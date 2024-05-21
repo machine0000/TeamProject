@@ -1,4 +1,6 @@
 #pragma once
+#include <msclr/marshal_cppstd.h>
+using namespace std;
 
 namespace TeamProject {
 
@@ -39,53 +41,65 @@ namespace TeamProject {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ l_s_page;
 
-	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ l_s_book1;
+
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ button2;
 
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ l_s_book2;
+
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ l_s_book3;
+
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Label^ label13;
-	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::Label^ l_s_book4;
+
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Label^ label16;
-	private: System::Windows::Forms::Label^ label17;
+	private: System::Windows::Forms::Label^ l_s_book5;
+
 	private: System::Windows::Forms::Label^ label18;
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Label^ label19;
-	private: System::Windows::Forms::Label^ label20;
+	private: System::Windows::Forms::Label^ l_s_book6;
+
 	private: System::Windows::Forms::Label^ label21;
 	private: System::Windows::Forms::Button^ button8;
 	private: System::Windows::Forms::Label^ label22;
-	private: System::Windows::Forms::Label^ label23;
+	private: System::Windows::Forms::Label^ l_s_book7;
+
 	private: System::Windows::Forms::Label^ label24;
 	private: System::Windows::Forms::Button^ button9;
 	private: System::Windows::Forms::Label^ label25;
-	private: System::Windows::Forms::Label^ label26;
+	private: System::Windows::Forms::Label^ l_s_book8;
+
 	private: System::Windows::Forms::Label^ label27;
 	private: System::Windows::Forms::Button^ button10;
 	private: System::Windows::Forms::Label^ label28;
-	private: System::Windows::Forms::Label^ label29;
+	private: System::Windows::Forms::Label^ l_s_book9;
+
 	private: System::Windows::Forms::Label^ label30;
 	private: System::Windows::Forms::Button^ button11;
 	private: System::Windows::Forms::Label^ label31;
-	private: System::Windows::Forms::Label^ label32;
+	private: System::Windows::Forms::Label^ l_s_book10;
+
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Button^ button12;
 	private: System::Windows::Forms::Label^ label33;
 	private: System::Windows::Forms::Button^ button14;
-	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ t_s_choicepage;
+
 	private: System::Windows::Forms::Button^ button13;
 
 
@@ -109,51 +123,51 @@ namespace TeamProject {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->l_s_page = (gcnew System::Windows::Forms::Label());
+			this->l_s_book1 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->l_s_book2 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->l_s_book3 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->l_s_book4 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->label16 = (gcnew System::Windows::Forms::Label());
-			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->l_s_book5 = (gcnew System::Windows::Forms::Label());
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->label19 = (gcnew System::Windows::Forms::Label());
-			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->l_s_book6 = (gcnew System::Windows::Forms::Label());
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->label22 = (gcnew System::Windows::Forms::Label());
-			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->l_s_book7 = (gcnew System::Windows::Forms::Label());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->label25 = (gcnew System::Windows::Forms::Label());
-			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->l_s_book8 = (gcnew System::Windows::Forms::Label());
 			this->label27 = (gcnew System::Windows::Forms::Label());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->label28 = (gcnew System::Windows::Forms::Label());
-			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->l_s_book9 = (gcnew System::Windows::Forms::Label());
 			this->label30 = (gcnew System::Windows::Forms::Label());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->label31 = (gcnew System::Windows::Forms::Label());
-			this->label32 = (gcnew System::Windows::Forms::Label());
+			this->l_s_book10 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->button14 = (gcnew System::Windows::Forms::Button());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->t_s_choicepage = (gcnew System::Windows::Forms::TextBox());
 			this->button13 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -206,25 +220,25 @@ namespace TeamProject {
 			this->button1->Text = L"検索";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
-			// label2
+			// l_s_page
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label2->Location = System::Drawing::Point(20, 220);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(92, 20);
-			this->label2->TabIndex = 5;
-			this->label2->Text = L"１ページ目";
+			this->l_s_page->AutoSize = true;
+			this->l_s_page->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_page->Location = System::Drawing::Point(20, 220);
+			this->l_s_page->Name = L"l_s_page";
+			this->l_s_page->Size = System::Drawing::Size(92, 20);
+			this->l_s_page->TabIndex = 5;
+			this->l_s_page->Text = L"１ページ目";
 			// 
-			// label3
+			// l_s_book1
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label3->Location = System::Drawing::Point(25, 275);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(109, 20);
-			this->label3->TabIndex = 7;
-			this->label3->Text = L"　１．書籍名";
+			this->l_s_book1->AutoSize = true;
+			this->l_s_book1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_book1->Location = System::Drawing::Point(25, 275);
+			this->l_s_book1->Name = L"l_s_book1";
+			this->l_s_book1->Size = System::Drawing::Size(109, 20);
+			this->l_s_book1->TabIndex = 7;
+			this->l_s_book1->Text = L"　１．書籍名";
 			// 
 			// label4
 			// 
@@ -236,7 +250,7 @@ namespace TeamProject {
 			// 
 			// button2
 			// 
-			this->button2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->button2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->button2->Location = System::Drawing::Point(400, 271);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(102, 28);
@@ -256,7 +270,7 @@ namespace TeamProject {
 			// 
 			// button3
 			// 
-			this->button3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->button3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->button3->Location = System::Drawing::Point(400, 305);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(102, 28);
@@ -272,15 +286,15 @@ namespace TeamProject {
 			this->label7->Size = System::Drawing::Size(370, 1);
 			this->label7->TabIndex = 12;
 			// 
-			// label8
+			// l_s_book2
 			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label8->Location = System::Drawing::Point(25, 309);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(109, 20);
-			this->label8->TabIndex = 11;
-			this->label8->Text = L"　２．書籍名";
+			this->l_s_book2->AutoSize = true;
+			this->l_s_book2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_book2->Location = System::Drawing::Point(25, 309);
+			this->l_s_book2->Name = L"l_s_book2";
+			this->l_s_book2->Size = System::Drawing::Size(109, 20);
+			this->l_s_book2->TabIndex = 11;
+			this->l_s_book2->Text = L"　２．書籍名";
 			// 
 			// label9
 			// 
@@ -294,7 +308,7 @@ namespace TeamProject {
 			// 
 			// button4
 			// 
-			this->button4->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->button4->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->button4->Location = System::Drawing::Point(400, 339);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(102, 28);
@@ -310,15 +324,15 @@ namespace TeamProject {
 			this->label10->Size = System::Drawing::Size(370, 1);
 			this->label10->TabIndex = 16;
 			// 
-			// label11
+			// l_s_book3
 			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label11->Location = System::Drawing::Point(25, 343);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(109, 20);
-			this->label11->TabIndex = 15;
-			this->label11->Text = L"　３．書籍名";
+			this->l_s_book3->AutoSize = true;
+			this->l_s_book3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_book3->Location = System::Drawing::Point(25, 343);
+			this->l_s_book3->Name = L"l_s_book3";
+			this->l_s_book3->Size = System::Drawing::Size(109, 20);
+			this->l_s_book3->TabIndex = 15;
+			this->l_s_book3->Text = L"　３．書籍名";
 			// 
 			// label12
 			// 
@@ -332,7 +346,7 @@ namespace TeamProject {
 			// 
 			// button5
 			// 
-			this->button5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->button5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->button5->Location = System::Drawing::Point(400, 373);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(102, 28);
@@ -348,15 +362,15 @@ namespace TeamProject {
 			this->label13->Size = System::Drawing::Size(370, 1);
 			this->label13->TabIndex = 20;
 			// 
-			// label14
+			// l_s_book4
 			// 
-			this->label14->AutoSize = true;
-			this->label14->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label14->Location = System::Drawing::Point(25, 377);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(109, 20);
-			this->label14->TabIndex = 19;
-			this->label14->Text = L"　４．書籍名";
+			this->l_s_book4->AutoSize = true;
+			this->l_s_book4->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_book4->Location = System::Drawing::Point(25, 377);
+			this->l_s_book4->Name = L"l_s_book4";
+			this->l_s_book4->Size = System::Drawing::Size(109, 20);
+			this->l_s_book4->TabIndex = 19;
+			this->l_s_book4->Text = L"　４．書籍名";
 			// 
 			// label15
 			// 
@@ -370,7 +384,7 @@ namespace TeamProject {
 			// 
 			// button6
 			// 
-			this->button6->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->button6->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->button6->Location = System::Drawing::Point(400, 407);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(102, 28);
@@ -386,15 +400,15 @@ namespace TeamProject {
 			this->label16->Size = System::Drawing::Size(370, 1);
 			this->label16->TabIndex = 24;
 			// 
-			// label17
+			// l_s_book5
 			// 
-			this->label17->AutoSize = true;
-			this->label17->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label17->Location = System::Drawing::Point(25, 411);
-			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(109, 20);
-			this->label17->TabIndex = 23;
-			this->label17->Text = L"　５．書籍名";
+			this->l_s_book5->AutoSize = true;
+			this->l_s_book5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_book5->Location = System::Drawing::Point(25, 411);
+			this->l_s_book5->Name = L"l_s_book5";
+			this->l_s_book5->Size = System::Drawing::Size(109, 20);
+			this->l_s_book5->TabIndex = 23;
+			this->l_s_book5->Text = L"　５．書籍名";
 			// 
 			// label18
 			// 
@@ -408,7 +422,7 @@ namespace TeamProject {
 			// 
 			// button7
 			// 
-			this->button7->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->button7->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->button7->Location = System::Drawing::Point(400, 441);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(102, 28);
@@ -424,15 +438,15 @@ namespace TeamProject {
 			this->label19->Size = System::Drawing::Size(370, 1);
 			this->label19->TabIndex = 28;
 			// 
-			// label20
+			// l_s_book6
 			// 
-			this->label20->AutoSize = true;
-			this->label20->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label20->Location = System::Drawing::Point(25, 445);
-			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(109, 20);
-			this->label20->TabIndex = 27;
-			this->label20->Text = L"　６．書籍名";
+			this->l_s_book6->AutoSize = true;
+			this->l_s_book6->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_book6->Location = System::Drawing::Point(25, 445);
+			this->l_s_book6->Name = L"l_s_book6";
+			this->l_s_book6->Size = System::Drawing::Size(109, 20);
+			this->l_s_book6->TabIndex = 27;
+			this->l_s_book6->Text = L"　６．書籍名";
 			// 
 			// label21
 			// 
@@ -446,7 +460,7 @@ namespace TeamProject {
 			// 
 			// button8
 			// 
-			this->button8->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->button8->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->button8->Location = System::Drawing::Point(400, 475);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(102, 28);
@@ -462,15 +476,15 @@ namespace TeamProject {
 			this->label22->Size = System::Drawing::Size(370, 1);
 			this->label22->TabIndex = 32;
 			// 
-			// label23
+			// l_s_book7
 			// 
-			this->label23->AutoSize = true;
-			this->label23->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label23->Location = System::Drawing::Point(25, 479);
-			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(109, 20);
-			this->label23->TabIndex = 31;
-			this->label23->Text = L"　７．書籍名";
+			this->l_s_book7->AutoSize = true;
+			this->l_s_book7->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_book7->Location = System::Drawing::Point(25, 479);
+			this->l_s_book7->Name = L"l_s_book7";
+			this->l_s_book7->Size = System::Drawing::Size(109, 20);
+			this->l_s_book7->TabIndex = 31;
+			this->l_s_book7->Text = L"　７．書籍名";
 			// 
 			// label24
 			// 
@@ -484,7 +498,7 @@ namespace TeamProject {
 			// 
 			// button9
 			// 
-			this->button9->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->button9->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->button9->Location = System::Drawing::Point(400, 509);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(102, 28);
@@ -500,15 +514,15 @@ namespace TeamProject {
 			this->label25->Size = System::Drawing::Size(370, 1);
 			this->label25->TabIndex = 36;
 			// 
-			// label26
+			// l_s_book8
 			// 
-			this->label26->AutoSize = true;
-			this->label26->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label26->Location = System::Drawing::Point(25, 513);
-			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(109, 20);
-			this->label26->TabIndex = 35;
-			this->label26->Text = L"　８．書籍名";
+			this->l_s_book8->AutoSize = true;
+			this->l_s_book8->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_book8->Location = System::Drawing::Point(25, 513);
+			this->l_s_book8->Name = L"l_s_book8";
+			this->l_s_book8->Size = System::Drawing::Size(109, 20);
+			this->l_s_book8->TabIndex = 35;
+			this->l_s_book8->Text = L"　８．書籍名";
 			// 
 			// label27
 			// 
@@ -522,7 +536,7 @@ namespace TeamProject {
 			// 
 			// button10
 			// 
-			this->button10->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->button10->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->button10->Location = System::Drawing::Point(400, 543);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(102, 28);
@@ -538,15 +552,15 @@ namespace TeamProject {
 			this->label28->Size = System::Drawing::Size(370, 1);
 			this->label28->TabIndex = 40;
 			// 
-			// label29
+			// l_s_book9
 			// 
-			this->label29->AutoSize = true;
-			this->label29->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label29->Location = System::Drawing::Point(25, 547);
-			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(109, 20);
-			this->label29->TabIndex = 39;
-			this->label29->Text = L"　９．書籍名";
+			this->l_s_book9->AutoSize = true;
+			this->l_s_book9->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_book9->Location = System::Drawing::Point(25, 547);
+			this->l_s_book9->Name = L"l_s_book9";
+			this->l_s_book9->Size = System::Drawing::Size(109, 20);
+			this->l_s_book9->TabIndex = 39;
+			this->l_s_book9->Text = L"　９．書籍名";
 			// 
 			// label30
 			// 
@@ -560,7 +574,7 @@ namespace TeamProject {
 			// 
 			// button11
 			// 
-			this->button11->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->button11->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->button11->Location = System::Drawing::Point(400, 577);
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(102, 28);
@@ -576,15 +590,15 @@ namespace TeamProject {
 			this->label31->Size = System::Drawing::Size(370, 1);
 			this->label31->TabIndex = 44;
 			// 
-			// label32
+			// l_s_book10
 			// 
-			this->label32->AutoSize = true;
-			this->label32->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label32->Location = System::Drawing::Point(25, 581);
-			this->label32->Name = L"label32";
-			this->label32->Size = System::Drawing::Size(110, 20);
-			this->label32->TabIndex = 43;
-			this->label32->Text = L"１０．書籍名";
+			this->l_s_book10->AutoSize = true;
+			this->l_s_book10->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_book10->Location = System::Drawing::Point(25, 581);
+			this->l_s_book10->Name = L"l_s_book10";
+			this->l_s_book10->Size = System::Drawing::Size(110, 20);
+			this->l_s_book10->TabIndex = 43;
+			this->l_s_book10->Text = L"１０．書籍名";
 			// 
 			// label5
 			// 
@@ -605,6 +619,7 @@ namespace TeamProject {
 			this->button12->TabIndex = 48;
 			this->button12->Text = L"次";
 			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &ShowForm::button12_Click);
 			// 
 			// label33
 			// 
@@ -623,16 +638,18 @@ namespace TeamProject {
 			this->button14->Name = L"button14";
 			this->button14->Size = System::Drawing::Size(60, 40);
 			this->button14->TabIndex = 51;
-			this->button14->Text = L"次";
+			this->button14->Text = L"前";
 			this->button14->UseVisualStyleBackColor = true;
 			// 
-			// textBox3
+			// t_s_choicepage
 			// 
-			this->textBox3->Location = System::Drawing::Point(200, 620);
-			this->textBox3->Multiline = true;
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(40, 40);
-			this->textBox3->TabIndex = 52;
+			this->t_s_choicepage->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->t_s_choicepage->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 20));
+			this->t_s_choicepage->Location = System::Drawing::Point(200, 620);
+			this->t_s_choicepage->MaxLength = 2;
+			this->t_s_choicepage->Name = L"t_s_choicepage";
+			this->t_s_choicepage->Size = System::Drawing::Size(40, 41);
+			this->t_s_choicepage->TabIndex = 52;
 			// 
 			// button13
 			// 
@@ -650,7 +667,7 @@ namespace TeamProject {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(532, 703);
 			this->Controls->Add(this->button13);
-			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->t_s_choicepage);
 			this->Controls->Add(this->button14);
 			this->Controls->Add(this->label33);
 			this->Controls->Add(this->button12);
@@ -658,43 +675,43 @@ namespace TeamProject {
 			this->Controls->Add(this->label30);
 			this->Controls->Add(this->button11);
 			this->Controls->Add(this->label31);
-			this->Controls->Add(this->label32);
+			this->Controls->Add(this->l_s_book10);
 			this->Controls->Add(this->label27);
 			this->Controls->Add(this->button10);
 			this->Controls->Add(this->label28);
-			this->Controls->Add(this->label29);
+			this->Controls->Add(this->l_s_book9);
 			this->Controls->Add(this->label24);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->label25);
-			this->Controls->Add(this->label26);
+			this->Controls->Add(this->l_s_book8);
 			this->Controls->Add(this->label21);
 			this->Controls->Add(this->button8);
 			this->Controls->Add(this->label22);
-			this->Controls->Add(this->label23);
+			this->Controls->Add(this->l_s_book7);
 			this->Controls->Add(this->label18);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->label19);
-			this->Controls->Add(this->label20);
+			this->Controls->Add(this->l_s_book6);
 			this->Controls->Add(this->label15);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->label16);
-			this->Controls->Add(this->label17);
+			this->Controls->Add(this->l_s_book5);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->label13);
-			this->Controls->Add(this->label14);
+			this->Controls->Add(this->l_s_book4);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->label10);
-			this->Controls->Add(this->label11);
+			this->Controls->Add(this->l_s_book3);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(this->label8);
+			this->Controls->Add(this->l_s_book2);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
+			this->Controls->Add(this->l_s_book1);
+			this->Controls->Add(this->l_s_page);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->textBox2);
@@ -707,6 +724,33 @@ namespace TeamProject {
 
 		}
 #pragma endregion
+		void showBook(int num) {
+			l_s_page->Text = msclr::interop::marshal_as<System::String^>(to_string(num));
+			//l_s_book1->Text = lib.name[(num-1)*10];
+			//l_s_book2->Text = lib.name[(num-1)*10+1];
+			//l_s_book3->Text = lib.name[(num-1)*10+2];
+			//l_s_book4->Text = lib.name[(num-1)*10+3];
+			//l_s_book5->Text = lib.name[(num-1)*10+4];
+			//l_s_book6->Text = lib.name[(num-1)*10+5];
+			//l_s_book7->Text = lib.name[(num-1)*10+6];
+			//l_s_book8->Text = lib.name[(num-1)*10+7];
+			//l_s_book9->Text = lib.name[(num-1)*10+8];
+			//l_s_book10->Text = lib.name[(num-1)*10+9];
+		}
 
+		private: void textBox1_KeyPress(System::Object^ senderr, KeyPressEventArgs^ e)
+		{
+			if (e->KeyChar == '\r') // Enterキーが押された場合
+			{
+				
+				int choice = stoi(msclr::interop::marshal_as<std::string>(t_s_choicepage->Text));
+				showBook(choice);
+
+			}
+		}
+
+		private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		}
 };
 }
