@@ -118,12 +118,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="book_detail_form.cpp" />
+    <ClCompile Include="LendForm.cpp" />
     <ClCompile Include="ShowForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="book_detail_form.h" />
+    <ClInclude Include="LendForm.h" />
     <ClInclude Include="ShowForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ShowForm.resx">
+      <DependentUpon>ShowForm.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
