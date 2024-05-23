@@ -8,8 +8,8 @@ public:
 	string mail;
 	string pass;
 	string genre;
-	string lendname;
-	tm rday;
+	string lendname[3];
+	tm rday[3];
 	int books;
 };
 User user[100];
