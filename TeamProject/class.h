@@ -46,4 +46,4 @@ string selectgenre = "ƒWƒƒƒ“ƒ‹‚ğ‘I‘ğ";
 int page = 1;
 int lnum = 0;
 int nummax = 0;
-string usermail;
+int usernum;

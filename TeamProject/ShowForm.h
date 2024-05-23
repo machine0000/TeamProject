@@ -1144,10 +1144,11 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			pagemax = nummax / 10;
 			ifs.close();
 
+
 			//‚¨‚·‚·‚ß•\¦
 			if (user->genre != "") {
 				for (int i = 0; i != nummax; i++) {
-					if(lib[i].genre == mailaddress)
+					if(lib[i].genre == usermail)
 				}
 			}
 
