@@ -128,20 +128,50 @@
     <ClCompile Include="ShowForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="book_detail_form.h" />
+    <ClInclude Include="book_detail_form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="class.h" />
-    <ClInclude Include="completeForm.h" />
-    <ClInclude Include="confirmationForm.h" />
-    <ClInclude Include="LendForm.h" />
-    <ClInclude Include="LoginForm.h" />
+    <ClInclude Include="completeForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="confirmationForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="LendForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="LoginForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ShowForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="sign up Form.h" />
+    <ClInclude Include="sign up Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="book_detail_form.resx">
+      <DependentUpon>book_detail_form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="completeForm.resx">
+      <DependentUpon>completeForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmationForm.resx">
+      <DependentUpon>confirmationForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LendForm.resx">
+      <DependentUpon>LendForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShowForm.resx">
       <DependentUpon>ShowForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sign up Form.resx">
+      <DependentUpon>sign up Form.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
