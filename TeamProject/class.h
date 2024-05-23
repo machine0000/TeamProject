@@ -8,7 +8,7 @@ public:
 	string mail;
 	string pass;
 	string genre;
-	string lib;
+	string lendname;
 	tm rday;
 	int books;
 };
