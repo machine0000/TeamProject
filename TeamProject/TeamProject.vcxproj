@@ -111,23 +111,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="stdole">
+      <HintPath>stdole</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="book_detail_form.cpp" />
-    <ClCompile Include="LendForm.cpp" />
     <ClCompile Include="ShowForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="book_detail_form.h" />
+    <ClInclude Include="class.h" />
+    <ClInclude Include="completeForm.h" />
+    <ClInclude Include="confirmationForm.h" />
     <ClInclude Include="LendForm.h" />
+    <ClInclude Include="LoginForm.h" />
     <ClInclude Include="ShowForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="sign up Form.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ShowForm.resx">

@@ -1,5 +1,10 @@
 #pragma once
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 #include <msclr/marshal_cppstd.h>
+#include "class.h"
 using namespace std;
 
 namespace TeamProject {
@@ -36,71 +41,130 @@ namespace TeamProject {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ l_s_header;
+	protected:
+
+	protected:
+
+	protected:
+
+	private: System::Windows::Forms::TextBox^ t_s_recommendbook;
+	private: System::Windows::Forms::TextBox^ t_s_recommend;
+
+
+	private: System::Windows::Forms::ComboBox^ c_s_genre;
+
+	private: System::Windows::Forms::Button^ b_s_search;
+
 	private: System::Windows::Forms::Label^ l_s_page;
 
 	private: System::Windows::Forms::Label^ l_s_book1;
+	private: System::Windows::Forms::Label^ l_s_bar1;
 
 
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Button^ button2;
 
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Label^ label7;
+
+	private: System::Windows::Forms::Button^ b_s_lend1;
+
+	private: System::Windows::Forms::Label^ ll_s_detailform2;
+	private: System::Windows::Forms::Button^ b_s_lend2;
+	private: System::Windows::Forms::Label^ l_s_bar2;
+
+
+
+
+
 	private: System::Windows::Forms::Label^ l_s_book2;
+	private: System::Windows::Forms::Label^ ll_s_detailform3;
+	private: System::Windows::Forms::Button^ b_s_lend3;
+	private: System::Windows::Forms::Label^ l_s_bar3;
 
-	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Label^ label10;
+
+
+
+
 	private: System::Windows::Forms::Label^ l_s_book3;
+	private: System::Windows::Forms::Label^ ll_s_detailform4;
+	private: System::Windows::Forms::Button^ b_s_lend4;
+	private: System::Windows::Forms::Label^ l_s_bar4;
 
-	private: System::Windows::Forms::Label^ label12;
-	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Label^ label13;
+
+
+
+
 	private: System::Windows::Forms::Label^ l_s_book4;
+	private: System::Windows::Forms::Label^ ll_s_detailform5;
+	private: System::Windows::Forms::Button^ b_s_lend5;
+	private: System::Windows::Forms::Label^ l_s_bar5;
 
-	private: System::Windows::Forms::Label^ label15;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Label^ label16;
+
+
+
+
 	private: System::Windows::Forms::Label^ l_s_book5;
+	private: System::Windows::Forms::Label^ ll_s_detailform6;
+	private: System::Windows::Forms::Button^ b_s_lend6;
+	private: System::Windows::Forms::Label^ l_s_bar6;
 
-	private: System::Windows::Forms::Label^ label18;
-	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::Label^ label19;
+
+
+
+
+
 	private: System::Windows::Forms::Label^ l_s_book6;
+	private: System::Windows::Forms::Label^ ll_s_detailform7;
+	private: System::Windows::Forms::Button^ b_s_lend7;
+	private: System::Windows::Forms::Label^ l_s_bar7;
 
-	private: System::Windows::Forms::Label^ label21;
-	private: System::Windows::Forms::Button^ button8;
-	private: System::Windows::Forms::Label^ label22;
+
+
+
+
+
 	private: System::Windows::Forms::Label^ l_s_book7;
+	private: System::Windows::Forms::Label^ ll_s_detailform8;
+	private: System::Windows::Forms::Button^ b_s_lend8;
+private: System::Windows::Forms::Label^ l_s_bar8;
 
-	private: System::Windows::Forms::Label^ label24;
-	private: System::Windows::Forms::Button^ button9;
-	private: System::Windows::Forms::Label^ label25;
+
+
+
+
 	private: System::Windows::Forms::Label^ l_s_book8;
+	private: System::Windows::Forms::Label^ ll_s_detailform9;
+	private: System::Windows::Forms::Button^ b_s_lend9;
+private: System::Windows::Forms::Label^ l_s_bar9;
 
-	private: System::Windows::Forms::Label^ label27;
-	private: System::Windows::Forms::Button^ button10;
-	private: System::Windows::Forms::Label^ label28;
+
+
+
+
 	private: System::Windows::Forms::Label^ l_s_book9;
+	private: System::Windows::Forms::Label^ ll_s_detailform10;
+	private: System::Windows::Forms::Button^ b_s_lend10;
+private: System::Windows::Forms::Label^ l_s_bar10;
 
-	private: System::Windows::Forms::Label^ label30;
-	private: System::Windows::Forms::Button^ button11;
-	private: System::Windows::Forms::Label^ label31;
+
+
+
+
 	private: System::Windows::Forms::Label^ l_s_book10;
+	private: System::Windows::Forms::Label^ ll_s_detailform1;
 
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Button^ button12;
+
+	private: System::Windows::Forms::Button^ b_s_next;
+
 	private: System::Windows::Forms::Label^ label33;
-	private: System::Windows::Forms::Button^ button14;
-	private: System::Windows::Forms::TextBox^ t_s_choicepage;
+	private: System::Windows::Forms::Button^ b_s_previous;
 
-	private: System::Windows::Forms::Button^ button13;
+	private: System::Windows::Forms::TextBox^ t_s_choicepage;
+private: System::Windows::Forms::Button^ b_s_lendform;
+private: System::Windows::Forms::Label^ label1;
+private: System::Windows::Forms::Label^ label2;
+
+
+
+	private: System::ComponentModel::IContainer^ components;
 
 
 	protected:
@@ -109,7 +173,7 @@ namespace TeamProject {
 		/// <summary>
 		/// 必要なデザイナー変数です。
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -118,107 +182,114 @@ namespace TeamProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->l_s_header = (gcnew System::Windows::Forms::Label());
+			this->t_s_recommendbook = (gcnew System::Windows::Forms::TextBox());
+			this->t_s_recommend = (gcnew System::Windows::Forms::TextBox());
+			this->c_s_genre = (gcnew System::Windows::Forms::ComboBox());
+			this->b_s_search = (gcnew System::Windows::Forms::Button());
 			this->l_s_page = (gcnew System::Windows::Forms::Label());
 			this->l_s_book1 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->l_s_bar1 = (gcnew System::Windows::Forms::Label());
+			this->b_s_lend1 = (gcnew System::Windows::Forms::Button());
+			this->ll_s_detailform2 = (gcnew System::Windows::Forms::Label());
+			this->b_s_lend2 = (gcnew System::Windows::Forms::Button());
+			this->l_s_bar2 = (gcnew System::Windows::Forms::Label());
 			this->l_s_book2 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->ll_s_detailform3 = (gcnew System::Windows::Forms::Label());
+			this->b_s_lend3 = (gcnew System::Windows::Forms::Button());
+			this->l_s_bar3 = (gcnew System::Windows::Forms::Label());
 			this->l_s_book3 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->ll_s_detailform4 = (gcnew System::Windows::Forms::Label());
+			this->b_s_lend4 = (gcnew System::Windows::Forms::Button());
+			this->l_s_bar4 = (gcnew System::Windows::Forms::Label());
 			this->l_s_book4 = (gcnew System::Windows::Forms::Label());
-			this->label15 = (gcnew System::Windows::Forms::Label());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->ll_s_detailform5 = (gcnew System::Windows::Forms::Label());
+			this->b_s_lend5 = (gcnew System::Windows::Forms::Button());
+			this->l_s_bar5 = (gcnew System::Windows::Forms::Label());
 			this->l_s_book5 = (gcnew System::Windows::Forms::Label());
-			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->ll_s_detailform6 = (gcnew System::Windows::Forms::Label());
+			this->b_s_lend6 = (gcnew System::Windows::Forms::Button());
+			this->l_s_bar6 = (gcnew System::Windows::Forms::Label());
 			this->l_s_book6 = (gcnew System::Windows::Forms::Label());
-			this->label21 = (gcnew System::Windows::Forms::Label());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->ll_s_detailform7 = (gcnew System::Windows::Forms::Label());
+			this->b_s_lend7 = (gcnew System::Windows::Forms::Button());
+			this->l_s_bar7 = (gcnew System::Windows::Forms::Label());
 			this->l_s_book7 = (gcnew System::Windows::Forms::Label());
-			this->label24 = (gcnew System::Windows::Forms::Label());
-			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->ll_s_detailform8 = (gcnew System::Windows::Forms::Label());
+			this->b_s_lend8 = (gcnew System::Windows::Forms::Button());
+			this->l_s_bar8 = (gcnew System::Windows::Forms::Label());
 			this->l_s_book8 = (gcnew System::Windows::Forms::Label());
-			this->label27 = (gcnew System::Windows::Forms::Label());
-			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->ll_s_detailform9 = (gcnew System::Windows::Forms::Label());
+			this->b_s_lend9 = (gcnew System::Windows::Forms::Button());
+			this->l_s_bar9 = (gcnew System::Windows::Forms::Label());
 			this->l_s_book9 = (gcnew System::Windows::Forms::Label());
-			this->label30 = (gcnew System::Windows::Forms::Label());
-			this->button11 = (gcnew System::Windows::Forms::Button());
-			this->label31 = (gcnew System::Windows::Forms::Label());
+			this->ll_s_detailform10 = (gcnew System::Windows::Forms::Label());
+			this->b_s_lend10 = (gcnew System::Windows::Forms::Button());
+			this->l_s_bar10 = (gcnew System::Windows::Forms::Label());
 			this->l_s_book10 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->ll_s_detailform1 = (gcnew System::Windows::Forms::Label());
+			this->b_s_next = (gcnew System::Windows::Forms::Button());
 			this->label33 = (gcnew System::Windows::Forms::Label());
-			this->button14 = (gcnew System::Windows::Forms::Button());
+			this->b_s_previous = (gcnew System::Windows::Forms::Button());
 			this->t_s_choicepage = (gcnew System::Windows::Forms::TextBox());
-			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->b_s_lendform = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// label1
+			// l_s_header
 			// 
-			this->label1->BackColor = System::Drawing::Color::Peru;
-			this->label1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 24));
-			this->label1->Location = System::Drawing::Point(-2, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(571, 40);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"図書貸し出しシステム";
+			this->l_s_header->BackColor = System::Drawing::Color::Peru;
+			this->l_s_header->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 24));
+			this->l_s_header->Location = System::Drawing::Point(-2, 0);
+			this->l_s_header->Name = L"l_s_header";
+			this->l_s_header->Size = System::Drawing::Size(571, 40);
+			this->l_s_header->TabIndex = 0;
+			this->l_s_header->Text = L"図書貸し出しシステム";
 			// 
-			// textBox1
+			// t_s_recommendbook
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->textBox1->Location = System::Drawing::Point(25, 87);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(325, 81);
-			this->textBox1->TabIndex = 1;
+			this->t_s_recommendbook->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->t_s_recommendbook->Location = System::Drawing::Point(24, 87);
+			this->t_s_recommendbook->Multiline = true;
+			this->t_s_recommendbook->Name = L"t_s_recommendbook";
+			this->t_s_recommendbook->Size = System::Drawing::Size(325, 81);
+			this->t_s_recommendbook->TabIndex = 1;
 			// 
-			// textBox2
+			// t_s_recommend
 			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->textBox2->Location = System::Drawing::Point(25, 60);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(150, 27);
-			this->textBox2->TabIndex = 2;
-			this->textBox2->Text = L"おすすめ";
-			this->textBox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->t_s_recommend->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->t_s_recommend->Location = System::Drawing::Point(25, 60);
+			this->t_s_recommend->Name = L"t_s_recommend";
+			this->t_s_recommend->Size = System::Drawing::Size(150, 27);
+			this->t_s_recommend->TabIndex = 2;
+			this->t_s_recommend->Text = L"おすすめ";
+			this->t_s_recommend->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// comboBox1
+			// c_s_genre
 			// 
-			this->comboBox1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->c_s_genre->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->c_s_genre->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(25, 180);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(350, 28);
-			this->comboBox1->TabIndex = 3;
+			this->c_s_genre->Items->AddRange(gcnew cli::array< System::Object^  >(7) {
+				L"ジャンルを選択", L"社会", L"ミステリー", L"ファンタジー", L"エッセイ",
+					L"歴史", L"ノンフィクション"
+			});
+			this->c_s_genre->Location = System::Drawing::Point(25, 180);
+			this->c_s_genre->Name = L"c_s_genre";
+			this->c_s_genre->Size = System::Drawing::Size(350, 28);
+			this->c_s_genre->TabIndex = 3;
 			// 
-			// button1
+			// b_s_search
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->button1->Location = System::Drawing::Point(411, 180);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 28);
-			this->button1->TabIndex = 4;
-			this->button1->Text = L"検索";
-			this->button1->UseVisualStyleBackColor = true;
+			this->b_s_search->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->b_s_search->Location = System::Drawing::Point(411, 180);
+			this->b_s_search->Name = L"b_s_search";
+			this->b_s_search->Size = System::Drawing::Size(75, 28);
+			this->b_s_search->TabIndex = 4;
+			this->b_s_search->Text = L"検索";
+			this->b_s_search->UseVisualStyleBackColor = true;
+			this->b_s_search->Click += gcnew System::EventHandler(this, &ShowForm::b_s_search_Click);
 			// 
 			// l_s_page
 			// 
@@ -240,51 +311,51 @@ namespace TeamProject {
 			this->l_s_book1->TabIndex = 7;
 			this->l_s_book1->Text = L"　１．書籍名";
 			// 
-			// label4
+			// l_s_bar1
 			// 
-			this->label4->BackColor = System::Drawing::Color::Black;
-			this->label4->Location = System::Drawing::Point(26, 295);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(370, 1);
-			this->label4->TabIndex = 8;
+			this->l_s_bar1->BackColor = System::Drawing::Color::Black;
+			this->l_s_bar1->Location = System::Drawing::Point(26, 295);
+			this->l_s_bar1->Name = L"l_s_bar1";
+			this->l_s_bar1->Size = System::Drawing::Size(370, 1);
+			this->l_s_bar1->TabIndex = 8;
 			// 
-			// button2
+			// b_s_lend1
 			// 
-			this->button2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->button2->Location = System::Drawing::Point(400, 271);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(102, 28);
-			this->button2->TabIndex = 9;
-			this->button2->Text = L"貸し出し";
-			this->button2->UseVisualStyleBackColor = true;
+			this->b_s_lend1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->b_s_lend1->Location = System::Drawing::Point(400, 271);
+			this->b_s_lend1->Name = L"b_s_lend1";
+			this->b_s_lend1->Size = System::Drawing::Size(102, 28);
+			this->b_s_lend1->TabIndex = 9;
+			this->b_s_lend1->Text = L"貸し出し";
+			this->b_s_lend1->UseVisualStyleBackColor = true;
 			// 
-			// label6
+			// ll_s_detailform2
 			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label6->Location = System::Drawing::Point(345, 309);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(49, 20);
-			this->label6->TabIndex = 14;
-			this->label6->Text = L"詳細";
+			this->ll_s_detailform2->AutoSize = true;
+			this->ll_s_detailform2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform2->Location = System::Drawing::Point(345, 309);
+			this->ll_s_detailform2->Name = L"ll_s_detailform2";
+			this->ll_s_detailform2->Size = System::Drawing::Size(49, 20);
+			this->ll_s_detailform2->TabIndex = 14;
+			this->ll_s_detailform2->Text = L"詳細";
 			// 
-			// button3
+			// b_s_lend2
 			// 
-			this->button3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->button3->Location = System::Drawing::Point(400, 305);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(102, 28);
-			this->button3->TabIndex = 13;
-			this->button3->Text = L"貸し出し";
-			this->button3->UseVisualStyleBackColor = true;
+			this->b_s_lend2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->b_s_lend2->Location = System::Drawing::Point(400, 305);
+			this->b_s_lend2->Name = L"b_s_lend2";
+			this->b_s_lend2->Size = System::Drawing::Size(102, 28);
+			this->b_s_lend2->TabIndex = 13;
+			this->b_s_lend2->Text = L"貸し出し";
+			this->b_s_lend2->UseVisualStyleBackColor = true;
 			// 
-			// label7
+			// l_s_bar2
 			// 
-			this->label7->BackColor = System::Drawing::Color::Black;
-			this->label7->Location = System::Drawing::Point(26, 329);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(370, 1);
-			this->label7->TabIndex = 12;
+			this->l_s_bar2->BackColor = System::Drawing::Color::Black;
+			this->l_s_bar2->Location = System::Drawing::Point(26, 329);
+			this->l_s_bar2->Name = L"l_s_bar2";
+			this->l_s_bar2->Size = System::Drawing::Size(370, 1);
+			this->l_s_bar2->TabIndex = 12;
 			// 
 			// l_s_book2
 			// 
@@ -296,33 +367,33 @@ namespace TeamProject {
 			this->l_s_book2->TabIndex = 11;
 			this->l_s_book2->Text = L"　２．書籍名";
 			// 
-			// label9
+			// ll_s_detailform3
 			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label9->Location = System::Drawing::Point(345, 343);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(49, 20);
-			this->label9->TabIndex = 18;
-			this->label9->Text = L"詳細";
+			this->ll_s_detailform3->AutoSize = true;
+			this->ll_s_detailform3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform3->Location = System::Drawing::Point(345, 343);
+			this->ll_s_detailform3->Name = L"ll_s_detailform3";
+			this->ll_s_detailform3->Size = System::Drawing::Size(49, 20);
+			this->ll_s_detailform3->TabIndex = 18;
+			this->ll_s_detailform3->Text = L"詳細";
 			// 
-			// button4
+			// b_s_lend3
 			// 
-			this->button4->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->button4->Location = System::Drawing::Point(400, 339);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(102, 28);
-			this->button4->TabIndex = 17;
-			this->button4->Text = L"貸し出し";
-			this->button4->UseVisualStyleBackColor = true;
+			this->b_s_lend3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->b_s_lend3->Location = System::Drawing::Point(400, 339);
+			this->b_s_lend3->Name = L"b_s_lend3";
+			this->b_s_lend3->Size = System::Drawing::Size(102, 28);
+			this->b_s_lend3->TabIndex = 17;
+			this->b_s_lend3->Text = L"貸し出し";
+			this->b_s_lend3->UseVisualStyleBackColor = true;
 			// 
-			// label10
+			// l_s_bar3
 			// 
-			this->label10->BackColor = System::Drawing::Color::Black;
-			this->label10->Location = System::Drawing::Point(26, 363);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(370, 1);
-			this->label10->TabIndex = 16;
+			this->l_s_bar3->BackColor = System::Drawing::Color::Black;
+			this->l_s_bar3->Location = System::Drawing::Point(26, 363);
+			this->l_s_bar3->Name = L"l_s_bar3";
+			this->l_s_bar3->Size = System::Drawing::Size(370, 1);
+			this->l_s_bar3->TabIndex = 16;
 			// 
 			// l_s_book3
 			// 
@@ -334,33 +405,33 @@ namespace TeamProject {
 			this->l_s_book3->TabIndex = 15;
 			this->l_s_book3->Text = L"　３．書籍名";
 			// 
-			// label12
+			// ll_s_detailform4
 			// 
-			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label12->Location = System::Drawing::Point(345, 377);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(49, 20);
-			this->label12->TabIndex = 22;
-			this->label12->Text = L"詳細";
+			this->ll_s_detailform4->AutoSize = true;
+			this->ll_s_detailform4->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform4->Location = System::Drawing::Point(345, 377);
+			this->ll_s_detailform4->Name = L"ll_s_detailform4";
+			this->ll_s_detailform4->Size = System::Drawing::Size(49, 20);
+			this->ll_s_detailform4->TabIndex = 22;
+			this->ll_s_detailform4->Text = L"詳細";
 			// 
-			// button5
+			// b_s_lend4
 			// 
-			this->button5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->button5->Location = System::Drawing::Point(400, 373);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(102, 28);
-			this->button5->TabIndex = 21;
-			this->button5->Text = L"貸し出し";
-			this->button5->UseVisualStyleBackColor = true;
+			this->b_s_lend4->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->b_s_lend4->Location = System::Drawing::Point(400, 373);
+			this->b_s_lend4->Name = L"b_s_lend4";
+			this->b_s_lend4->Size = System::Drawing::Size(102, 28);
+			this->b_s_lend4->TabIndex = 21;
+			this->b_s_lend4->Text = L"貸し出し";
+			this->b_s_lend4->UseVisualStyleBackColor = true;
 			// 
-			// label13
+			// l_s_bar4
 			// 
-			this->label13->BackColor = System::Drawing::Color::Black;
-			this->label13->Location = System::Drawing::Point(26, 397);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(370, 1);
-			this->label13->TabIndex = 20;
+			this->l_s_bar4->BackColor = System::Drawing::Color::Black;
+			this->l_s_bar4->Location = System::Drawing::Point(26, 397);
+			this->l_s_bar4->Name = L"l_s_bar4";
+			this->l_s_bar4->Size = System::Drawing::Size(370, 1);
+			this->l_s_bar4->TabIndex = 20;
 			// 
 			// l_s_book4
 			// 
@@ -372,33 +443,33 @@ namespace TeamProject {
 			this->l_s_book4->TabIndex = 19;
 			this->l_s_book4->Text = L"　４．書籍名";
 			// 
-			// label15
+			// ll_s_detailform5
 			// 
-			this->label15->AutoSize = true;
-			this->label15->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label15->Location = System::Drawing::Point(345, 411);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(49, 20);
-			this->label15->TabIndex = 26;
-			this->label15->Text = L"詳細";
+			this->ll_s_detailform5->AutoSize = true;
+			this->ll_s_detailform5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform5->Location = System::Drawing::Point(345, 411);
+			this->ll_s_detailform5->Name = L"ll_s_detailform5";
+			this->ll_s_detailform5->Size = System::Drawing::Size(49, 20);
+			this->ll_s_detailform5->TabIndex = 26;
+			this->ll_s_detailform5->Text = L"詳細";
 			// 
-			// button6
+			// b_s_lend5
 			// 
-			this->button6->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->button6->Location = System::Drawing::Point(400, 407);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(102, 28);
-			this->button6->TabIndex = 25;
-			this->button6->Text = L"貸し出し";
-			this->button6->UseVisualStyleBackColor = true;
+			this->b_s_lend5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->b_s_lend5->Location = System::Drawing::Point(400, 407);
+			this->b_s_lend5->Name = L"b_s_lend5";
+			this->b_s_lend5->Size = System::Drawing::Size(102, 28);
+			this->b_s_lend5->TabIndex = 25;
+			this->b_s_lend5->Text = L"貸し出し";
+			this->b_s_lend5->UseVisualStyleBackColor = true;
 			// 
-			// label16
+			// l_s_bar5
 			// 
-			this->label16->BackColor = System::Drawing::Color::Black;
-			this->label16->Location = System::Drawing::Point(26, 431);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(370, 1);
-			this->label16->TabIndex = 24;
+			this->l_s_bar5->BackColor = System::Drawing::Color::Black;
+			this->l_s_bar5->Location = System::Drawing::Point(26, 431);
+			this->l_s_bar5->Name = L"l_s_bar5";
+			this->l_s_bar5->Size = System::Drawing::Size(370, 1);
+			this->l_s_bar5->TabIndex = 24;
 			// 
 			// l_s_book5
 			// 
@@ -410,33 +481,33 @@ namespace TeamProject {
 			this->l_s_book5->TabIndex = 23;
 			this->l_s_book5->Text = L"　５．書籍名";
 			// 
-			// label18
+			// ll_s_detailform6
 			// 
-			this->label18->AutoSize = true;
-			this->label18->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label18->Location = System::Drawing::Point(345, 445);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(49, 20);
-			this->label18->TabIndex = 30;
-			this->label18->Text = L"詳細";
+			this->ll_s_detailform6->AutoSize = true;
+			this->ll_s_detailform6->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform6->Location = System::Drawing::Point(345, 445);
+			this->ll_s_detailform6->Name = L"ll_s_detailform6";
+			this->ll_s_detailform6->Size = System::Drawing::Size(49, 20);
+			this->ll_s_detailform6->TabIndex = 30;
+			this->ll_s_detailform6->Text = L"詳細";
 			// 
-			// button7
+			// b_s_lend6
 			// 
-			this->button7->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->button7->Location = System::Drawing::Point(400, 441);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(102, 28);
-			this->button7->TabIndex = 29;
-			this->button7->Text = L"貸し出し";
-			this->button7->UseVisualStyleBackColor = true;
+			this->b_s_lend6->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->b_s_lend6->Location = System::Drawing::Point(400, 441);
+			this->b_s_lend6->Name = L"b_s_lend6";
+			this->b_s_lend6->Size = System::Drawing::Size(102, 28);
+			this->b_s_lend6->TabIndex = 29;
+			this->b_s_lend6->Text = L"貸し出し";
+			this->b_s_lend6->UseVisualStyleBackColor = true;
 			// 
-			// label19
+			// l_s_bar6
 			// 
-			this->label19->BackColor = System::Drawing::Color::Black;
-			this->label19->Location = System::Drawing::Point(26, 465);
-			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(370, 1);
-			this->label19->TabIndex = 28;
+			this->l_s_bar6->BackColor = System::Drawing::Color::Black;
+			this->l_s_bar6->Location = System::Drawing::Point(26, 465);
+			this->l_s_bar6->Name = L"l_s_bar6";
+			this->l_s_bar6->Size = System::Drawing::Size(370, 1);
+			this->l_s_bar6->TabIndex = 28;
 			// 
 			// l_s_book6
 			// 
@@ -448,33 +519,33 @@ namespace TeamProject {
 			this->l_s_book6->TabIndex = 27;
 			this->l_s_book6->Text = L"　６．書籍名";
 			// 
-			// label21
+			// ll_s_detailform7
 			// 
-			this->label21->AutoSize = true;
-			this->label21->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label21->Location = System::Drawing::Point(345, 479);
-			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(49, 20);
-			this->label21->TabIndex = 34;
-			this->label21->Text = L"詳細";
+			this->ll_s_detailform7->AutoSize = true;
+			this->ll_s_detailform7->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform7->Location = System::Drawing::Point(345, 479);
+			this->ll_s_detailform7->Name = L"ll_s_detailform7";
+			this->ll_s_detailform7->Size = System::Drawing::Size(49, 20);
+			this->ll_s_detailform7->TabIndex = 34;
+			this->ll_s_detailform7->Text = L"詳細";
 			// 
-			// button8
+			// b_s_lend7
 			// 
-			this->button8->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->button8->Location = System::Drawing::Point(400, 475);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(102, 28);
-			this->button8->TabIndex = 33;
-			this->button8->Text = L"貸し出し";
-			this->button8->UseVisualStyleBackColor = true;
+			this->b_s_lend7->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->b_s_lend7->Location = System::Drawing::Point(400, 475);
+			this->b_s_lend7->Name = L"b_s_lend7";
+			this->b_s_lend7->Size = System::Drawing::Size(102, 28);
+			this->b_s_lend7->TabIndex = 33;
+			this->b_s_lend7->Text = L"貸し出し";
+			this->b_s_lend7->UseVisualStyleBackColor = true;
 			// 
-			// label22
+			// l_s_bar7
 			// 
-			this->label22->BackColor = System::Drawing::Color::Black;
-			this->label22->Location = System::Drawing::Point(26, 499);
-			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(370, 1);
-			this->label22->TabIndex = 32;
+			this->l_s_bar7->BackColor = System::Drawing::Color::Black;
+			this->l_s_bar7->Location = System::Drawing::Point(26, 499);
+			this->l_s_bar7->Name = L"l_s_bar7";
+			this->l_s_bar7->Size = System::Drawing::Size(370, 1);
+			this->l_s_bar7->TabIndex = 32;
 			// 
 			// l_s_book7
 			// 
@@ -486,33 +557,33 @@ namespace TeamProject {
 			this->l_s_book7->TabIndex = 31;
 			this->l_s_book7->Text = L"　７．書籍名";
 			// 
-			// label24
+			// ll_s_detailform8
 			// 
-			this->label24->AutoSize = true;
-			this->label24->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label24->Location = System::Drawing::Point(345, 513);
-			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(49, 20);
-			this->label24->TabIndex = 38;
-			this->label24->Text = L"詳細";
+			this->ll_s_detailform8->AutoSize = true;
+			this->ll_s_detailform8->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform8->Location = System::Drawing::Point(345, 513);
+			this->ll_s_detailform8->Name = L"ll_s_detailform8";
+			this->ll_s_detailform8->Size = System::Drawing::Size(49, 20);
+			this->ll_s_detailform8->TabIndex = 38;
+			this->ll_s_detailform8->Text = L"詳細";
 			// 
-			// button9
+			// b_s_lend8
 			// 
-			this->button9->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->button9->Location = System::Drawing::Point(400, 509);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(102, 28);
-			this->button9->TabIndex = 37;
-			this->button9->Text = L"貸し出し";
-			this->button9->UseVisualStyleBackColor = true;
+			this->b_s_lend8->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->b_s_lend8->Location = System::Drawing::Point(400, 509);
+			this->b_s_lend8->Name = L"b_s_lend8";
+			this->b_s_lend8->Size = System::Drawing::Size(102, 28);
+			this->b_s_lend8->TabIndex = 37;
+			this->b_s_lend8->Text = L"貸し出し";
+			this->b_s_lend8->UseVisualStyleBackColor = true;
 			// 
-			// label25
+			// l_s_bar8
 			// 
-			this->label25->BackColor = System::Drawing::Color::Black;
-			this->label25->Location = System::Drawing::Point(26, 533);
-			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(370, 1);
-			this->label25->TabIndex = 36;
+			this->l_s_bar8->BackColor = System::Drawing::Color::Black;
+			this->l_s_bar8->Location = System::Drawing::Point(26, 533);
+			this->l_s_bar8->Name = L"l_s_bar8";
+			this->l_s_bar8->Size = System::Drawing::Size(370, 1);
+			this->l_s_bar8->TabIndex = 36;
 			// 
 			// l_s_book8
 			// 
@@ -524,33 +595,33 @@ namespace TeamProject {
 			this->l_s_book8->TabIndex = 35;
 			this->l_s_book8->Text = L"　８．書籍名";
 			// 
-			// label27
+			// ll_s_detailform9
 			// 
-			this->label27->AutoSize = true;
-			this->label27->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label27->Location = System::Drawing::Point(345, 547);
-			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(49, 20);
-			this->label27->TabIndex = 42;
-			this->label27->Text = L"詳細";
+			this->ll_s_detailform9->AutoSize = true;
+			this->ll_s_detailform9->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform9->Location = System::Drawing::Point(345, 547);
+			this->ll_s_detailform9->Name = L"ll_s_detailform9";
+			this->ll_s_detailform9->Size = System::Drawing::Size(49, 20);
+			this->ll_s_detailform9->TabIndex = 42;
+			this->ll_s_detailform9->Text = L"詳細";
 			// 
-			// button10
+			// b_s_lend9
 			// 
-			this->button10->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->button10->Location = System::Drawing::Point(400, 543);
-			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(102, 28);
-			this->button10->TabIndex = 41;
-			this->button10->Text = L"貸し出し";
-			this->button10->UseVisualStyleBackColor = true;
+			this->b_s_lend9->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->b_s_lend9->Location = System::Drawing::Point(400, 543);
+			this->b_s_lend9->Name = L"b_s_lend9";
+			this->b_s_lend9->Size = System::Drawing::Size(102, 28);
+			this->b_s_lend9->TabIndex = 41;
+			this->b_s_lend9->Text = L"貸し出し";
+			this->b_s_lend9->UseVisualStyleBackColor = true;
 			// 
-			// label28
+			// l_s_bar9
 			// 
-			this->label28->BackColor = System::Drawing::Color::Black;
-			this->label28->Location = System::Drawing::Point(26, 567);
-			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(370, 1);
-			this->label28->TabIndex = 40;
+			this->l_s_bar9->BackColor = System::Drawing::Color::Black;
+			this->l_s_bar9->Location = System::Drawing::Point(26, 567);
+			this->l_s_bar9->Name = L"l_s_bar9";
+			this->l_s_bar9->Size = System::Drawing::Size(370, 1);
+			this->l_s_bar9->TabIndex = 40;
 			// 
 			// l_s_book9
 			// 
@@ -562,33 +633,33 @@ namespace TeamProject {
 			this->l_s_book9->TabIndex = 39;
 			this->l_s_book9->Text = L"　９．書籍名";
 			// 
-			// label30
+			// ll_s_detailform10
 			// 
-			this->label30->AutoSize = true;
-			this->label30->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label30->Location = System::Drawing::Point(345, 581);
-			this->label30->Name = L"label30";
-			this->label30->Size = System::Drawing::Size(49, 20);
-			this->label30->TabIndex = 46;
-			this->label30->Text = L"詳細";
+			this->ll_s_detailform10->AutoSize = true;
+			this->ll_s_detailform10->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform10->Location = System::Drawing::Point(345, 581);
+			this->ll_s_detailform10->Name = L"ll_s_detailform10";
+			this->ll_s_detailform10->Size = System::Drawing::Size(49, 20);
+			this->ll_s_detailform10->TabIndex = 46;
+			this->ll_s_detailform10->Text = L"詳細";
 			// 
-			// button11
+			// b_s_lend10
 			// 
-			this->button11->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->button11->Location = System::Drawing::Point(400, 577);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(102, 28);
-			this->button11->TabIndex = 45;
-			this->button11->Text = L"貸し出し";
-			this->button11->UseVisualStyleBackColor = true;
+			this->b_s_lend10->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->b_s_lend10->Location = System::Drawing::Point(400, 577);
+			this->b_s_lend10->Name = L"b_s_lend10";
+			this->b_s_lend10->Size = System::Drawing::Size(102, 28);
+			this->b_s_lend10->TabIndex = 45;
+			this->b_s_lend10->Text = L"貸し出し";
+			this->b_s_lend10->UseVisualStyleBackColor = true;
 			// 
-			// label31
+			// l_s_bar10
 			// 
-			this->label31->BackColor = System::Drawing::Color::Black;
-			this->label31->Location = System::Drawing::Point(26, 601);
-			this->label31->Name = L"label31";
-			this->label31->Size = System::Drawing::Size(370, 1);
-			this->label31->TabIndex = 44;
+			this->l_s_bar10->BackColor = System::Drawing::Color::Black;
+			this->l_s_bar10->Location = System::Drawing::Point(26, 601);
+			this->l_s_bar10->Name = L"l_s_bar10";
+			this->l_s_bar10->Size = System::Drawing::Size(370, 1);
+			this->l_s_bar10->TabIndex = 44;
 			// 
 			// l_s_book10
 			// 
@@ -600,157 +671,503 @@ namespace TeamProject {
 			this->l_s_book10->TabIndex = 43;
 			this->l_s_book10->Text = L"１０．書籍名";
 			// 
-			// label5
+			// ll_s_detailform1
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label5->Location = System::Drawing::Point(345, 275);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(49, 20);
-			this->label5->TabIndex = 47;
-			this->label5->Text = L"詳細";
+			this->ll_s_detailform1->AutoSize = true;
+			this->ll_s_detailform1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform1->Location = System::Drawing::Point(345, 275);
+			this->ll_s_detailform1->Name = L"ll_s_detailform1";
+			this->ll_s_detailform1->Size = System::Drawing::Size(49, 20);
+			this->ll_s_detailform1->TabIndex = 47;
+			this->ll_s_detailform1->Text = L"詳細";
 			// 
-			// button12
+			// b_s_next
 			// 
-			this->button12->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->button12->Location = System::Drawing::Point(334, 620);
-			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(60, 40);
-			this->button12->TabIndex = 48;
-			this->button12->Text = L"次";
-			this->button12->UseVisualStyleBackColor = true;
-			this->button12->Click += gcnew System::EventHandler(this, &ShowForm::button12_Click);
+			this->b_s_next->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->b_s_next->Location = System::Drawing::Point(334, 660);
+			this->b_s_next->Name = L"b_s_next";
+			this->b_s_next->Size = System::Drawing::Size(60, 40);
+			this->b_s_next->TabIndex = 48;
+			this->b_s_next->Text = L"次";
+			this->b_s_next->UseVisualStyleBackColor = true;
+			this->b_s_next->Click += gcnew System::EventHandler(this, &ShowForm::b_s_next_Click);
 			// 
 			// label33
 			// 
 			this->label33->AutoSize = true;
 			this->label33->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->label33->Location = System::Drawing::Point(250, 630);
+			this->label33->Location = System::Drawing::Point(250, 670);
 			this->label33->Name = L"label33";
 			this->label33->Size = System::Drawing::Size(58, 20);
 			this->label33->TabIndex = 50;
 			this->label33->Text = L"ページ";
 			// 
-			// button14
+			// b_s_previous
 			// 
-			this->button14->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->button14->Location = System::Drawing::Point(115, 620);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(60, 40);
-			this->button14->TabIndex = 51;
-			this->button14->Text = L"前";
-			this->button14->UseVisualStyleBackColor = true;
+			this->b_s_previous->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->b_s_previous->Location = System::Drawing::Point(115, 660);
+			this->b_s_previous->Name = L"b_s_previous";
+			this->b_s_previous->Size = System::Drawing::Size(60, 40);
+			this->b_s_previous->TabIndex = 51;
+			this->b_s_previous->Text = L"前";
+			this->b_s_previous->UseVisualStyleBackColor = true;
+			this->b_s_previous->Click += gcnew System::EventHandler(this, &ShowForm::b_s_previous_Click);
 			// 
 			// t_s_choicepage
 			// 
 			this->t_s_choicepage->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->t_s_choicepage->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 20));
-			this->t_s_choicepage->Location = System::Drawing::Point(200, 620);
+			this->t_s_choicepage->Location = System::Drawing::Point(200, 660);
 			this->t_s_choicepage->MaxLength = 2;
 			this->t_s_choicepage->Name = L"t_s_choicepage";
 			this->t_s_choicepage->Size = System::Drawing::Size(40, 41);
 			this->t_s_choicepage->TabIndex = 52;
+			this->t_s_choicepage->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &ShowForm::t_s_choicepage_KeyPress);
 			// 
-			// button13
+			// b_s_lendform
 			// 
-			this->button13->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->button13->Location = System::Drawing::Point(352, 214);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(150, 35);
-			this->button13->TabIndex = 53;
-			this->button13->Text = L"貸し出し詳細";
-			this->button13->UseVisualStyleBackColor = true;
+			this->b_s_lendform->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->b_s_lendform->Location = System::Drawing::Point(352, 214);
+			this->b_s_lendform->Name = L"b_s_lendform";
+			this->b_s_lendform->Size = System::Drawing::Size(150, 35);
+			this->b_s_lendform->TabIndex = 53;
+			this->b_s_lendform->Text = L"貸し出し詳細";
+			this->b_s_lendform->UseVisualStyleBackColor = true;
+			// 
+			// label1
+			// 
+			this->label1->BackColor = System::Drawing::Color::Peru;
+			this->label1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 9));
+			this->label1->Location = System::Drawing::Point(-2, 734);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(571, 20);
+			this->label1->TabIndex = 54;
+			this->label1->Text = L"copyright(C)";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label2
+			// 
+			this->label2->BackColor = System::Drawing::SystemColors::Control;
+			this->label2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 24));
+			this->label2->Location = System::Drawing::Point(20, 620);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(480, 20);
+			this->label2->TabIndex = 55;
 			// 
 			// ShowForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(532, 703);
-			this->Controls->Add(this->button13);
+			this->ClientSize = System::Drawing::Size(532, 753);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->b_s_lendform);
 			this->Controls->Add(this->t_s_choicepage);
-			this->Controls->Add(this->button14);
+			this->Controls->Add(this->b_s_previous);
 			this->Controls->Add(this->label33);
-			this->Controls->Add(this->button12);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label30);
-			this->Controls->Add(this->button11);
-			this->Controls->Add(this->label31);
+			this->Controls->Add(this->b_s_next);
+			this->Controls->Add(this->ll_s_detailform1);
+			this->Controls->Add(this->ll_s_detailform10);
+			this->Controls->Add(this->b_s_lend10);
+			this->Controls->Add(this->l_s_bar10);
 			this->Controls->Add(this->l_s_book10);
-			this->Controls->Add(this->label27);
-			this->Controls->Add(this->button10);
-			this->Controls->Add(this->label28);
+			this->Controls->Add(this->ll_s_detailform9);
+			this->Controls->Add(this->b_s_lend9);
+			this->Controls->Add(this->l_s_bar9);
 			this->Controls->Add(this->l_s_book9);
-			this->Controls->Add(this->label24);
-			this->Controls->Add(this->button9);
-			this->Controls->Add(this->label25);
+			this->Controls->Add(this->ll_s_detailform8);
+			this->Controls->Add(this->b_s_lend8);
+			this->Controls->Add(this->l_s_bar8);
 			this->Controls->Add(this->l_s_book8);
-			this->Controls->Add(this->label21);
-			this->Controls->Add(this->button8);
-			this->Controls->Add(this->label22);
+			this->Controls->Add(this->ll_s_detailform7);
+			this->Controls->Add(this->b_s_lend7);
+			this->Controls->Add(this->l_s_bar7);
 			this->Controls->Add(this->l_s_book7);
-			this->Controls->Add(this->label18);
-			this->Controls->Add(this->button7);
-			this->Controls->Add(this->label19);
+			this->Controls->Add(this->ll_s_detailform6);
+			this->Controls->Add(this->b_s_lend6);
+			this->Controls->Add(this->l_s_bar6);
 			this->Controls->Add(this->l_s_book6);
-			this->Controls->Add(this->label15);
-			this->Controls->Add(this->button6);
-			this->Controls->Add(this->label16);
+			this->Controls->Add(this->ll_s_detailform5);
+			this->Controls->Add(this->b_s_lend5);
+			this->Controls->Add(this->l_s_bar5);
 			this->Controls->Add(this->l_s_book5);
-			this->Controls->Add(this->label12);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->label13);
+			this->Controls->Add(this->ll_s_detailform4);
+			this->Controls->Add(this->b_s_lend4);
+			this->Controls->Add(this->l_s_bar4);
 			this->Controls->Add(this->l_s_book4);
-			this->Controls->Add(this->label9);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->label10);
+			this->Controls->Add(this->ll_s_detailform3);
+			this->Controls->Add(this->b_s_lend3);
+			this->Controls->Add(this->l_s_bar3);
 			this->Controls->Add(this->l_s_book3);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->label7);
+			this->Controls->Add(this->ll_s_detailform2);
+			this->Controls->Add(this->b_s_lend2);
+			this->Controls->Add(this->l_s_bar2);
 			this->Controls->Add(this->l_s_book2);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->label4);
+			this->Controls->Add(this->b_s_lend1);
+			this->Controls->Add(this->l_s_bar1);
 			this->Controls->Add(this->l_s_book1);
 			this->Controls->Add(this->l_s_page);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->comboBox1);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->b_s_search);
+			this->Controls->Add(this->c_s_genre);
+			this->Controls->Add(this->t_s_recommend);
+			this->Controls->Add(this->t_s_recommendbook);
+			this->Controls->Add(this->l_s_header);
 			this->Name = L"ShowForm";
 			this->Text = L"貸し出し";
+			this->Load += gcnew System::EventHandler(this, &ShowForm::ShowForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-		void showBook(int num) {
-			l_s_page->Text = msclr::interop::marshal_as<System::String^>(to_string(num));
-			//l_s_book1->Text = lib.name[(num-1)*10];
-			//l_s_book2->Text = lib.name[(num-1)*10+1];
-			//l_s_book3->Text = lib.name[(num-1)*10+2];
-			//l_s_book4->Text = lib.name[(num-1)*10+3];
-			//l_s_book5->Text = lib.name[(num-1)*10+4];
-			//l_s_book6->Text = lib.name[(num-1)*10+5];
-			//l_s_book7->Text = lib.name[(num-1)*10+6];
-			//l_s_book8->Text = lib.name[(num-1)*10+7];
-			//l_s_book9->Text = lib.name[(num-1)*10+8];
-			//l_s_book10->Text = lib.name[(num-1)*10+9];
-		}
+		private: int choice = 1;
+		private: int pagemax;
 
-		private: void textBox1_KeyPress(System::Object^ senderr, KeyPressEventArgs^ e)
-		{
-			if (e->KeyChar == '\r') // Enterキーが押された場合
-			{
-				
-				int choice = stoi(msclr::interop::marshal_as<std::string>(t_s_choicepage->Text));
-				showBook(choice);
+		private: void showBook(int num) {
+			//ページ変更
+			l_s_page->Text = msclr::interop::marshal_as<System::String^>(to_string(num)) + "ページ目";
+			page = num;
 
+//未実装			//図書一覧変更
+			//ジャンル未選択
+			if (selectgenre == "選択されたジャンル") {
+				//　１番目の表示
+				l_s_book1->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10].title);
+				//　２番目の表示
+				if(lib[(num - 1) * 10 + 1].title != ""){
+					l_s_book2->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 1].title);
+				}
+				else {
+					l_s_book2->Visible = false;
+					ll_s_detailform2->Visible = false;
+					b_s_lend2->Visible = false;
+					l_s_bar2->Visible = false;
+				}
+				//　３番目の表示
+				if (lib[(num - 1) * 10 + 2].title != "") {
+					l_s_book3->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 2].title);
+				}
+				else {
+					l_s_book3->Visible = false;
+					ll_s_detailform3->Visible = false;
+					b_s_lend3->Visible = false;
+					l_s_bar3->Visible = false;
+				}
+				//　４番目の表示
+				if (lib[(num - 1) * 10 + 3].title != "") {
+					l_s_book4->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 3].title);
+				}
+				else {
+					l_s_book4->Visible = false;
+					ll_s_detailform4->Visible = false;
+					b_s_lend4->Visible = false;
+					l_s_bar4->Visible = false;
+				}
+				//　５番目の表示
+				if (lib[(num - 1) * 10 + 4].title != "") {
+					l_s_book5->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 4].title);
+				}
+				else {
+					l_s_book5->Visible = false;
+					ll_s_detailform5->Visible = false;
+					b_s_lend5->Visible = false;
+					l_s_bar5->Visible = false;
+				}
+				//　６番目の表示
+				if (lib[(num - 1) * 10 + 5].title != "") {
+					l_s_book6->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 5].title);
+				}
+				else {
+					l_s_book6->Visible = false;
+					ll_s_detailform6->Visible = false;
+					b_s_lend6->Visible = false;
+					l_s_bar6->Visible = false;
+				}
+				//　７番目の表示
+				if (lib[(num - 1) * 10 + 6].title != "") {
+					l_s_book7->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 6].title);
+				}
+				else {
+					l_s_book7->Visible = false;
+					ll_s_detailform7->Visible = false;
+					b_s_lend7->Visible = false;
+					l_s_bar7->Visible = false;
+				}
+				//　８番目の表示
+				if (lib[(num - 1) * 10 + 7].title != "") {
+					l_s_book8->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 7].title);
+				}
+				else {
+					l_s_book8->Visible = false;
+					ll_s_detailform8->Visible = false;
+					b_s_lend8->Visible = false;
+					l_s_bar8->Visible = false;
+				}
+				//　９番目の表示
+				if (lib[(num - 1) * 10 + 8].title != "") {
+					l_s_book9->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 8].title);
+				}
+				else {
+					l_s_book9->Visible = false;
+					ll_s_detailform9->Visible = false;
+					b_s_lend9->Visible = false;
+					l_s_bar9->Visible = false;
+				}
+				//　１０番目の表示
+				if (lib[(num - 1) * 10 + 9].title != "") {
+					l_s_book10->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 9].title);
+				}
+				else {
+					l_s_book10->Visible = false;
+					ll_s_detailform10->Visible = false;
+					b_s_lend10->Visible = false;
+					l_s_bar10->Visible = false;
+				}
+			}
+			else {
+				//ジャンル選択
+				/*l_s_book1->Text = lib.name[(num - 1) * 10];
+				l_s_book2->Text = gen.name[(num-1)*10+1];
+				l_s_book3->Text = gen.name[(num-1)*10+2];
+				l_s_book4->Text = gen.name[(num-1)*10+3];
+				l_s_book5->Text = gen.name[(num-1)*10+4];
+				l_s_book6->Text = gen.name[(num-1)*10+5];
+				l_s_book7->Text = gen.name[(num-1)*10+6];
+				l_s_book8->Text = gen.name[(num-1)*10+7];
+				l_s_book9->Text = gen.name[(num-1)*10+8];
+				l_s_book10->Text = gen.name[(num-1)*10+9];*/
+			}
+
+			//ページがなければボタンを無効化
+			if (num == 1) {
+				b_s_previous->Enabled = false;
+			}
+			else {
+				b_s_previous->Enabled = true;
+			}
+
+//未実装
+			if (num == pagemax) {
+				b_s_next->Enabled = false;
+			}
+			else {
+				b_s_next->Enabled = true;
 			}
 		}
 
-		private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+		private: System::Void ShowForm_Load(System::Object^ sender, System::EventArgs^ e) {
+			//図書クラスのファイル入力
+			string str_buf;
+			string str_conma_buf;
+			string time;
 
+			// 読み込むcsvファイルを開く(std::ifstreamのコンストラクタで開く)
+			std::ifstream ifs("sample.csv");
+
+			// getline関数で1行ずつ読み込む(読み込んだ内容はstr_bufに格納)
+			for (nummax = 0; getline(ifs, str_buf); nummax++) {
+				// 「,」区切りごとにデータを読み込むためにistringstream型にする
+				istringstream i_stream(str_buf);
+
+				// １列目
+				// 「,」区切りごとにデータを読み込む
+				getline(i_stream, str_conma_buf, ',');
+				// 読み込んだデータをクラスに格納
+				lib[nummax].title = str_conma_buf;
+
+				// ２列目
+				getline(i_stream, str_conma_buf, ',');
+				lib[nummax].genre = str_conma_buf;
+
+				// ３列目
+				getline(i_stream, str_conma_buf, ',');
+				/*if (str_conma_buf != "") {
+					//年
+					time = str_conma_buf.substr(0, 4);
+					lib[nummax].rday.tm_year = stoi(time);
+					//月
+					time = str_conma_buf.substr(4, 2);
+					lib[nummax].rday.tm_mon = stoi(time);
+					//日
+					time = str_conma_buf.substr(6, 2);
+					lib[nummax].rday.tm_mday = stoi(time);
+					//時
+					time = str_conma_buf.substr(8, 2);
+					lib[nummax].rday.tm_hour = stoi(time);
+					//分
+					time = str_conma_buf.substr(10, 2);
+					lib[nummax].rday.tm_min = stoi(time);
+					//秒
+					time = str_conma_buf.substr(12, 2);
+					lib[nummax].rday.tm_sec = stoi(time);
+				}*/
+
+				// ４列目
+				getline(i_stream, str_conma_buf, ',');
+				lib[nummax].pub = str_conma_buf;
+
+				//// ５列目
+				//getline(i_stream, str_conma_buf, ',');
+				//lib[nummax].writer = str_conma_buf;
+
+				// ６列目
+				getline(i_stream, str_conma_buf, ',');
+				if (str_conma_buf != "") {
+					//年
+					time = str_conma_buf.substr(0, 4);
+					lib[nummax].aday.tm_year = stoi(time);
+					//月
+					time = str_conma_buf.substr(4, 2);
+					lib[nummax].aday.tm_mon = stoi(time);
+					//日
+					time = str_conma_buf.substr(6, 2);
+					lib[nummax].aday.tm_mday = stoi(time);
+					//時
+					time = str_conma_buf.substr(8, 2);
+					lib[nummax].aday.tm_hour = stoi(time);
+					//分
+					time = str_conma_buf.substr(10, 2);
+					lib[nummax].aday.tm_min = stoi(time);
+					//秒
+					time = str_conma_buf.substr(12, 2);
+					lib[nummax].aday.tm_sec = stoi(time);
+				}
+
+				// ７列目
+				getline(i_stream, str_conma_buf, ',');
+				lib[nummax].lendname = str_conma_buf;
+
+				// ８列目
+				getline(i_stream, str_conma_buf, ',');
+				if (str_conma_buf != "") {
+					lib[nummax].count = stoi(str_conma_buf);
+				}
+
+				// ９列目
+				getline(i_stream, str_conma_buf, ',');
+				if (str_conma_buf != "") {
+					lib[nummax].rest = stoi(str_conma_buf);
+				}
+
+				
+			}
+			pagemax = nummax / 10;
+			ifs.close();
+
+//未実装			//おすすめ表示
+
+
+			//コンボボックスに「ジャンルを選択」を表示
+			c_s_genre->SelectedIndex = 0;
+
+			//１ページ目の図書一覧表示
+			showBook(1);
 		}
+
+		private: System::Void b_s_search_Click(System::Object^ sender, System::EventArgs^ e) {
+
+			//選択されたジャンルを変数に格納
+			string selectgenre = msclr::interop::marshal_as<string>(c_s_genre->SelectedItem->ToString());
+
+//未実装			//選択されたジャンルのクラスに入力
+			string str_buf;
+			string str_conma_buf;
+			string time;
+			int j = 0;
+
+			// 読み込むcsvファイルを開く(std::ifstreamのコンストラクタで開く)
+			std::ifstream ifs("sample.csv");
+
+			// getline関数で1行ずつ読み込む(読み込んだ内容はstr_bufに格納)
+			for (int i = 0; i == nummax; i++) {
+
+				if(lib[i].genre == selectgenre) {
+					// １列目
+					// 選択されたジャンルのデータを格納
+					gen[j].title = lib[i].title;
+
+					// ２列目
+					gen[j].genre = lib[i].genre;
+
+					// ３列目
+					/*if (str_conma_buf != "") {
+						//年
+						gen[j].rday.tm_year = lib[i].rday.tm_year;
+						//月
+						gen[j].rday.tm_mon = lib[i].rday.tm_mon;
+						//日
+						gen[j].rday.tm_mday = lib[i].rday.tm_mday;
+						//時
+						gen[j].rday.tm_hour = lib[i].rday.tm_hour;
+						//分
+						gen[j].rday.tm_min = lib[i].rday.tm_min;
+						//秒
+						gen[j].rday.tm_sec = lib[i].rday.tm_sec;
+					}*/
+
+					// ４列目
+					gen[j].pub = lib[i].pub;
+
+					//// ５列目
+					//getline(i_stream, str_conma_buf, ',');
+					//gen[i].writer = str_conma_buf;
+
+					// ６列目
+						//年
+						gen[i].aday.tm_year = stoi(time);
+						//月
+						gen[i].aday.tm_mon = stoi(time);
+						//日
+						gen[i].aday.tm_mday = stoi(time);
+						//時
+						gen[i].aday.tm_hour = stoi(time);
+						//分
+						gen[i].aday.tm_min = stoi(time);
+						//秒
+						gen[i].aday.tm_sec = stoi(time);
+
+					// ７列目
+					gen[i].lendname = str_conma_buf;
+
+					// ８列目
+					if (str_conma_buf != "") {
+						gen[i].count = stoi(str_conma_buf);
+					}
+
+					// ９列目
+					if (str_conma_buf != "") {
+						gen[i].rest = stoi(str_conma_buf);
+					}
+					j++;
+				}
+			}
+			pagemax = j / 10;
+
+			//選択されたジャンルの１ページ目を表示
+			showBook(1);
+
+		};
+
+		private: void t_s_choicepage_KeyPress(System::Object^ senderr, KeyPressEventArgs^ e)
+		{
+			if (e->KeyChar == '\r') // Enterキーが押された場合
+			{
+				//テキストボックス記入された文字列を
+				choice = stoi(msclr::interop::marshal_as<string>(t_s_choicepage->Text));
+				showBook(choice);
+			}
+		}
+
+		private: System::Void b_s_previous_Click(System::Object^ sender, System::EventArgs^ e) {
+			//前ページの一覧に更新
+			showBook(page - 1);
+		}
+
+		private: System::Void b_s_next_Click(System::Object^ sender, System::EventArgs^ e) {
+			//次ページの一覧に更新
+			showBook(page + 1);
+		}
+
+
 };
 }

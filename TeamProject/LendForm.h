@@ -1,5 +1,7 @@
 #pragma once
-#include "ShowForm.h"
+//#include "class.h"
+#include <msclr/marshal_cppstd.h>
+
 
 namespace TeamProject {
 
@@ -68,6 +70,7 @@ namespace TeamProject {
 
 
 
+
 	protected:
 
 	private:
@@ -129,9 +132,8 @@ namespace TeamProject {
 			this->l_l_lendbook1->AutoSize = true;
 			this->l_l_lendbook1->Location = System::Drawing::Point(158, 97);
 			this->l_l_lendbook1->Name = L"l_l_lendbook1";
-			this->l_l_lendbook1->Size = System::Drawing::Size(35, 12);
+			this->l_l_lendbook1->Size = System::Drawing::Size(0, 12);
 			this->l_l_lendbook1->TabIndex = 3;
-			this->l_l_lendbook1->Text = L"label2";
 			// 
 			// l_l_returnday1
 			// 
@@ -188,45 +190,40 @@ namespace TeamProject {
 			this->l_l_day1->AutoSize = true;
 			this->l_l_day1->Location = System::Drawing::Point(158, 164);
 			this->l_l_day1->Name = L"l_l_day1";
-			this->l_l_day1->Size = System::Drawing::Size(35, 12);
+			this->l_l_day1->Size = System::Drawing::Size(0, 12);
 			this->l_l_day1->TabIndex = 9;
-			this->l_l_day1->Text = L"label1";
 			// 
 			// l_l_lendbook2
 			// 
 			this->l_l_lendbook2->AutoSize = true;
 			this->l_l_lendbook2->Location = System::Drawing::Point(158, 126);
 			this->l_l_lendbook2->Name = L"l_l_lendbook2";
-			this->l_l_lendbook2->Size = System::Drawing::Size(35, 12);
+			this->l_l_lendbook2->Size = System::Drawing::Size(0, 12);
 			this->l_l_lendbook2->TabIndex = 10;
-			this->l_l_lendbook2->Text = L"label3";
 			// 
 			// l_l_day2
 			// 
 			this->l_l_day2->AutoSize = true;
 			this->l_l_day2->Location = System::Drawing::Point(158, 192);
 			this->l_l_day2->Name = L"l_l_day2";
-			this->l_l_day2->Size = System::Drawing::Size(35, 12);
+			this->l_l_day2->Size = System::Drawing::Size(0, 12);
 			this->l_l_day2->TabIndex = 11;
-			this->l_l_day2->Text = L"label4";
 			// 
 			// l_l_lendbook3
 			// 
 			this->l_l_lendbook3->AutoSize = true;
 			this->l_l_lendbook3->Location = System::Drawing::Point(158, 232);
 			this->l_l_lendbook3->Name = L"l_l_lendbook3";
-			this->l_l_lendbook3->Size = System::Drawing::Size(35, 12);
+			this->l_l_lendbook3->Size = System::Drawing::Size(0, 12);
 			this->l_l_lendbook3->TabIndex = 12;
-			this->l_l_lendbook3->Text = L"label5";
 			// 
 			// l_l_day3
 			// 
 			this->l_l_day3->AutoSize = true;
 			this->l_l_day3->Location = System::Drawing::Point(158, 256);
 			this->l_l_day3->Name = L"l_l_day3";
-			this->l_l_day3->Size = System::Drawing::Size(35, 12);
+			this->l_l_day3->Size = System::Drawing::Size(0, 12);
 			this->l_l_day3->TabIndex = 13;
-			this->l_l_day3->Text = L"label6";
 			// 
 			// le_l_copyright
 			// 
@@ -304,29 +301,39 @@ namespace TeamProject {
 
 		}
 #pragma endregion
-		private: System::Void Reset() {
-			this->l_l_booktitle3->Visible = false;
-			this->l_l_returnday3->Visible = false;
-			this->l_l_booktitle2->Visible = false;
-			this->l_l_returnday2->Visible = false;
+		private: System::Void Reset() {//label‚ð‰Šú‰»‚·‚éŠÖ”
 			this->l_l_booktitle1->Visible = false;
 			this->l_l_returnday1->Visible = false;
+			this->l_l_lendbook1->Text = "";
+			this->l_l_day1->Text = "";
+			this->l_l_booktitle2->Visible = false;
+			this->l_l_returnday2->Visible = false;
+			this->l_l_lendbook2->Text = "";
+			this->l_l_day2->Text = "";
+			this->l_l_booktitle3->Visible = false;
+			this->l_l_returnday3->Visible = false;
+			this->l_l_lendbook3->Text = "";
+			this->l_l_day3->Text = "";
 			this->l_l_not->Visible = false;
 		}
 
-	private: System::Void Showbookday(int booknum) {
+	private: System::Void Showbookday(int booknum) {//ŽØ‚è‚Ä‚¢‚éû”‚É‰ž‚¶‚Älabel‚É’l‚ð“ü‚ê•\Ž¦‚·‚éŠÖ”
 		switch (booknum) {
 		case 3:
 			this->l_l_booktitle3->Visible = true;
 			this->l_l_returnday3->Visible = true;
-			//this->l_l_lendbook3->Text = User.lib[2];
-			//this->l_l_day3->Text = User.rday[2];
+			//this->l_l_lendbook3->Text = msclr::interop::marshal_as<System::String^>(user.lib[2]);
+			//this->l_l_day3->Text = msclr::interop::marshal_as<System::String^>(user.rday[2]);
 		case 2:
 			this->l_l_booktitle2->Visible = true;
 			this->l_l_returnday2->Visible = true;
+			//this->l_l_lendbook2->Text = msclr::interop::marshal_as<System::String^>(user.lib[1]);
+			//this->l_l_day2->Text = msclr::interop::marshal_as<System::String^>(user.rday[1]);
 		case 1:
 			this->l_l_booktitle1->Visible = true;
 			this->l_l_returnday1->Visible = true;
+			//this->l_l_lendbook1->Text = msclr::interop::marshal_as<System::String^>(user.lib[0]);
+			//this->l_l_day1->Text = msclr::interop::marshal_as<System::String^>(user.rday[0]);
 			break;
 		default :
 			this->l_l_not->Visible = true;
@@ -334,18 +341,18 @@ namespace TeamProject {
 		}
 	}
 
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-
+	
 	private: System::Void LendForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		Reset();
-		//Showbookday(User.count);
+		//Showbookday(user.count);
 	}
 
 	private: System::Void l_b_return_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
 
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 
 
 
