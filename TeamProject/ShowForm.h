@@ -48,8 +48,8 @@ namespace TeamProject {
 
 	protected:
 
-	private: System::Windows::Forms::TextBox^ t_s_recommendbook;
-	private: System::Windows::Forms::TextBox^ t_s_recommend;
+
+
 
 
 	private: System::Windows::Forms::ComboBox^ c_s_genre;
@@ -161,6 +161,11 @@ private: System::Windows::Forms::Label^ l_s_bar10;
 private: System::Windows::Forms::Button^ b_s_lendform;
 private: System::Windows::Forms::Label^ label1;
 private: System::Windows::Forms::Label^ label2;
+private: System::Windows::Forms::Label^ l_s_recommend;
+private: System::Windows::Forms::Label^ l_s_recommendbook;
+
+
+
 
 
 
@@ -183,8 +188,6 @@ private: System::Windows::Forms::Label^ label2;
 		void InitializeComponent(void)
 		{
 			this->l_s_header = (gcnew System::Windows::Forms::Label());
-			this->t_s_recommendbook = (gcnew System::Windows::Forms::TextBox());
-			this->t_s_recommend = (gcnew System::Windows::Forms::TextBox());
 			this->c_s_genre = (gcnew System::Windows::Forms::ComboBox());
 			this->b_s_search = (gcnew System::Windows::Forms::Button());
 			this->l_s_page = (gcnew System::Windows::Forms::Label());
@@ -235,6 +238,8 @@ private: System::Windows::Forms::Label^ label2;
 			this->b_s_lendform = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->l_s_recommend = (gcnew System::Windows::Forms::Label());
+			this->l_s_recommendbook = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// l_s_header
@@ -246,25 +251,6 @@ private: System::Windows::Forms::Label^ label2;
 			this->l_s_header->Size = System::Drawing::Size(571, 40);
 			this->l_s_header->TabIndex = 0;
 			this->l_s_header->Text = L"図書貸し出しシステム";
-			// 
-			// t_s_recommendbook
-			// 
-			this->t_s_recommendbook->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->t_s_recommendbook->Location = System::Drawing::Point(24, 87);
-			this->t_s_recommendbook->Multiline = true;
-			this->t_s_recommendbook->Name = L"t_s_recommendbook";
-			this->t_s_recommendbook->Size = System::Drawing::Size(325, 81);
-			this->t_s_recommendbook->TabIndex = 1;
-			// 
-			// t_s_recommend
-			// 
-			this->t_s_recommend->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->t_s_recommend->Location = System::Drawing::Point(25, 60);
-			this->t_s_recommend->Name = L"t_s_recommend";
-			this->t_s_recommend->Size = System::Drawing::Size(150, 27);
-			this->t_s_recommend->TabIndex = 2;
-			this->t_s_recommend->Text = L"おすすめ";
-			this->t_s_recommend->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// c_s_genre
 			// 
@@ -754,11 +740,36 @@ private: System::Windows::Forms::Label^ label2;
 			this->label2->Size = System::Drawing::Size(480, 20);
 			this->label2->TabIndex = 55;
 			// 
+			// l_s_recommend
+			// 
+			this->l_s_recommend->BackColor = System::Drawing::Color::White;
+			this->l_s_recommend->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->l_s_recommend->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_recommend->Location = System::Drawing::Point(25, 60);
+			this->l_s_recommend->Name = L"l_s_recommend";
+			this->l_s_recommend->Size = System::Drawing::Size(150, 27);
+			this->l_s_recommend->TabIndex = 56;
+			this->l_s_recommend->Text = L"おすすめ";
+			this->l_s_recommend->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// l_s_recommendbook
+			// 
+			this->l_s_recommendbook->BackColor = System::Drawing::Color::White;
+			this->l_s_recommendbook->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->l_s_recommendbook->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_recommendbook->Location = System::Drawing::Point(25, 86);
+			this->l_s_recommendbook->Name = L"l_s_recommendbook";
+			this->l_s_recommendbook->Size = System::Drawing::Size(325, 81);
+			this->l_s_recommendbook->TabIndex = 57;
+			this->l_s_recommendbook->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
 			// ShowForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(532, 753);
+			this->Controls->Add(this->l_s_recommendbook);
+			this->Controls->Add(this->l_s_recommend);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->b_s_lendform);
@@ -809,8 +820,6 @@ private: System::Windows::Forms::Label^ label2;
 			this->Controls->Add(this->l_s_page);
 			this->Controls->Add(this->b_s_search);
 			this->Controls->Add(this->c_s_genre);
-			this->Controls->Add(this->t_s_recommend);
-			this->Controls->Add(this->t_s_recommendbook);
 			this->Controls->Add(this->l_s_header);
 			this->Name = L"ShowForm";
 			this->Text = L"貸し出し";
@@ -828,9 +837,9 @@ private: System::Windows::Forms::Label^ label2;
 			l_s_page->Text = msclr::interop::marshal_as<System::String^>(to_string(num)) + "ページ目";
 			page = num;
 
-//未実装			//図書一覧変更
+			//図書一覧変更
 			//ジャンル未選択
-			if (selectgenre == "選択されたジャンル") {
+			if (selectgenre == "ジャンルを選択") {
 				//　１番目の表示
 				l_s_book1->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10].title);
 				//　２番目の表示
@@ -925,20 +934,101 @@ private: System::Windows::Forms::Label^ label2;
 				}
 			}
 			else {
-				//ジャンル選択
-				/*l_s_book1->Text = lib.name[(num - 1) * 10];
-				l_s_book2->Text = gen.name[(num-1)*10+1];
-				l_s_book3->Text = gen.name[(num-1)*10+2];
-				l_s_book4->Text = gen.name[(num-1)*10+3];
-				l_s_book5->Text = gen.name[(num-1)*10+4];
-				l_s_book6->Text = gen.name[(num-1)*10+5];
-				l_s_book7->Text = gen.name[(num-1)*10+6];
-				l_s_book8->Text = gen.name[(num-1)*10+7];
-				l_s_book9->Text = gen.name[(num-1)*10+8];
-				l_s_book10->Text = gen.name[(num-1)*10+9];*/
+				//　１番目の表示
+				l_s_book1->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10].title);
+				//　２番目の表示
+				if (gen[(num - 1) * 10 + 1].title != "") {
+					l_s_book2->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 1].title);
+				}
+				else {
+					l_s_book2->Visible = false;
+					ll_s_detailform2->Visible = false;
+					b_s_lend2->Visible = false;
+					l_s_bar2->Visible = false;
+				}
+				//　３番目の表示
+				if (gen[(num - 1) * 10 + 2].title != "") {
+					l_s_book3->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 2].title);
+				}
+				else {
+					l_s_book3->Visible = false;
+					ll_s_detailform3->Visible = false;
+					b_s_lend3->Visible = false;
+					l_s_bar3->Visible = false;
+				}
+				//　４番目の表示
+				if (gen[(num - 1) * 10 + 3].title != "") {
+					l_s_book4->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 3].title);
+				}
+				else {
+					l_s_book4->Visible = false;
+					ll_s_detailform4->Visible = false;
+					b_s_lend4->Visible = false;
+					l_s_bar4->Visible = false;
+				}
+				//　５番目の表示
+				if (gen[(num - 1) * 10 + 4].title != "") {
+					l_s_book5->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 4].title);
+				}
+				else {
+					l_s_book5->Visible = false;
+					ll_s_detailform5->Visible = false;
+					b_s_lend5->Visible = false;
+					l_s_bar5->Visible = false;
+				}
+				//　６番目の表示
+				if (gen[(num - 1) * 10 + 5].title != "") {
+					l_s_book6->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 5].title);
+				}
+				else {
+					l_s_book6->Visible = false;
+					ll_s_detailform6->Visible = false;
+					b_s_lend6->Visible = false;
+					l_s_bar6->Visible = false;
+				}
+				//　７番目の表示
+				if (gen[(num - 1) * 10 + 6].title != "") {
+					l_s_book7->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 6].title);
+				}
+				else {
+					l_s_book7->Visible = false;
+					ll_s_detailform7->Visible = false;
+					b_s_lend7->Visible = false;
+					l_s_bar7->Visible = false;
+				}
+				//　８番目の表示
+				if (gen[(num - 1) * 10 + 7].title != "") {
+					l_s_book8->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 7].title);
+				}
+				else {
+					l_s_book8->Visible = false;
+					ll_s_detailform8->Visible = false;
+					b_s_lend8->Visible = false;
+					l_s_bar8->Visible = false;
+				}
+				//　９番目の表示
+				if (gen[(num - 1) * 10 + 8].title != "") {
+					l_s_book9->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 8].title);
+				}
+				else {
+					l_s_book9->Visible = false;
+					ll_s_detailform9->Visible = false;
+					b_s_lend9->Visible = false;
+					l_s_bar9->Visible = false;
+				}
+				//　１０番目の表示
+				if (gen[(num - 1) * 10 + 9].title != "") {
+					l_s_book10->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 9].title);
+				}
+				else {
+					l_s_book10->Visible = false;
+					ll_s_detailform10->Visible = false;
+					b_s_lend10->Visible = false;
+					l_s_bar10->Visible = false;
+				}
 			}
 
-			//ページがなければボタンを無効化
+			//ページがなければ前ボタンを無効化
 			if (num == 1) {
 				b_s_previous->Enabled = false;
 			}
@@ -946,7 +1036,7 @@ private: System::Windows::Forms::Label^ label2;
 				b_s_previous->Enabled = true;
 			}
 
-//未実装
+			//ページがなければ次ボタンを無効化
 			if (num == pagemax) {
 				b_s_next->Enabled = false;
 			}
@@ -1054,8 +1144,12 @@ private: System::Windows::Forms::Label^ label2;
 			pagemax = nummax / 10;
 			ifs.close();
 
-//未実装			//おすすめ表示
-
+			//おすすめ表示
+			if (user->genre != "") {
+				for (int i = 0; i != nummax; i++) {
+					if(lib[i].genre == mailaddress)
+				}
+			}
 
 			//コンボボックスに「ジャンルを選択」を表示
 			c_s_genre->SelectedIndex = 0;
@@ -1067,9 +1161,9 @@ private: System::Windows::Forms::Label^ label2;
 		private: System::Void b_s_search_Click(System::Object^ sender, System::EventArgs^ e) {
 
 			//選択されたジャンルを変数に格納
-			string selectgenre = msclr::interop::marshal_as<string>(c_s_genre->SelectedItem->ToString());
+			selectgenre = msclr::interop::marshal_as<string>(c_s_genre->SelectedItem->ToString());
 
-//未実装			//選択されたジャンルのクラスに入力
+			//選択されたジャンルのクラスに入力
 			string str_buf;
 			string str_conma_buf;
 			string time;
@@ -1079,8 +1173,8 @@ private: System::Windows::Forms::Label^ label2;
 			std::ifstream ifs("sample.csv");
 
 			// getline関数で1行ずつ読み込む(読み込んだ内容はstr_bufに格納)
-			for (int i = 0; i == nummax; i++) {
 
+			for (int i = 0; i != nummax; i++) {
 				if(lib[i].genre == selectgenre) {
 					// １列目
 					// 選択されたジャンルのデータを格納
@@ -1109,44 +1203,43 @@ private: System::Windows::Forms::Label^ label2;
 					gen[j].pub = lib[i].pub;
 
 					//// ５列目
-					//getline(i_stream, str_conma_buf, ',');
-					//gen[i].writer = str_conma_buf;
+					//gen[i].writer = lib[i].rday;
 
 					// ６列目
 						//年
-						gen[i].aday.tm_year = stoi(time);
+						gen[i].aday.tm_year = lib[i].aday.tm_year;
 						//月
-						gen[i].aday.tm_mon = stoi(time);
+						gen[i].aday.tm_mon = lib[i].aday.tm_mon;
 						//日
-						gen[i].aday.tm_mday = stoi(time);
+						gen[i].aday.tm_mday = lib[i].aday.tm_mday;
 						//時
-						gen[i].aday.tm_hour = stoi(time);
+						gen[i].aday.tm_hour = lib[i].aday.tm_hour;
 						//分
-						gen[i].aday.tm_min = stoi(time);
+						gen[i].aday.tm_min = lib[i].aday.tm_min;
 						//秒
-						gen[i].aday.tm_sec = stoi(time);
+						gen[i].aday.tm_sec = lib[i].aday.tm_sec;
 
 					// ７列目
-					gen[i].lendname = str_conma_buf;
+					gen[i].lendname = lib[i].lendname;
 
 					// ８列目
 					if (str_conma_buf != "") {
-						gen[i].count = stoi(str_conma_buf);
+						gen[i].count = lib[i].count;
 					}
 
 					// ９列目
 					if (str_conma_buf != "") {
-						gen[i].rest = stoi(str_conma_buf);
+						gen[i].rest = lib[i].rest;
 					}
 					j++;
 				}
 			}
-			pagemax = j / 10;
+			pagemax = (j+1) / 10;
 
 			//選択されたジャンルの１ページ目を表示
 			showBook(1);
 
-		};
+		}
 
 		private: void t_s_choicepage_KeyPress(System::Object^ senderr, KeyPressEventArgs^ e)
 		{

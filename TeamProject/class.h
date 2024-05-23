@@ -42,7 +42,8 @@ public:
 };
 Genre gen[100];
 
-string selectgenre = "選択されたジャンル";
+string selectgenre = "ジャンルを選択";
 int page = 1;
 int lnum = 0;
 int nummax = 0;
+string usermail;
