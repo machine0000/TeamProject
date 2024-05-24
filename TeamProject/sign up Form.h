@@ -4,6 +4,8 @@
 #include <msclr/marshal_cppstd.h>
 #include "confirmationForm.h"
 #include <string>
+#include "class.h"
+
 using namespace std;
 
 namespace TeamProject {
@@ -60,6 +62,12 @@ namespace TeamProject {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ Label_sign_up_error;
+	private: System::Windows::Forms::Label^ Label_sign_up_error1;
+	private: System::Windows::Forms::Label^ Label_sign_up_error2;
+
+
+
+	private: System::Windows::Forms::Label^ label3;
 
 
 
@@ -89,6 +97,9 @@ namespace TeamProject {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->Label_sign_up_error = (gcnew System::Windows::Forms::Label());
+			this->Label_sign_up_error1 = (gcnew System::Windows::Forms::Label());
+			this->Label_sign_up_error2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// Label_sign_up
@@ -112,11 +123,11 @@ namespace TeamProject {
 			// Label_password
 			// 
 			this->Label_password->AutoSize = true;
-			this->Label_password->Location = System::Drawing::Point(12, 156);
+			this->Label_password->Location = System::Drawing::Point(68, 156);
 			this->Label_password->Name = L"Label_password";
-			this->Label_password->Size = System::Drawing::Size(304, 30);
+			this->Label_password->Size = System::Drawing::Size(64, 15);
 			this->Label_password->TabIndex = 2;
-			this->Label_password->Text = L"パスワード\r\n(8文字以上16文字以内の英数字でお願いします)";
+			this->Label_password->Text = L"パスワード";
 			// 
 			// Label_Genre
 			// 
@@ -190,19 +201,55 @@ namespace TeamProject {
 			// Label_sign_up_error
 			// 
 			this->Label_sign_up_error->AutoSize = true;
-			this->Label_sign_up_error->Location = System::Drawing::Point(70, 275);
+			this->Label_sign_up_error->ForeColor = System::Drawing::Color::Red;
+			this->Label_sign_up_error->Location = System::Drawing::Point(62, 275);
 			this->Label_sign_up_error->Name = L"Label_sign_up_error";
-			this->Label_sign_up_error->Size = System::Drawing::Size(260, 15);
+			this->Label_sign_up_error->Size = System::Drawing::Size(267, 15);
 			this->Label_sign_up_error->TabIndex = 10;
-			this->Label_sign_up_error->Text = L"メールアドレスかパスワードでエラーが出ました";
+			this->Label_sign_up_error->Text = L"メールアドレスかパスワードが入力されてません\r\n";
 			this->Label_sign_up_error->Visible = false;
 			this->Label_sign_up_error->Click += gcnew System::EventHandler(this, &signupForm::Label_sign_up_error_Click);
+			// 
+			// Label_sign_up_error1
+			// 
+			this->Label_sign_up_error1->AutoSize = true;
+			this->Label_sign_up_error1->ForeColor = System::Drawing::Color::Red;
+			this->Label_sign_up_error1->Location = System::Drawing::Point(70, 290);
+			this->Label_sign_up_error1->Name = L"Label_sign_up_error1";
+			this->Label_sign_up_error1->Size = System::Drawing::Size(246, 15);
+			this->Label_sign_up_error1->TabIndex = 11;
+			this->Label_sign_up_error1->Text = L"すでにこのメールアドレスは使われています";
+			this->Label_sign_up_error1->Visible = false;
+			this->Label_sign_up_error1->Click += gcnew System::EventHandler(this, &signupForm::Label_sign_up_error1_Click);
+			// 
+			// Label_sign_up_error2
+			// 
+			this->Label_sign_up_error2->AutoSize = true;
+			this->Label_sign_up_error2->ForeColor = System::Drawing::Color::Red;
+			this->Label_sign_up_error2->Location = System::Drawing::Point(32, 231);
+			this->Label_sign_up_error2->Name = L"Label_sign_up_error2";
+			this->Label_sign_up_error2->Size = System::Drawing::Size(340, 15);
+			this->Label_sign_up_error2->TabIndex = 12;
+			this->Label_sign_up_error2->Text = L"８文字以上１６文字以内の英数文字のみでお願いします";
+			this->Label_sign_up_error2->Visible = false;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(17, 178);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(307, 15);
+			this->label3->TabIndex = 13;
+			this->label3->Text = L"(8文字以上16文字以内の英数字でお願いします）";
 			// 
 			// signupForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(384, 325);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->Label_sign_up_error2);
+			this->Controls->Add(this->Label_sign_up_error1);
 			this->Controls->Add(this->Label_sign_up_error);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -232,16 +279,29 @@ namespace TeamProject {
 			int space1 = pass.find(" ");
 			int space2 = Email.find(" ");
 			int check = 0;
-			/*for (int i = 0; i < user.size(); i++) {
+			for (int i = 0; i < nummax; i++) {
 				if (Email == user[i].mail) {
-					check = 1;a
+					check = 1;
 					break;
 				}
-			}*/
-			if (TextBox_Email->Text == "" || TextBox_password->Text == "" || Pass >= 17 || Pass <= 7 || space1!= std::string::npos|| space2!= std::string::npos||check == 1) {
+			}
+			this->Label_sign_up_error->Visible = false;
+			this->Label_sign_up_error1->Visible = false;
+			this->Label_sign_up_error2->Visible = false;
+
+			if (TextBox_Email->Text == "" || TextBox_password->Text == "" ) {
 				this->Label_sign_up_error->Visible = true;
 			}
+			else if (check == 1) {
+				this->Label_sign_up_error1->Visible = true;
+			}
+			else if (Pass >= 17 || Pass <= 7 || space1 != std::string::npos || space2 != std::string::npos) {
+				this->Label_sign_up_error2->Visible = true;
+			}
 			else {
+				this->Label_sign_up_error->Visible = false;
+				this->Label_sign_up_error1->Visible = false;
+				this->Label_sign_up_error2->Visible = false;
 				confirmationForm^ frma = gcnew confirmationForm();
 				completeForm^ frmb = gcnew completeForm();
 				frmb->FormClosed += gcnew FormClosedEventHandler(this, &signupForm::Close);
@@ -255,5 +315,7 @@ namespace TeamProject {
 		private: System::Void Button_confirmation_sign_up_Click(System::Object^ sender, System::EventArgs^ e) {
 			this->Close();
 		}
+private: System::Void Label_sign_up_error1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

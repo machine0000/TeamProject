@@ -1101,8 +1101,8 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				lib[nummax].pub = str_conma_buf;
 
 				//// ５列目
-				//getline(i_stream, str_conma_buf, ',');
-				//lib[nummax].writer = str_conma_buf;
+				getline(i_stream, str_conma_buf, ',');
+				lib[nummax].writer = str_conma_buf;
 
 				// ６列目
 				getline(i_stream, str_conma_buf, ',');
@@ -1156,16 +1156,16 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			string num2;
 			string num3;
 //未実装			//おすすめ表示
-			for (int i = 0; i != nummax; i++) {
-				if (lib[i].genre == user[usernum].genre) {
-					if (lib[i].count > max3) {
-						max3 = max2;
-						max2 = max1;
-						max1 = lib[i].count;
-					}
-					
-				}
+
+			//一時保存用の配列に貸し出し回数を
+			int buf[100][2];
+			for (int i = 0; i < nummax; i++) {
+				buf[i][0] = i;
+				buf[i][1] = lib[i].count;
 			}
+
+			//貸し出し回数が多い順にソート
+			//sort(buf, buf + nummax);
 
 
 			//コンボボックスに「ジャンルを選択」を表示
@@ -1203,7 +1203,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 					choice = stoi(msclr::interop::marshal_as<string>(t_s_choicepage->Text));
 					l_s_error->Text = "";
 				}
-				catch (invalid_argument& e) {
+				catch (invalid_argument&) {
 					l_s_error->Text = "error1";
 				}
 

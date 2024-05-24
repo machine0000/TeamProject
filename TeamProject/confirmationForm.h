@@ -5,6 +5,7 @@
 #include <msclr/marshal_cppstd.h>
 #include "completeForm.h"
 #include <fstream>
+#include "class.h"
 using namespace std;
 string Email = "";
 string pass = "";
@@ -246,18 +247,26 @@ private: System::Void Button_return_Click(System::Object^ sender, System::EventA
 }
 private: System::Void Button_confirmation_sign_up_Click(System::Object^ sender, System::EventArgs^ e) {
 	std::ofstream ofs("user.csv");
-	/*for (int i = 0; i == usermax; i++) {
+	user[nummax].mail = Email;
+	user[nummax].pass = pass;
+	user[nummax].genre = Genre;
+	for (int i = 0; i <= nummax; i++) {
 	 ofs << user[i].mail << ',';
 	ofs << user[i].pass << ',';
-	ofs << user[i].Genre << ',';
-	ofs << user[i].Lib[0]<< ',';
-	ofs << user[i].Lib[1] << ',';
-	ofs << user[i].Lib[2] << ',';
-	ofs << user[i].rday[0] << ',';
-	ofs << user[i].rday[1] << ',';
-	ofs << user[i].rday[2] << ',';
+	ofs << user[i].genre << ',';
+	ofs << user[i].lendname[0]<< ',';
+	ofs << user[i].lendname[1] << ',';
+	ofs << user[i].lendname[2] << ',';
+	for (int j = 0; j < 3; j++) {	  
+		ofs << to_string(user[i].rday[j].tm_year);
+		ofs << to_string(user[i].rday[j].tm_mon);
+		ofs << to_string(user[i].rday[j].tm_mday);
+		ofs << to_string(user[i].rday[j].tm_hour);
+		ofs << to_string(user[i].rday[j].tm_min);
+		ofs << to_string(user[i].rday[j].tm_sec) << ',';
+	}
 	ofs << user[i].books << "\n";
-}*/
+}
 	
 	completeForm^ frm = gcnew completeForm();
 	frm->Show();
