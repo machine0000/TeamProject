@@ -6,6 +6,8 @@
 #include <msclr/marshal_cppstd.h>
 #include <regex>
 #include "class.h"
+#include "LendForm.h"
+#include "book_detail_form.h"
 using namespace std;
 
 namespace TeamProject {
@@ -321,11 +323,13 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform2->AutoSize = true;
 			this->ll_s_detailform2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform2->ForeColor = System::Drawing::SystemColors::Highlight;
 			this->ll_s_detailform2->Location = System::Drawing::Point(345, 309);
 			this->ll_s_detailform2->Name = L"ll_s_detailform2";
 			this->ll_s_detailform2->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform2->TabIndex = 14;
 			this->ll_s_detailform2->Text = L"詳細";
+			this->ll_s_detailform2->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform2_Click);
 			// 
 			// b_s_lend2
 			// 
@@ -359,11 +363,13 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform3->AutoSize = true;
 			this->ll_s_detailform3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform3->ForeColor = System::Drawing::SystemColors::Highlight;
 			this->ll_s_detailform3->Location = System::Drawing::Point(345, 343);
 			this->ll_s_detailform3->Name = L"ll_s_detailform3";
 			this->ll_s_detailform3->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform3->TabIndex = 18;
 			this->ll_s_detailform3->Text = L"詳細";
+			this->ll_s_detailform3->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform3_Click);
 			// 
 			// b_s_lend3
 			// 
@@ -397,11 +403,13 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform4->AutoSize = true;
 			this->ll_s_detailform4->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform4->ForeColor = System::Drawing::SystemColors::Highlight;
 			this->ll_s_detailform4->Location = System::Drawing::Point(345, 377);
 			this->ll_s_detailform4->Name = L"ll_s_detailform4";
 			this->ll_s_detailform4->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform4->TabIndex = 22;
 			this->ll_s_detailform4->Text = L"詳細";
+			this->ll_s_detailform4->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform4_Click);
 			// 
 			// b_s_lend4
 			// 
@@ -435,11 +443,13 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform5->AutoSize = true;
 			this->ll_s_detailform5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform5->ForeColor = System::Drawing::SystemColors::Highlight;
 			this->ll_s_detailform5->Location = System::Drawing::Point(345, 411);
 			this->ll_s_detailform5->Name = L"ll_s_detailform5";
 			this->ll_s_detailform5->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform5->TabIndex = 26;
 			this->ll_s_detailform5->Text = L"詳細";
+			this->ll_s_detailform5->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform5_Click);
 			// 
 			// b_s_lend5
 			// 
@@ -473,11 +483,13 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform6->AutoSize = true;
 			this->ll_s_detailform6->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform6->ForeColor = System::Drawing::SystemColors::Highlight;
 			this->ll_s_detailform6->Location = System::Drawing::Point(345, 445);
 			this->ll_s_detailform6->Name = L"ll_s_detailform6";
 			this->ll_s_detailform6->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform6->TabIndex = 30;
 			this->ll_s_detailform6->Text = L"詳細";
+			this->ll_s_detailform6->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform6_Click);
 			// 
 			// b_s_lend6
 			// 
@@ -511,11 +523,13 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform7->AutoSize = true;
 			this->ll_s_detailform7->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform7->ForeColor = System::Drawing::SystemColors::Highlight;
 			this->ll_s_detailform7->Location = System::Drawing::Point(345, 479);
 			this->ll_s_detailform7->Name = L"ll_s_detailform7";
 			this->ll_s_detailform7->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform7->TabIndex = 34;
 			this->ll_s_detailform7->Text = L"詳細";
+			this->ll_s_detailform7->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform7_Click);
 			// 
 			// b_s_lend7
 			// 
@@ -549,11 +563,13 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform8->AutoSize = true;
 			this->ll_s_detailform8->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform8->ForeColor = System::Drawing::SystemColors::Highlight;
 			this->ll_s_detailform8->Location = System::Drawing::Point(345, 513);
 			this->ll_s_detailform8->Name = L"ll_s_detailform8";
 			this->ll_s_detailform8->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform8->TabIndex = 38;
 			this->ll_s_detailform8->Text = L"詳細";
+			this->ll_s_detailform8->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform8_Click);
 			// 
 			// b_s_lend8
 			// 
@@ -587,11 +603,13 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform9->AutoSize = true;
 			this->ll_s_detailform9->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform9->ForeColor = System::Drawing::SystemColors::Highlight;
 			this->ll_s_detailform9->Location = System::Drawing::Point(345, 547);
 			this->ll_s_detailform9->Name = L"ll_s_detailform9";
 			this->ll_s_detailform9->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform9->TabIndex = 42;
 			this->ll_s_detailform9->Text = L"詳細";
+			this->ll_s_detailform9->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform9_Click);
 			// 
 			// b_s_lend9
 			// 
@@ -625,11 +643,13 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform10->AutoSize = true;
 			this->ll_s_detailform10->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform10->ForeColor = System::Drawing::SystemColors::Highlight;
 			this->ll_s_detailform10->Location = System::Drawing::Point(345, 581);
 			this->ll_s_detailform10->Name = L"ll_s_detailform10";
 			this->ll_s_detailform10->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform10->TabIndex = 46;
 			this->ll_s_detailform10->Text = L"詳細";
+			this->ll_s_detailform10->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform10_Click);
 			// 
 			// b_s_lend10
 			// 
@@ -663,11 +683,14 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform1->AutoSize = true;
 			this->ll_s_detailform1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->ll_s_detailform1->ForeColor = System::Drawing::SystemColors::Highlight;
 			this->ll_s_detailform1->Location = System::Drawing::Point(345, 275);
 			this->ll_s_detailform1->Name = L"ll_s_detailform1";
 			this->ll_s_detailform1->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform1->TabIndex = 47;
 			this->ll_s_detailform1->Text = L"詳細";
+			this->ll_s_detailform1->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform1_Click);
+			this->ll_s_detailform1->MouseEnter += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform1_MouseEnter);
 			// 
 			// b_s_next
 			// 
@@ -723,6 +746,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->b_s_lendform->TabIndex = 53;
 			this->b_s_lendform->Text = L"貸し出し詳細";
 			this->b_s_lendform->UseVisualStyleBackColor = true;
+			this->b_s_lendform->Click += gcnew System::EventHandler(this, &ShowForm::b_s_lendform_Click);
 			// 
 			// label1
 			// 
@@ -1155,18 +1179,29 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			string num1;
 			string num2;
 			string num3;
-			//未実装			//おすすめ表示
 
-						//一時保存用の配列に貸し出し回数を
+			//おすすめ表示
 			int buf[100][2];
-			for (int i = 0; i < nummax; i++) {
-				buf[i][0] = i;
-				buf[i][1] = lib[i].count;
-			}
+			int bufnum = 0;
 			int tmp;
-			//貸し出し回数が多い順にソート
+
+			//一時保存用の配列にユーザーのジャンルに合わせた添字と貸し出し回数を格納
 			for (int i = 0; i < nummax; i++) {
-				for (int j = nummax - 1; j > i; j--) {
+				if(user[usernum].genre == ""){
+					buf[bufnum][0] = i;
+					buf[bufnum][1] = lib[i].count;
+					bufnum++;
+				}
+				else if(user[usernum].genre == lib[i].genre){
+					buf[bufnum][0] = i;
+					buf[bufnum][1] = lib[i].count;
+					bufnum++;
+				}
+			}
+			
+			//貸し出し回数が多い順にソート
+			for (int i = 0; i < bufnum; i++) {
+				for (int j = bufnum - 1; j > i; j--) {
 					// 隣り合う要素を比較
 					if (buf[j][1] > buf[j - 1][1]) {
 						// 添字を入れ替え
@@ -1181,6 +1216,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				}
 			}
 
+			//ユーザーのジャンルに合わせた１～３番目に貸し出し回数が多い本を表示
 			l_s_recommendbook->Text = msclr::interop::marshal_as<System::String^>(lib[buf[0][0]].title + "\n" + lib[buf[1][0]].title + "\n" + lib[buf[2][0]].title);
 
 			//コンボボックスに「ジャンルを選択」を表示
@@ -1209,6 +1245,83 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 
 		}
 
+		//貸し出し詳細ボタンクリック
+		private: System::Void b_s_lendform_Click(System::Object^ sender, System::EventArgs^ e) {
+			LendForm^ frm_LF = gcnew LendForm();
+			frm_LF->ShowDialog();
+		}
+
+		//詳細ラベルクリック
+		private: System::Void ll_s_detailform1_Click(System::Object^ sender, System::EventArgs^ e) {
+			lnum = 0;
+			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			frm_bdf->ShowDialog();
+		}
+
+		private: System::Void ll_s_detailform2_Click(System::Object^ sender, System::EventArgs^ e) {
+			lnum = 1;
+			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			frm_bdf->ShowDialog();
+		}
+
+		private: System::Void ll_s_detailform3_Click(System::Object^ sender, System::EventArgs^ e) {
+			lnum = 2;
+			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			frm_bdf->ShowDialog();
+		}
+
+		private: System::Void ll_s_detailform4_Click(System::Object^ sender, System::EventArgs^ e) {
+			lnum = 3;
+			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			frm_bdf->ShowDialog();
+		}
+
+		private: System::Void ll_s_detailform5_Click(System::Object^ sender, System::EventArgs^ e) {
+			lnum = 4;
+			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			frm_bdf->ShowDialog();
+		}
+
+		private: System::Void ll_s_detailform6_Click(System::Object^ sender, System::EventArgs^ e) {
+			lnum = 5;
+			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			frm_bdf->ShowDialog();
+		}
+
+		private: System::Void ll_s_detailform7_Click(System::Object^ sender, System::EventArgs^ e) {
+			lnum = 6;
+			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			frm_bdf->ShowDialog();
+		}
+
+		private: System::Void ll_s_detailform8_Click(System::Object^ sender, System::EventArgs^ e) {
+			lnum = 7;
+			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			frm_bdf->ShowDialog();
+		}
+
+		private: System::Void ll_s_detailform9_Click(System::Object^ sender, System::EventArgs^ e) {
+			lnum = 8;
+			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			frm_bdf->ShowDialog();
+		}
+
+		private: System::Void ll_s_detailform10_Click(System::Object^ sender, System::EventArgs^ e) {
+			lnum = 9;
+			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			frm_bdf->ShowDialog();
+		}
+
+		private: System::Void b_s_previous_Click(System::Object^ sender, System::EventArgs^ e) {
+			//前ページの一覧に更新
+			showBook(page - 1);
+		}
+
+		private: System::Void b_s_next_Click(System::Object^ sender, System::EventArgs^ e) {
+			//次ページの一覧に更新
+			showBook(page + 1);
+		}
+
 		private: void t_s_choicepage_KeyPress(System::Object^ senderr, KeyPressEventArgs^ e)
 		{
 			if (e->KeyChar == '\r') // Enterキーが押された場合
@@ -1232,16 +1345,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			}
 		}
 
-		private: System::Void b_s_previous_Click(System::Object^ sender, System::EventArgs^ e) {
-			//前ページの一覧に更新
-			showBook(page - 1);
-		}
-
-		private: System::Void b_s_next_Click(System::Object^ sender, System::EventArgs^ e) {
-			//次ページの一覧に更新
-			showBook(page + 1);
-		}
-
-
+private: System::Void ll_s_detailform1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
