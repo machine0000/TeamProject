@@ -1059,91 +1059,91 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			std::ifstream ifs("sample.csv");
 
 			// getline関数で1行ずつ読み込む(読み込んだ内容はstr_bufに格納)
-			for (nummax = 0; getline(ifs, str_buf); nummax++) {
-				// 「,」区切りごとにデータを読み込むためにistringstream型にする
-				istringstream i_stream(str_buf);
+			for (nummax = -1; getline(ifs, str_buf); nummax++) {
+				if (nummax >= 0) {
+					// 「,」区切りごとにデータを読み込むためにistringstream型にする
+					istringstream i_stream(str_buf);
 
-				// １列目
-				// 「,」区切りごとにデータを読み込む
-				getline(i_stream, str_conma_buf, ',');
-				// 読み込んだデータをクラスに格納
-				lib[nummax].title = str_conma_buf;
+					// １列目
+					// 「,」区切りごとにデータを読み込む
+					getline(i_stream, str_conma_buf, ',');
+					// 読み込んだデータをクラスに格納
+					lib[nummax].title = str_conma_buf;
 
-				// ２列目
-				getline(i_stream, str_conma_buf, ',');
-				lib[nummax].genre = str_conma_buf;
+					// ２列目
+					getline(i_stream, str_conma_buf, ',');
+					lib[nummax].genre = str_conma_buf;
 
-				// ３列目
-				getline(i_stream, str_conma_buf, ',');
-				/*if (str_conma_buf != "") {
-					//年
-					time = str_conma_buf.substr(0, 4);
-					lib[nummax].rday.tm_year = stoi(time);
-					//月
-					time = str_conma_buf.substr(4, 2);
-					lib[nummax].rday.tm_mon = stoi(time);
-					//日
-					time = str_conma_buf.substr(6, 2);
-					lib[nummax].rday.tm_mday = stoi(time);
-					//時
-					time = str_conma_buf.substr(8, 2);
-					lib[nummax].rday.tm_hour = stoi(time);
-					//分
-					time = str_conma_buf.substr(10, 2);
-					lib[nummax].rday.tm_min = stoi(time);
-					//秒
-					time = str_conma_buf.substr(12, 2);
-					lib[nummax].rday.tm_sec = stoi(time);
-				}*/
+					// ３列目
+					getline(i_stream, str_conma_buf, ',');
+					if (str_conma_buf != "") {
+						//年
+						time = str_conma_buf.substr(0, 4);
+						lib[nummax].rday.tm_year = stoi(time);
+						//月
+						time = str_conma_buf.substr(4, 2);
+						lib[nummax].rday.tm_mon = stoi(time);
+						//日
+						time = str_conma_buf.substr(6, 2);
+						lib[nummax].rday.tm_mday = stoi(time);
+						//時
+						time = str_conma_buf.substr(8, 2);
+						lib[nummax].rday.tm_hour = stoi(time);
+						//分
+						time = str_conma_buf.substr(10, 2);
+						lib[nummax].rday.tm_min = stoi(time);
+						//秒
+						time = str_conma_buf.substr(12, 2);
+						lib[nummax].rday.tm_sec = stoi(time);
+					}
 
-				// ４列目
-				getline(i_stream, str_conma_buf, ',');
-				lib[nummax].pub = str_conma_buf;
+					// ４列目
+					getline(i_stream, str_conma_buf, ',');
+					lib[nummax].pub = str_conma_buf;
 
-				//// ５列目
-				getline(i_stream, str_conma_buf, ',');
-				lib[nummax].writer = str_conma_buf;
+					//// ５列目
+					getline(i_stream, str_conma_buf, ',');
+					lib[nummax].writer = str_conma_buf;
 
-				// ６列目
-				getline(i_stream, str_conma_buf, ',');
-				if (str_conma_buf != "") {
-					//年
-					time = str_conma_buf.substr(0, 4);
-					lib[nummax].aday.tm_year = stoi(time);
-					//月
-					time = str_conma_buf.substr(4, 2);
-					lib[nummax].aday.tm_mon = stoi(time);
-					//日
-					time = str_conma_buf.substr(6, 2);
-					lib[nummax].aday.tm_mday = stoi(time);
-					//時
-					time = str_conma_buf.substr(8, 2);
-					lib[nummax].aday.tm_hour = stoi(time);
-					//分
-					time = str_conma_buf.substr(10, 2);
-					lib[nummax].aday.tm_min = stoi(time);
-					//秒
-					time = str_conma_buf.substr(12, 2);
-					lib[nummax].aday.tm_sec = stoi(time);
+					// ６列目
+					getline(i_stream, str_conma_buf, ',');
+					if (str_conma_buf != "") {
+						//年
+						time = str_conma_buf.substr(0, 4);
+						lib[nummax].aday.tm_year = stoi(time);
+						//月
+						time = str_conma_buf.substr(4, 2);
+						lib[nummax].aday.tm_mon = stoi(time);
+						//日
+						time = str_conma_buf.substr(6, 2);
+						lib[nummax].aday.tm_mday = stoi(time);
+						//時
+						time = str_conma_buf.substr(8, 2);
+						lib[nummax].aday.tm_hour = stoi(time);
+						//分
+						time = str_conma_buf.substr(10, 2);
+						lib[nummax].aday.tm_min = stoi(time);
+						//秒
+						time = str_conma_buf.substr(12, 2);
+						lib[nummax].aday.tm_sec = stoi(time);
+					}
+
+					// ７列目
+					getline(i_stream, str_conma_buf, ',');
+					lib[nummax].lendname = str_conma_buf;
+
+					// ８列目
+					getline(i_stream, str_conma_buf, ',');
+					if (str_conma_buf != "") {
+						lib[nummax].count = stoi(str_conma_buf);
+					}
+
+					// ９列目
+					getline(i_stream, str_conma_buf, ',');
+					if (str_conma_buf != "") {
+						lib[nummax].rest = stoi(str_conma_buf);
+					}
 				}
-
-				// ７列目
-				getline(i_stream, str_conma_buf, ',');
-				lib[nummax].lendname = str_conma_buf;
-
-				// ８列目
-				getline(i_stream, str_conma_buf, ',');
-				if (str_conma_buf != "") {
-					lib[nummax].count = stoi(str_conma_buf);
-				}
-
-				// ９列目
-				getline(i_stream, str_conma_buf, ',');
-				if (str_conma_buf != "") {
-					lib[nummax].rest = stoi(str_conma_buf);
-				}
-
-				
 			}
 			pagemax = (nummax - 1) / 10;
 			ifs.close();
@@ -1155,18 +1155,33 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			string num1;
 			string num2;
 			string num3;
-//未実装			//おすすめ表示
+			//未実装			//おすすめ表示
 
-			//一時保存用の配列に貸し出し回数を
+						//一時保存用の配列に貸し出し回数を
 			int buf[100][2];
 			for (int i = 0; i < nummax; i++) {
 				buf[i][0] = i;
 				buf[i][1] = lib[i].count;
 			}
-
+			int tmp;
 			//貸し出し回数が多い順にソート
-			//sort(buf, buf + nummax);
+			for (int i = 0; i < nummax; i++) {
+				for (int j = nummax - 1; j > i; j--) {
+					// 隣り合う要素を比較
+					if (buf[j][1] > buf[j - 1][1]) {
+						// 添字を入れ替え
+						tmp = buf[j][0];
+						buf[j][0] = buf[j - 1][0];
+						buf[j - 1][0] = tmp;
+						// 要素を入れ替え
+						tmp = buf[j][1];
+						buf[j][1] = buf[j - 1][1];
+						buf[j - 1][1] = tmp;
+					}
+				}
+			}
 
+			l_s_recommendbook->Text = msclr::interop::marshal_as<System::String^>(lib[buf[0][0]].title + "\n" + lib[buf[1][0]].title + "\n" + lib[buf[2][0]].title);
 
 			//コンボボックスに「ジャンルを選択」を表示
 			c_s_genre->SelectedIndex = 0;
