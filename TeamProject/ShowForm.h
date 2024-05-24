@@ -4,6 +4,7 @@
 #include <sstream>
 #include <iostream>
 #include <msclr/marshal_cppstd.h>
+#include <regex>
 #include "class.h"
 using namespace std;
 
@@ -160,7 +161,8 @@ private: System::Windows::Forms::Label^ l_s_bar10;
 	private: System::Windows::Forms::TextBox^ t_s_choicepage;
 private: System::Windows::Forms::Button^ b_s_lendform;
 private: System::Windows::Forms::Label^ label1;
-private: System::Windows::Forms::Label^ label2;
+private: System::Windows::Forms::Label^ l_s_error;
+
 private: System::Windows::Forms::Label^ l_s_recommend;
 private: System::Windows::Forms::Label^ l_s_recommendbook;
 
@@ -237,7 +239,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->t_s_choicepage = (gcnew System::Windows::Forms::TextBox());
 			this->b_s_lendform = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->l_s_error = (gcnew System::Windows::Forms::Label());
 			this->l_s_recommend = (gcnew System::Windows::Forms::Label());
 			this->l_s_recommendbook = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
@@ -703,9 +705,11 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->t_s_choicepage->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->t_s_choicepage->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 20));
+			this->t_s_choicepage->ImeMode = System::Windows::Forms::ImeMode::Disable;
 			this->t_s_choicepage->Location = System::Drawing::Point(200, 660);
 			this->t_s_choicepage->MaxLength = 2;
 			this->t_s_choicepage->Name = L"t_s_choicepage";
+			this->t_s_choicepage->ShortcutsEnabled = false;
 			this->t_s_choicepage->Size = System::Drawing::Size(40, 41);
 			this->t_s_choicepage->TabIndex = 52;
 			this->t_s_choicepage->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &ShowForm::t_s_choicepage_KeyPress);
@@ -731,14 +735,14 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->label1->Text = L"copyright(C)";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// label2
+			// l_s_error
 			// 
-			this->label2->BackColor = System::Drawing::SystemColors::Control;
-			this->label2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 24));
-			this->label2->Location = System::Drawing::Point(20, 620);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(480, 20);
-			this->label2->TabIndex = 55;
+			this->l_s_error->BackColor = System::Drawing::SystemColors::Control;
+			this->l_s_error->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_error->Location = System::Drawing::Point(20, 620);
+			this->l_s_error->Name = L"l_s_error";
+			this->l_s_error->Size = System::Drawing::Size(480, 20);
+			this->l_s_error->TabIndex = 55;
 			// 
 			// l_s_recommend
 			// 
@@ -770,7 +774,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->ClientSize = System::Drawing::Size(532, 753);
 			this->Controls->Add(this->l_s_recommendbook);
 			this->Controls->Add(this->l_s_recommend);
-			this->Controls->Add(this->label2);
+			this->Controls->Add(this->l_s_error);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->b_s_lendform);
 			this->Controls->Add(this->t_s_choicepage);
@@ -1037,7 +1041,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			}
 
 			//ページがなければ次ボタンを無効化
-			if (num == pagemax) {
+			if (num == (pagemax+1)) {
 				b_s_next->Enabled = false;
 			}
 			else {
@@ -1141,16 +1145,28 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 
 				
 			}
-			pagemax = nummax / 10;
+			pagemax = (nummax - 1) / 10;
 			ifs.close();
 
-
-			//おすすめ表示
-			if (user->genre != "") {
-				for (int i = 0; i != nummax; i++) {
-					if(lib[i].genre == usermail)
+			int max = 0;
+			int max1;
+			int max2;
+			int max3;
+			string num1;
+			string num2;
+			string num3;
+//未実装			//おすすめ表示
+			for (int i = 0; i != nummax; i++) {
+				if (lib[i].genre == user[usernum].genre) {
+					if (lib[i].count > max3) {
+						max3 = max2;
+						max2 = max1;
+						max1 = lib[i].count;
+					}
+					
 				}
 			}
+
 
 			//コンボボックスに「ジャンルを選択」を表示
 			c_s_genre->SelectedIndex = 0;
@@ -1160,82 +1176,18 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 		}
 
 		private: System::Void b_s_search_Click(System::Object^ sender, System::EventArgs^ e) {
-
+			int j = 0;
 			//選択されたジャンルを変数に格納
 			selectgenre = msclr::interop::marshal_as<string>(c_s_genre->SelectedItem->ToString());
 
 			//選択されたジャンルのクラスに入力
-			string str_buf;
-			string str_conma_buf;
-			string time;
-			int j = 0;
-
-			// 読み込むcsvファイルを開く(std::ifstreamのコンストラクタで開く)
-			std::ifstream ifs("sample.csv");
-
-			// getline関数で1行ずつ読み込む(読み込んだ内容はstr_bufに格納)
-
 			for (int i = 0; i != nummax; i++) {
 				if(lib[i].genre == selectgenre) {
-					// １列目
-					// 選択されたジャンルのデータを格納
-					gen[j].title = lib[i].title;
-
-					// ２列目
-					gen[j].genre = lib[i].genre;
-
-					// ３列目
-					/*if (str_conma_buf != "") {
-						//年
-						gen[j].rday.tm_year = lib[i].rday.tm_year;
-						//月
-						gen[j].rday.tm_mon = lib[i].rday.tm_mon;
-						//日
-						gen[j].rday.tm_mday = lib[i].rday.tm_mday;
-						//時
-						gen[j].rday.tm_hour = lib[i].rday.tm_hour;
-						//分
-						gen[j].rday.tm_min = lib[i].rday.tm_min;
-						//秒
-						gen[j].rday.tm_sec = lib[i].rday.tm_sec;
-					}*/
-
-					// ４列目
-					gen[j].pub = lib[i].pub;
-
-					//// ５列目
-					//gen[i].writer = lib[i].rday;
-
-					// ６列目
-						//年
-						gen[i].aday.tm_year = lib[i].aday.tm_year;
-						//月
-						gen[i].aday.tm_mon = lib[i].aday.tm_mon;
-						//日
-						gen[i].aday.tm_mday = lib[i].aday.tm_mday;
-						//時
-						gen[i].aday.tm_hour = lib[i].aday.tm_hour;
-						//分
-						gen[i].aday.tm_min = lib[i].aday.tm_min;
-						//秒
-						gen[i].aday.tm_sec = lib[i].aday.tm_sec;
-
-					// ７列目
-					gen[i].lendname = lib[i].lendname;
-
-					// ８列目
-					if (str_conma_buf != "") {
-						gen[i].count = lib[i].count;
-					}
-
-					// ９列目
-					if (str_conma_buf != "") {
-						gen[i].rest = lib[i].rest;
-					}
+					gen[j] = lib[i];
 					j++;
 				}
 			}
-			pagemax = (j+1) / 10;
+			pagemax = (j-1) / 10;
 
 			//選択されたジャンルの１ページ目を表示
 			showBook(1);
@@ -1246,9 +1198,22 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 		{
 			if (e->KeyChar == '\r') // Enterキーが押された場合
 			{
-				//テキストボックス記入された文字列を
-				choice = stoi(msclr::interop::marshal_as<string>(t_s_choicepage->Text));
-				showBook(choice);
+				//テキストボックス入力された数字を数値に変換
+				try {
+					choice = stoi(msclr::interop::marshal_as<string>(t_s_choicepage->Text));
+					l_s_error->Text = "";
+				}
+				catch (invalid_argument& e) {
+					l_s_error->Text = "error1";
+				}
+
+				//入力された数値のページの内容を表示
+				if (choice <= (pagemax + 1)) {
+					showBook(choice);
+				}
+				else {
+					l_s_error->Text = "error2";
+				}
 			}
 		}
 

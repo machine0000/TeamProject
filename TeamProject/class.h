@@ -27,20 +27,7 @@ public:
 	int rest;
 };
 Libraly lib[100];
-
-class Genre {
-public:
-	string title;
-	string genre;
-	tm rday;
-	string pub;
-	string writer;
-	tm aday;
-	string lendname;
-	int count;
-	int rest;
-};
-Genre gen[100];
+Libraly gen[100];
 
 string selectgenre = "ƒWƒƒƒ“ƒ‹‚ğ‘I‘ğ";
 int page = 1;
