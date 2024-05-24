@@ -323,13 +323,15 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform2->AutoSize = true;
 			this->ll_s_detailform2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->ll_s_detailform2->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->ll_s_detailform2->ForeColor = System::Drawing::Color::Blue;
 			this->ll_s_detailform2->Location = System::Drawing::Point(345, 309);
 			this->ll_s_detailform2->Name = L"ll_s_detailform2";
 			this->ll_s_detailform2->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform2->TabIndex = 14;
 			this->ll_s_detailform2->Text = L"詳細";
 			this->ll_s_detailform2->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform2_Click);
+			this->ll_s_detailform2->MouseEnter += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform2_MouseEnter);
+			this->ll_s_detailform2->MouseLeave += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform2_MouseLeave);
 			// 
 			// b_s_lend2
 			// 
@@ -363,13 +365,15 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform3->AutoSize = true;
 			this->ll_s_detailform3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->ll_s_detailform3->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->ll_s_detailform3->ForeColor = System::Drawing::Color::Blue;
 			this->ll_s_detailform3->Location = System::Drawing::Point(345, 343);
 			this->ll_s_detailform3->Name = L"ll_s_detailform3";
 			this->ll_s_detailform3->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform3->TabIndex = 18;
 			this->ll_s_detailform3->Text = L"詳細";
 			this->ll_s_detailform3->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform3_Click);
+			this->ll_s_detailform3->MouseEnter += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform3_MouseEnter);
+			this->ll_s_detailform3->MouseLeave += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform3_MouseLeave);
 			// 
 			// b_s_lend3
 			// 
@@ -403,13 +407,15 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform4->AutoSize = true;
 			this->ll_s_detailform4->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->ll_s_detailform4->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->ll_s_detailform4->ForeColor = System::Drawing::Color::Blue;
 			this->ll_s_detailform4->Location = System::Drawing::Point(345, 377);
 			this->ll_s_detailform4->Name = L"ll_s_detailform4";
 			this->ll_s_detailform4->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform4->TabIndex = 22;
 			this->ll_s_detailform4->Text = L"詳細";
 			this->ll_s_detailform4->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform4_Click);
+			this->ll_s_detailform4->MouseEnter += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform4_MouseEnter);
+			this->ll_s_detailform4->MouseLeave += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform4_MouseLeave);
 			// 
 			// b_s_lend4
 			// 
@@ -443,13 +449,15 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform5->AutoSize = true;
 			this->ll_s_detailform5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->ll_s_detailform5->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->ll_s_detailform5->ForeColor = System::Drawing::Color::Blue;
 			this->ll_s_detailform5->Location = System::Drawing::Point(345, 411);
 			this->ll_s_detailform5->Name = L"ll_s_detailform5";
 			this->ll_s_detailform5->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform5->TabIndex = 26;
 			this->ll_s_detailform5->Text = L"詳細";
 			this->ll_s_detailform5->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform5_Click);
+			this->ll_s_detailform5->MouseEnter += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform5_MouseEnter);
+			this->ll_s_detailform5->MouseLeave += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform5_MouseLeave);
 			// 
 			// b_s_lend5
 			// 
@@ -483,13 +491,15 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform6->AutoSize = true;
 			this->ll_s_detailform6->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->ll_s_detailform6->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->ll_s_detailform6->ForeColor = System::Drawing::Color::Blue;
 			this->ll_s_detailform6->Location = System::Drawing::Point(345, 445);
 			this->ll_s_detailform6->Name = L"ll_s_detailform6";
 			this->ll_s_detailform6->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform6->TabIndex = 30;
 			this->ll_s_detailform6->Text = L"詳細";
 			this->ll_s_detailform6->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform6_Click);
+			this->ll_s_detailform6->MouseEnter += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform6_MouseEnter);
+			this->ll_s_detailform6->MouseLeave += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform6_MouseLeave);
 			// 
 			// b_s_lend6
 			// 
@@ -523,13 +533,15 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform7->AutoSize = true;
 			this->ll_s_detailform7->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->ll_s_detailform7->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->ll_s_detailform7->ForeColor = System::Drawing::Color::Blue;
 			this->ll_s_detailform7->Location = System::Drawing::Point(345, 479);
 			this->ll_s_detailform7->Name = L"ll_s_detailform7";
 			this->ll_s_detailform7->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform7->TabIndex = 34;
 			this->ll_s_detailform7->Text = L"詳細";
 			this->ll_s_detailform7->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform7_Click);
+			this->ll_s_detailform7->MouseEnter += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform7_MouseEnter);
+			this->ll_s_detailform7->MouseLeave += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform7_MouseLeave);
 			// 
 			// b_s_lend7
 			// 
@@ -563,13 +575,15 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform8->AutoSize = true;
 			this->ll_s_detailform8->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->ll_s_detailform8->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->ll_s_detailform8->ForeColor = System::Drawing::Color::Blue;
 			this->ll_s_detailform8->Location = System::Drawing::Point(345, 513);
 			this->ll_s_detailform8->Name = L"ll_s_detailform8";
 			this->ll_s_detailform8->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform8->TabIndex = 38;
 			this->ll_s_detailform8->Text = L"詳細";
 			this->ll_s_detailform8->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform8_Click);
+			this->ll_s_detailform8->MouseEnter += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform8_MouseEnter);
+			this->ll_s_detailform8->MouseLeave += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform8_MouseLeave);
 			// 
 			// b_s_lend8
 			// 
@@ -603,13 +617,15 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform9->AutoSize = true;
 			this->ll_s_detailform9->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->ll_s_detailform9->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->ll_s_detailform9->ForeColor = System::Drawing::Color::Blue;
 			this->ll_s_detailform9->Location = System::Drawing::Point(345, 547);
 			this->ll_s_detailform9->Name = L"ll_s_detailform9";
 			this->ll_s_detailform9->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform9->TabIndex = 42;
 			this->ll_s_detailform9->Text = L"詳細";
 			this->ll_s_detailform9->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform9_Click);
+			this->ll_s_detailform9->MouseEnter += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform9_MouseEnter);
+			this->ll_s_detailform9->MouseLeave += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform9_MouseLeave);
 			// 
 			// b_s_lend9
 			// 
@@ -643,13 +659,15 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform10->AutoSize = true;
 			this->ll_s_detailform10->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->ll_s_detailform10->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->ll_s_detailform10->ForeColor = System::Drawing::Color::Blue;
 			this->ll_s_detailform10->Location = System::Drawing::Point(345, 581);
 			this->ll_s_detailform10->Name = L"ll_s_detailform10";
 			this->ll_s_detailform10->Size = System::Drawing::Size(49, 20);
 			this->ll_s_detailform10->TabIndex = 46;
 			this->ll_s_detailform10->Text = L"詳細";
 			this->ll_s_detailform10->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform10_Click);
+			this->ll_s_detailform10->MouseEnter += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform10_MouseEnter);
+			this->ll_s_detailform10->MouseLeave += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform10_MouseLeave);
 			// 
 			// b_s_lend10
 			// 
@@ -683,7 +701,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			// 
 			this->ll_s_detailform1->AutoSize = true;
 			this->ll_s_detailform1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
-			this->ll_s_detailform1->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->ll_s_detailform1->ForeColor = System::Drawing::Color::Blue;
 			this->ll_s_detailform1->Location = System::Drawing::Point(345, 275);
 			this->ll_s_detailform1->Name = L"ll_s_detailform1";
 			this->ll_s_detailform1->Size = System::Drawing::Size(49, 20);
@@ -691,6 +709,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->ll_s_detailform1->Text = L"詳細";
 			this->ll_s_detailform1->Click += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform1_Click);
 			this->ll_s_detailform1->MouseEnter += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform1_MouseEnter);
+			this->ll_s_detailform1->MouseLeave += gcnew System::EventHandler(this, &ShowForm::ll_s_detailform1_MouseLeave);
 			// 
 			// b_s_next
 			// 
@@ -1345,7 +1364,75 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			}
 		}
 
-private: System::Void ll_s_detailform1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-}
+		//詳細ラベルをマウスカーソルにより色変更
+		private: System::Void ll_s_detailform1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform1->ForeColor = Color::SkyBlue;
+		}
+		private: System::Void ll_s_detailform1_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform1->ForeColor = Color::Blue;
+		}
+
+		private: System::Void ll_s_detailform2_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform2->ForeColor = Color::SkyBlue;
+		}
+		private: System::Void ll_s_detailform2_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform2->ForeColor = Color::Blue;
+		}
+
+		private: System::Void ll_s_detailform3_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform3->ForeColor = Color::SkyBlue;
+		}
+		private: System::Void ll_s_detailform3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform3->ForeColor = Color::Blue;
+		}
+
+		private: System::Void ll_s_detailform4_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform4->ForeColor = Color::SkyBlue;
+		}
+		private: System::Void ll_s_detailform4_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform4->ForeColor = Color::Blue;
+		}
+
+		private: System::Void ll_s_detailform5_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform5->ForeColor = Color::SkyBlue;
+		}
+		private: System::Void ll_s_detailform5_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform5->ForeColor = Color::Blue;
+		}
+
+		private: System::Void ll_s_detailform6_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform6->ForeColor = Color::SkyBlue;
+		}
+		private: System::Void ll_s_detailform6_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform6->ForeColor = Color::Blue;
+		}
+
+		private: System::Void ll_s_detailform7_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform7->ForeColor = Color::SkyBlue;
+		}
+		private: System::Void ll_s_detailform7_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform7->ForeColor = Color::Blue;
+		}
+
+		private: System::Void ll_s_detailform8_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform8->ForeColor = Color::SkyBlue;
+		}
+		private: System::Void ll_s_detailform8_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform8->ForeColor = Color::Blue;
+		}
+
+		private: System::Void ll_s_detailform9_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform9->ForeColor = Color::SkyBlue;
+		}
+		private: System::Void ll_s_detailform9_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform9->ForeColor = Color::Blue;
+		}
+
+		private: System::Void ll_s_detailform10_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform10->ForeColor = Color::SkyBlue;
+		}
+		private: System::Void ll_s_detailform10_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+			ll_s_detailform10->ForeColor = Color::Blue;
+		}
 };
 }
