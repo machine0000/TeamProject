@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LibraryForm.cpp" />
+    <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="ManagementForm.cpp" />
     <ClCompile Include="ShowForm.cpp" />
     <ClCompile Include="UserForm.cpp" />
@@ -175,9 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LendForm.resx">
       <DependentUpon>LendForm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowForm.resx">
       <DependentUpon>ShowForm.h</DependentUpon>
