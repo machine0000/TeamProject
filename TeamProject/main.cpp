@@ -1,4 +1,4 @@
-#include "ShowForm.h"
+#include "LoginForm.h"
 
 using namespace TeamProject;
 
@@ -7,6 +7,6 @@ int main() {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 
-	Application::Run(gcnew ShowForm());
+	Application::Run(gcnew LoginForm());
 	return 0;
 }
