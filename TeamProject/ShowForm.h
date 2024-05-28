@@ -5,9 +5,10 @@
 #include <iostream>
 #include <msclr/marshal_cppstd.h>
 #include <regex>
+#include <time.h>
 #include "class.h"
 #include "LendForm.h"
-#include "book_detail_form.h"
+#include "Book_detail_form.h"
 using namespace std;
 
 namespace TeamProject {
@@ -167,6 +168,10 @@ private: System::Windows::Forms::Label^ l_s_error;
 
 private: System::Windows::Forms::Label^ l_s_recommend;
 private: System::Windows::Forms::Label^ l_s_recommendbook;
+private: System::Windows::Forms::Label^ l_s_select;
+
+private: System::Windows::Forms::Label^ l_s_lendnum;
+
 
 
 
@@ -244,6 +249,8 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->l_s_error = (gcnew System::Windows::Forms::Label());
 			this->l_s_recommend = (gcnew System::Windows::Forms::Label());
 			this->l_s_recommendbook = (gcnew System::Windows::Forms::Label());
+			this->l_s_select = (gcnew System::Windows::Forms::Label());
+			this->l_s_lendnum = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// l_s_header
@@ -318,6 +325,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->b_s_lend1->TabIndex = 9;
 			this->b_s_lend1->Text = L"貸し出し";
 			this->b_s_lend1->UseVisualStyleBackColor = true;
+			this->b_s_lend1->Click += gcnew System::EventHandler(this, &ShowForm::b_s_lend1_Click);
 			// 
 			// ll_s_detailform2
 			// 
@@ -342,6 +350,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->b_s_lend2->TabIndex = 13;
 			this->b_s_lend2->Text = L"貸し出し";
 			this->b_s_lend2->UseVisualStyleBackColor = true;
+			this->b_s_lend2->Click += gcnew System::EventHandler(this, &ShowForm::b_s_lend2_Click);
 			// 
 			// l_s_bar2
 			// 
@@ -384,6 +393,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->b_s_lend3->TabIndex = 17;
 			this->b_s_lend3->Text = L"貸し出し";
 			this->b_s_lend3->UseVisualStyleBackColor = true;
+			this->b_s_lend3->Click += gcnew System::EventHandler(this, &ShowForm::b_s_lend3_Click);
 			// 
 			// l_s_bar3
 			// 
@@ -426,6 +436,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->b_s_lend4->TabIndex = 21;
 			this->b_s_lend4->Text = L"貸し出し";
 			this->b_s_lend4->UseVisualStyleBackColor = true;
+			this->b_s_lend4->Click += gcnew System::EventHandler(this, &ShowForm::b_s_lend4_Click);
 			// 
 			// l_s_bar4
 			// 
@@ -468,6 +479,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->b_s_lend5->TabIndex = 25;
 			this->b_s_lend5->Text = L"貸し出し";
 			this->b_s_lend5->UseVisualStyleBackColor = true;
+			this->b_s_lend5->Click += gcnew System::EventHandler(this, &ShowForm::b_s_lend5_Click);
 			// 
 			// l_s_bar5
 			// 
@@ -510,6 +522,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->b_s_lend6->TabIndex = 29;
 			this->b_s_lend6->Text = L"貸し出し";
 			this->b_s_lend6->UseVisualStyleBackColor = true;
+			this->b_s_lend6->Click += gcnew System::EventHandler(this, &ShowForm::b_s_lend6_Click);
 			// 
 			// l_s_bar6
 			// 
@@ -552,6 +565,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->b_s_lend7->TabIndex = 33;
 			this->b_s_lend7->Text = L"貸し出し";
 			this->b_s_lend7->UseVisualStyleBackColor = true;
+			this->b_s_lend7->Click += gcnew System::EventHandler(this, &ShowForm::b_s_lend7_Click);
 			// 
 			// l_s_bar7
 			// 
@@ -594,6 +608,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->b_s_lend8->TabIndex = 37;
 			this->b_s_lend8->Text = L"貸し出し";
 			this->b_s_lend8->UseVisualStyleBackColor = true;
+			this->b_s_lend8->Click += gcnew System::EventHandler(this, &ShowForm::b_s_lend8_Click);
 			// 
 			// l_s_bar8
 			// 
@@ -636,6 +651,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->b_s_lend9->TabIndex = 41;
 			this->b_s_lend9->Text = L"貸し出し";
 			this->b_s_lend9->UseVisualStyleBackColor = true;
+			this->b_s_lend9->Click += gcnew System::EventHandler(this, &ShowForm::b_s_lend9_Click);
 			// 
 			// l_s_bar9
 			// 
@@ -678,6 +694,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->b_s_lend10->TabIndex = 45;
 			this->b_s_lend10->Text = L"貸し出し";
 			this->b_s_lend10->UseVisualStyleBackColor = true;
+			this->b_s_lend10->Click += gcnew System::EventHandler(this, &ShowForm::b_s_lend10_Click);
 			// 
 			// l_s_bar10
 			// 
@@ -810,11 +827,33 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			this->l_s_recommendbook->TabIndex = 57;
 			this->l_s_recommendbook->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
+			// l_s_select
+			// 
+			this->l_s_select->AutoSize = true;
+			this->l_s_select->Font = (gcnew System::Drawing::Font(L"ＭＳ 明朝", 12));
+			this->l_s_select->Location = System::Drawing::Point(196, 704);
+			this->l_s_select->Name = L"l_s_select";
+			this->l_s_select->Size = System::Drawing::Size(49, 20);
+			this->l_s_select->TabIndex = 58;
+			this->l_s_select->Text = L"1～1";
+			// 
+			// l_s_lendnum
+			// 
+			this->l_s_lendnum->AutoSize = true;
+			this->l_s_lendnum->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_lendnum->Location = System::Drawing::Point(382, 106);
+			this->l_s_lendnum->Name = L"l_s_lendnum";
+			this->l_s_lendnum->Size = System::Drawing::Size(0, 20);
+			this->l_s_lendnum->TabIndex = 59;
+			this->l_s_lendnum->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// ShowForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(532, 753);
+			this->Controls->Add(this->l_s_lendnum);
+			this->Controls->Add(this->l_s_select);
 			this->Controls->Add(this->l_s_recommendbook);
 			this->Controls->Add(this->l_s_recommend);
 			this->Controls->Add(this->l_s_error);
@@ -878,20 +917,25 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 #pragma endregion
 		private: int choice = 1;
 		private: int pagemax;
+		private: int pagemaxtmp;
 
 		private: void showBook(int num) {
 			//ページ変更
 			l_s_page->Text = msclr::interop::marshal_as<System::String^>(to_string(num)) + "ページ目";
 			page = num;
 
+			lend_Botton_Enable(1);
+
 			//図書一覧変更
 			//ジャンル未選択
 			if (selectgenre == "ジャンルを選択") {
 				//　１番目の表示
 				l_s_book1->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10].title);
+					if (lib[(num - 1) * 10 + 0].rest == 0) { b_s_lend1->Enabled = false; }
 				//　２番目の表示
 				if(lib[(num - 1) * 10 + 1].title != ""){
 					l_s_book2->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 1].title);
+					if (lib[(num - 1) * 10 + 1].rest == 0) { b_s_lend2->Enabled = false; }
 				}
 				else {
 					l_s_book2->Visible = false;
@@ -902,6 +946,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　３番目の表示
 				if (lib[(num - 1) * 10 + 2].title != "") {
 					l_s_book3->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 2].title);
+					if (lib[(num - 1) * 10 + 2].rest == 0) { b_s_lend3->Enabled = false; }
 				}
 				else {
 					l_s_book3->Visible = false;
@@ -912,6 +957,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　４番目の表示
 				if (lib[(num - 1) * 10 + 3].title != "") {
 					l_s_book4->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 3].title);
+					if (lib[(num - 1) * 10 + 3].rest == 0) { b_s_lend4->Enabled = false; }
 				}
 				else {
 					l_s_book4->Visible = false;
@@ -922,6 +968,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　５番目の表示
 				if (lib[(num - 1) * 10 + 4].title != "") {
 					l_s_book5->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 4].title);
+					if (lib[(num - 1) * 10 + 4].rest == 0) { b_s_lend5->Enabled = false; }
 				}
 				else {
 					l_s_book5->Visible = false;
@@ -932,6 +979,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　６番目の表示
 				if (lib[(num - 1) * 10 + 5].title != "") {
 					l_s_book6->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 5].title);
+					if (lib[(num - 1) * 10 + 5].rest == 0) { b_s_lend6->Enabled = false; }
 				}
 				else {
 					l_s_book6->Visible = false;
@@ -942,6 +990,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　７番目の表示
 				if (lib[(num - 1) * 10 + 6].title != "") {
 					l_s_book7->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 6].title);
+					if (lib[(num - 1) * 10 + 6].rest == 0) { b_s_lend7->Enabled = false; }
 				}
 				else {
 					l_s_book7->Visible = false;
@@ -952,6 +1001,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　８番目の表示
 				if (lib[(num - 1) * 10 + 7].title != "") {
 					l_s_book8->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 7].title);
+					if (lib[(num - 1) * 10 + 7].rest == 0) { b_s_lend8->Enabled = false; }
 				}
 				else {
 					l_s_book8->Visible = false;
@@ -962,6 +1012,7 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　９番目の表示
 				if (lib[(num - 1) * 10 + 8].title != "") {
 					l_s_book9->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 8].title);
+					if (lib[(num - 1) * 10 + 8].rest == 0) { b_s_lend9->Enabled = false; };
 				}
 				else {
 					l_s_book9->Visible = false;
@@ -972,6 +1023,8 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　１０番目の表示
 				if (lib[(num - 1) * 10 + 9].title != "") {
 					l_s_book10->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 9].title);
+					//貸し出しボタンの無効化
+					if (lib[(num - 1) * 10 + 9].rest == 0) { b_s_lend10->Enabled = false; }
 				}
 				else {
 					l_s_book10->Visible = false;
@@ -983,9 +1036,13 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			else {
 				//　１番目の表示
 				l_s_book1->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10].title);
+				//貸し出しボタンの無効化
+				if (gen[(num - 1) * 10 + 0].rest == 0) { b_s_lend1->Enabled = false; }
 				//　２番目の表示
 				if (gen[(num - 1) * 10 + 1].title != "") {
 					l_s_book2->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 1].title);
+					//貸し出しボタンの無効化
+					if (gen[(num - 1) * 10 + 1].rest == 0) { b_s_lend2->Enabled = false; }
 				}
 				else {
 					l_s_book2->Visible = false;
@@ -995,6 +1052,8 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				}
 				//　３番目の表示
 				if (gen[(num - 1) * 10 + 2].title != "") {
+					//貸し出しボタンの無効化
+					if (gen[(num - 1) * 10 + 2].rest == 0) { b_s_lend3->Enabled = false; }
 					l_s_book3->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 2].title);
 				}
 				else {
@@ -1006,6 +1065,8 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　４番目の表示
 				if (gen[(num - 1) * 10 + 3].title != "") {
 					l_s_book4->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 3].title);
+					//貸し出しボタンの無効化
+					if (gen[(num - 1) * 10 + 3].rest == 0) { b_s_lend4->Enabled = false; }
 				}
 				else {
 					l_s_book4->Visible = false;
@@ -1016,6 +1077,8 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　５番目の表示
 				if (gen[(num - 1) * 10 + 4].title != "") {
 					l_s_book5->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 4].title);
+					//貸し出しボタンの無効化
+					if (gen[(num - 1) * 10 + 4].rest == 0) { b_s_lend5->Enabled = false; }
 				}
 				else {
 					l_s_book5->Visible = false;
@@ -1026,6 +1089,8 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　６番目の表示
 				if (gen[(num - 1) * 10 + 5].title != "") {
 					l_s_book6->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 5].title);
+					//貸し出しボタンの無効化
+					if (gen[(num - 1) * 10 + 5].rest == 0) { b_s_lend6->Enabled = false; }
 				}
 				else {
 					l_s_book6->Visible = false;
@@ -1036,6 +1101,8 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　７番目の表示
 				if (gen[(num - 1) * 10 + 6].title != "") {
 					l_s_book7->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 6].title);
+					//貸し出しボタンの無効化
+					if (gen[(num - 1) * 10 + 6].rest == 0) { b_s_lend7->Enabled = false; }
 				}
 				else {
 					l_s_book7->Visible = false;
@@ -1046,6 +1113,8 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　８番目の表示
 				if (gen[(num - 1) * 10 + 7].title != "") {
 					l_s_book8->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 7].title);
+					//貸し出しボタンの無効化
+					if (gen[(num - 1) * 10 + 7].rest == 0) { b_s_lend8->Enabled = false; }
 				}
 				else {
 					l_s_book8->Visible = false;
@@ -1056,6 +1125,8 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　９番目の表示
 				if (gen[(num - 1) * 10 + 8].title != "") {
 					l_s_book9->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 8].title);
+					//貸し出しボタンの無効化
+					if (gen[(num - 1) * 10 + 8].rest == 0) { b_s_lend9->Enabled = false; }
 				}
 				else {
 					l_s_book9->Visible = false;
@@ -1066,6 +1137,8 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//　１０番目の表示
 				if (gen[(num - 1) * 10 + 9].title != "") {
 					l_s_book10->Text = msclr::interop::marshal_as<System::String^>(gen[(num - 1) * 10 + 9].title);
+					//貸し出しボタンの無効化
+					if (gen[(num - 1) * 10 + 9].rest == 0) { b_s_lend10->Enabled = false; }
 				}
 				else {
 					l_s_book10->Visible = false;
@@ -1090,6 +1163,163 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			else {
 				b_s_next->Enabled = true;
 			}
+
+			//選択可能なページを表示
+			l_s_select->Text = "1～" + (pagemax + 1);
+			
+		}
+
+		private: void lend_Botton_Enable(bool lchoice) {
+			b_s_lend1->Enabled = lchoice;
+			b_s_lend2->Enabled = lchoice;
+			b_s_lend3->Enabled = lchoice;
+			b_s_lend4->Enabled = lchoice;
+			b_s_lend5->Enabled = lchoice;
+			b_s_lend6->Enabled = lchoice;
+			b_s_lend7->Enabled = lchoice;
+			b_s_lend8->Enabled = lchoice;
+			b_s_lend9->Enabled = lchoice;
+			b_s_lend10->Enabled = lchoice;
+		}
+
+		private: int lend_Click_func(int bnum) {
+			if (System::Windows::Forms::DialogResult::OK == MessageBox::Show(msclr::interop::marshal_as<System::String^>("タイトル" + lib[(page - 1) * 10 + lnum].title) + "を借りますか?", "確認", MessageBoxButtons::OKCancel, MessageBoxIcon::Question)) {
+				std::ofstream uofs("user.csv");
+
+				user[usernum].lendname[user[usernum].books] = lib[(page - 1) * 10 + bnum].title;
+
+				// 現在時刻を取得
+				time_t t = time(NULL);
+
+				// 一週間後の時刻を計算
+				t += (7 * 24 * 60 * 60);
+
+				// 現在時刻をクラスに格納
+				user[usernum].rday[user[usernum].books] = localtime(&t);
+				user[usernum].rday[user[usernum].books]->tm_year += 1900;
+				user[usernum].rday[user[usernum].books]->tm_mon += 1;
+
+				//借りている図書数を＋１
+				user[usernum].books += 1;
+
+				//列名出力
+				uofs << "メールアドレス" << ','
+					<< "パスワード" << ','
+					<< "ジャンル" << ','
+					<< "図書名1" << ','
+					<< "図書名2" << ','
+					<< "図書名3" << ','
+					<< "返却日1" << ','
+					<< "返却日2" << ','
+					<< "返却日3" << ','
+					<< "図書数" << '\n';
+
+				//図書情報出力
+				for (int i = 0; user[i].mail != ""; i++) {
+					uofs << user[i].mail << ',';
+					uofs << user[i].pass << ',';
+					uofs << user[i].genre << ',';
+					uofs << user[i].lendname[0] << ',';
+					uofs << user[i].lendname[1] << ',';
+					uofs << user[i].lendname[2] << ',';
+					for (int j = 0; j < 3; j++) {
+						if (lib[i].aday != NULL) {
+							//年
+							string tmp = to_string(user[i].rday[j]->tm_year);
+							//月
+							if (user[i].rday[j]->tm_mon < 10) { tmp += "0"; }
+							tmp += to_string(user[i].rday[j]->tm_mon);
+							//日
+							if (user[i].rday[j]->tm_mday < 10) { tmp += "0"; }
+							tmp += to_string(user[i].rday[j]->tm_mday);
+							//時
+							if (user[i].rday[j]->tm_hour < 10) { tmp += "0"; }
+							tmp += to_string(user[i].rday[j]->tm_hour);
+							//分
+							if (user[i].rday[j]->tm_min < 10) { tmp += "0"; }
+							tmp += to_string(user[i].rday[j]->tm_min);
+							//秒
+							if (user[i].rday[j]->tm_sec < 10) { tmp += "0"; }
+							tmp += to_string(user[i].rday[j]->tm_sec);
+						}
+						uofs << ',';
+					}
+					uofs << user[i].books << "\n";
+				}
+				uofs.close();
+
+				//図書情報ファイル出力
+				std::ofstream lofs("sample.csv");
+
+				// 現在時刻を取得
+				t = time(NULL);
+
+				// 現在時刻をクラスに格納
+				lib[(page - 1) * 10 + bnum].aday = localtime(&t);
+				lib[(page - 1) * 10 + bnum].aday->tm_year += 1900;
+				lib[(page - 1) * 10 + bnum].aday->tm_mon += 1;
+
+				user[usernum].books += 1;
+
+				lib[(page - 1) * 10 + bnum].lendname = user[usernum].mail;
+				lib[(page - 1) * 10 + bnum].count += 1;
+				lib[(page - 1) * 10 + bnum].rest -= 1;
+
+				//列名を出力
+				lofs << "図書名" << ','
+					<< "ジャンル" << ','
+					<< "出版社" << ','
+					<< "著者" << ','
+					<< "追加日" << ','
+					<< "貸し出た人のメールアドレス" << ','
+					<< "貸し出し回数" << ','
+					<< "残り冊数" << '\n';
+
+				for (int i = 0; i < nummax; i++) {
+					lofs << lib[i].title << ",";
+					lofs << lib[i].genre << ",";
+					lofs << lib[i].pub << ",";
+					lofs << lib[i].writer << ",";
+					if(lib[i].aday != NULL) {
+						//年
+						string tmp = to_string(lib[i].aday->tm_year);
+						//月
+						if (lib[i].aday->tm_mon < 10) { tmp += "0"; }
+						tmp += to_string(lib[i].aday->tm_mon);
+						//日
+						if (lib[i].aday->tm_mday < 10) { tmp += "0"; }
+						tmp += to_string(lib[i].aday->tm_mday);
+						//時
+						if (lib[i].aday->tm_hour < 10) { tmp += "0"; }
+						tmp+= to_string(lib[i].aday->tm_hour);
+						//分
+						if (lib[i].aday->tm_min < 10) { tmp += "0"; }
+						tmp+= to_string(lib[i].aday->tm_min);
+						//秒
+						if (lib[i].aday->tm_sec < 10) { tmp += "0"; }
+						tmp+= to_string(lib[i].aday->tm_sec);
+						lofs << tmp;
+					}
+					lofs << ',';
+					lofs << lib[i].lendname << ",";
+					lofs << lib[i].count << ",";
+					lofs << lib[i].rest << ",";
+					lofs << user[i].books << "\n";
+				}
+				lofs.close();
+				if (user[usernum].books >= 3) {
+					lend_Botton_Enable(0);
+				}
+
+				//借りられる残り冊数の表示を更新
+				l_s_lendnum->Text = "借りられる冊数\n" + user[usernum].books.ToString() + "／3冊";
+
+				return 1;
+			}
+			else {
+				return 0;
+			}
+
 		}
 
 		private: System::Void ShowForm_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -1119,69 +1349,50 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 
 					// ３列目
 					getline(i_stream, str_conma_buf, ',');
-					if (str_conma_buf != "") {
-						//年
-						time = str_conma_buf.substr(0, 4);
-						lib[nummax].rday.tm_year = stoi(time);
-						//月
-						time = str_conma_buf.substr(4, 2);
-						lib[nummax].rday.tm_mon = stoi(time);
-						//日
-						time = str_conma_buf.substr(6, 2);
-						lib[nummax].rday.tm_mday = stoi(time);
-						//時
-						time = str_conma_buf.substr(8, 2);
-						lib[nummax].rday.tm_hour = stoi(time);
-						//分
-						time = str_conma_buf.substr(10, 2);
-						lib[nummax].rday.tm_min = stoi(time);
-						//秒
-						time = str_conma_buf.substr(12, 2);
-						lib[nummax].rday.tm_sec = stoi(time);
-					}
-
-					// ４列目
-					getline(i_stream, str_conma_buf, ',');
 					lib[nummax].pub = str_conma_buf;
 
-					//// ５列目
+					//// ４列目
 					getline(i_stream, str_conma_buf, ',');
 					lib[nummax].writer = str_conma_buf;
 
-					// ６列目
+					// ５列目
+					struct tm tm;
 					getline(i_stream, str_conma_buf, ',');
+
 					if (str_conma_buf != "") {
 						//年
 						time = str_conma_buf.substr(0, 4);
-						lib[nummax].aday.tm_year = stoi(time);
+						tm.tm_year = stoi(time) - 1900;
 						//月
 						time = str_conma_buf.substr(4, 2);
-						lib[nummax].aday.tm_mon = stoi(time);
+						tm.tm_mon = stoi(time);
 						//日
 						time = str_conma_buf.substr(6, 2);
-						lib[nummax].aday.tm_mday = stoi(time);
+						tm.tm_mday = stoi(time);
 						//時
 						time = str_conma_buf.substr(8, 2);
-						lib[nummax].aday.tm_hour = stoi(time);
+						tm.tm_hour = stoi(time);
 						//分
 						time = str_conma_buf.substr(10, 2);
-						lib[nummax].aday.tm_min = stoi(time);
+						tm.tm_min = stoi(time);
 						//秒
 						time = str_conma_buf.substr(12, 2);
-						lib[nummax].aday.tm_sec = stoi(time);
+						tm.tm_sec = stoi(time);
+						time_t timep = mktime(&tm);
+						lib[nummax].aday = localtime(&timep);
 					}
 
-					// ７列目
+					// ６列目
 					getline(i_stream, str_conma_buf, ',');
 					lib[nummax].lendname = str_conma_buf;
 
-					// ８列目
+					// ７列目
 					getline(i_stream, str_conma_buf, ',');
 					if (str_conma_buf != "") {
 						lib[nummax].count = stoi(str_conma_buf);
 					}
 
-					// ９列目
+					// ８列目
 					getline(i_stream, str_conma_buf, ',');
 					if (str_conma_buf != "") {
 						lib[nummax].rest = stoi(str_conma_buf);
@@ -1189,12 +1400,10 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				}
 			}
 			pagemax = (nummax - 1) / 10;
+			pagemaxtmp = pagemax;
 			ifs.close();
 
 			int max = 0;
-			int max1;
-			int max2;
-			int max3;
 			string num1;
 			string num2;
 			string num3;
@@ -1243,6 +1452,14 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 
 			//１ページ目の図書一覧表示
 			showBook(1);
+
+			//貸し出しボタンの有効／無効
+			if (user[usernum].books >= 3) {
+				lend_Botton_Enable(0);
+			}
+
+			//借りられる残り冊数の表示
+			l_s_lendnum->Text = "借りられる冊数\n" + user[usernum].books.ToString() + "／３冊";
 		}
 
 		private: System::Void b_s_search_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1251,13 +1468,18 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 			selectgenre = msclr::interop::marshal_as<string>(c_s_genre->SelectedItem->ToString());
 
 			//選択されたジャンルのクラスに入力
-			for (int i = 0; i != nummax; i++) {
-				if(lib[i].genre == selectgenre) {
-					gen[j] = lib[i];
-					j++;
+			if(selectgenre != "ジャンルを選択") {
+				for (int i = 0; i != nummax; i++) {
+					if (lib[i].genre == selectgenre) {
+						gen[j] = lib[i];
+						j++;
+					}
 				}
+				pagemax = (j - 1) / 10;
 			}
-			pagemax = (j-1) / 10;
+			else {
+				pagemax = pagemaxtmp;
+			}
 
 			//選択されたジャンルの１ページ目を表示
 			showBook(1);
@@ -1273,61 +1495,61 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 		//詳細ラベルクリック
 		private: System::Void ll_s_detailform1_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 0;
-			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
 
 		private: System::Void ll_s_detailform2_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 1;
-			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
 
 		private: System::Void ll_s_detailform3_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 2;
-			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
 
 		private: System::Void ll_s_detailform4_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 3;
-			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
 
 		private: System::Void ll_s_detailform5_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 4;
-			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
 
 		private: System::Void ll_s_detailform6_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 5;
-			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
 
 		private: System::Void ll_s_detailform7_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 6;
-			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
 
 		private: System::Void ll_s_detailform8_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 7;
-			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
 
 		private: System::Void ll_s_detailform9_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 8;
-			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
 
 		private: System::Void ll_s_detailform10_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 9;
-			book_detail_form^ frm_bdf = gcnew book_detail_form();
+			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
 
@@ -1348,19 +1570,20 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 				//テキストボックス入力された数字を数値に変換
 				try {
 					choice = stoi(msclr::interop::marshal_as<string>(t_s_choicepage->Text));
-					l_s_error->Text = "";
+					//入力された数値のページの内容を表示
+					if (1 <= choice && choice <= (pagemax + 1)) {
+						l_s_error->Text = "";
+						showBook(choice);
+					}
+					else {
+						l_s_error->Text = "1～" + (pagemax + 1) + "の範囲で入力してください";
+					}
 				}
 				catch (invalid_argument&) {
-					l_s_error->Text = "error1";
+					l_s_error->Text = "数字を入力してください";
 				}
 
-				//入力された数値のページの内容を表示
-				if (choice <= (pagemax + 1)) {
-					showBook(choice);
-				}
-				else {
-					l_s_error->Text = "error2";
-				}
+
 			}
 		}
 
@@ -1433,6 +1656,69 @@ private: System::Windows::Forms::Label^ l_s_recommendbook;
 		}
 		private: System::Void ll_s_detailform10_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 			ll_s_detailform10->ForeColor = Color::Blue;
+
+		}
+
+		//貸し出しボタン
+		private: System::Void b_s_lend1_Click(System::Object^ sender, System::EventArgs^ e) {
+			bool okBotton = lend_Click_func(0);
+			if(okBotton){
+				b_s_lend1->Enabled = false;
+			}
+		}
+		private: System::Void b_s_lend2_Click(System::Object^ sender, System::EventArgs^ e) {
+			bool okBotton = lend_Click_func(1);
+			if (okBotton) {
+				b_s_lend2->Enabled = false;
+			}
+		}
+		private: System::Void b_s_lend3_Click(System::Object^ sender, System::EventArgs^ e) {
+			bool okBotton = lend_Click_func(2);
+			if (okBotton) {
+				b_s_lend3->Enabled = false;
+			}
+		}
+		private: System::Void b_s_lend4_Click(System::Object^ sender, System::EventArgs^ e) {
+			bool okBotton = lend_Click_func(3);
+			if (okBotton) {
+				b_s_lend4->Enabled = false;
+			}
+		}
+		private: System::Void b_s_lend5_Click(System::Object^ sender, System::EventArgs^ e) {
+			bool okBotton = lend_Click_func(4);
+			if (okBotton) {
+				b_s_lend5->Enabled = false;
+			}
+		}
+		private: System::Void b_s_lend6_Click(System::Object^ sender, System::EventArgs^ e) {
+			bool okBotton = lend_Click_func(5);
+			if (okBotton) {
+				b_s_lend6->Enabled = false;
+			}
+		}
+		private: System::Void b_s_lend7_Click(System::Object^ sender, System::EventArgs^ e) {
+			bool okBotton = lend_Click_func(6);
+			if (okBotton) {
+				b_s_lend7->Enabled = false;
+			}
+		}
+		private: System::Void b_s_lend8_Click(System::Object^ sender, System::EventArgs^ e) {
+			bool okBotton = lend_Click_func(7);
+			if (okBotton) {
+				b_s_lend8->Enabled = false;
+			}
+		}
+		private: System::Void b_s_lend9_Click(System::Object^ sender, System::EventArgs^ e) {
+			bool okBotton = lend_Click_func(8);
+			if (okBotton) {
+				b_s_lend9->Enabled = false;
+			}
+		}
+		private: System::Void b_s_lend10_Click(System::Object^ sender, System::EventArgs^ e) {
+			bool okBotton = lend_Click_func(9);
+			if (okBotton) {
+				b_s_lend10->Enabled = false;
+			}
 		}
 };
 }

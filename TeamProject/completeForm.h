@@ -114,6 +114,8 @@ namespace TeamProject {
 			this->Controls->Add(this->Label_confirmation_header);
 			this->Controls->Add(this->Button_complete_return);
 			this->Controls->Add(this->Label_complete);
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"completeForm";
 			this->Text = L"completeForm";
 			this->Load += gcnew System::EventHandler(this, &completeForm::completeForm_Load);

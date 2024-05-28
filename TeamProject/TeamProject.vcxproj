@@ -125,17 +125,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LibraryForm.cpp" />
-    <ClCompile Include="LoginForm.cpp" />
-    <ClCompile Include="ManagementForm.cpp" />
     <ClCompile Include="ShowForm.cpp" />
-    <ClCompile Include="UserForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="book_detail_form.h">
+    <ClInclude Include="Book_detail_form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="class.h" />
+    <ClInclude Include="class.h">
+      <FileType>CppHeader</FileType>
+    </ClInclude>
     <ClInclude Include="completeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -145,13 +143,7 @@
     <ClInclude Include="LendForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="LibraryForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="LoginForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ManagementForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ShowForm.h">
@@ -160,14 +152,8 @@
     <ClInclude Include="sign up Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="UserForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="book_detail_form.resx">
-      <DependentUpon>book_detail_form.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="completeForm.resx">
       <DependentUpon>completeForm.h</DependentUpon>
     </EmbeddedResource>

@@ -5,6 +5,7 @@
 #include "confirmationForm.h"
 #include <string>
 #include "class.h"
+#include "completeForm.h"
 
 using namespace std;
 
@@ -214,7 +215,7 @@ namespace TeamProject {
 			// 
 			this->Label_sign_up_error1->AutoSize = true;
 			this->Label_sign_up_error1->ForeColor = System::Drawing::Color::Red;
-			this->Label_sign_up_error1->Location = System::Drawing::Point(70, 290);
+			this->Label_sign_up_error1->Location = System::Drawing::Point(70, 275);
 			this->Label_sign_up_error1->Name = L"Label_sign_up_error1";
 			this->Label_sign_up_error1->Size = System::Drawing::Size(246, 15);
 			this->Label_sign_up_error1->TabIndex = 11;
@@ -226,7 +227,7 @@ namespace TeamProject {
 			// 
 			this->Label_sign_up_error2->AutoSize = true;
 			this->Label_sign_up_error2->ForeColor = System::Drawing::Color::Red;
-			this->Label_sign_up_error2->Location = System::Drawing::Point(32, 231);
+			this->Label_sign_up_error2->Location = System::Drawing::Point(17, 275);
 			this->Label_sign_up_error2->Name = L"Label_sign_up_error2";
 			this->Label_sign_up_error2->Size = System::Drawing::Size(340, 15);
 			this->Label_sign_up_error2->TabIndex = 12;
@@ -261,8 +262,11 @@ namespace TeamProject {
 			this->Controls->Add(this->Label_password);
 			this->Controls->Add(this->Label_Email);
 			this->Controls->Add(this->Label_sign_up);
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"signupForm";
 			this->Text = L"signupForm";
+			this->Load += gcnew System::EventHandler(this, &signupForm::signupForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -303,19 +307,26 @@ namespace TeamProject {
 				this->Label_sign_up_error1->Visible = false;
 				this->Label_sign_up_error2->Visible = false;
 				confirmationForm^ frma = gcnew confirmationForm();
-				completeForm^ frmb = gcnew completeForm();
-				frmb->FormClosed += gcnew FormClosedEventHandler(this, &signupForm::Close);
+				frma->FormClosed += gcnew FormClosedEventHandler(this, &signupForm::Close);
 				frma->ShowDialog();
 			}
 		}
 		private: void signupForm::Close(Object^ sender, FormClosedEventArgs^ e) {
-			signupForm::Close();
-			MessageBox::Show("ok");
+			if (close == 1) {
+				this->Visible = false;
+				//completeForm^ frm = gcnew completeForm();
+				//frm->Show();
+			}
 		}
 		private: System::Void Button_confirmation_sign_up_Click(System::Object^ sender, System::EventArgs^ e) {
 			this->Close();
 		}
 private: System::Void Label_sign_up_error1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void signupForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->Visible = true;
+	this->TextBox_Email-> Text = "";
+	this->TextBox_password->Text = "";
 }
 };
 }

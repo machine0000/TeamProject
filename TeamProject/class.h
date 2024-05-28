@@ -9,7 +9,7 @@ public:
 	string pass;
 	string genre;
 	string lendname[3];
-	tm rday[3];
+	tm* rday[3];
 	int books;
 };
 User user[100];
@@ -18,10 +18,9 @@ class Libraly {
 public:
 	string title;
 	string genre;
-	tm rday;
 	string pub;
 	string writer;
-	tm aday;
+	tm* aday;
 	string lendname;
 	int count;
 	int rest;
@@ -34,3 +33,4 @@ int page = 1;
 int lnum = 0;
 int nummax = 0;
 int usernum = 0;
+int usermax = 0;

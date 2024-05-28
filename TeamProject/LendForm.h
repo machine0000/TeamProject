@@ -1,6 +1,9 @@
 #pragma once
-//#include "class.h"
+#include "class.h"
 #include <msclr/marshal_cppstd.h>
+#include <iostream>
+#include <chrono>
+#include <ctime>
 
 
 namespace TeamProject {
@@ -64,6 +67,9 @@ namespace TeamProject {
 	private: System::Windows::Forms::Label^ l_l_booktitle1;
 	private: System::Windows::Forms::Label^ le_l_header;
 	private: System::Windows::Forms::Label^ l_l_not;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
 
 
 
@@ -103,6 +109,9 @@ namespace TeamProject {
 			this->l_l_booktitle1 = (gcnew System::Windows::Forms::Label());
 			this->le_l_header = (gcnew System::Windows::Forms::Label());
 			this->l_l_not = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// l_b_return
@@ -269,11 +278,48 @@ namespace TeamProject {
 			this->l_l_not->Text = L"ŽØ‚è‚Ä‚¢‚é–{‚Í‚ ‚è‚Ü‚¹‚ñ";
 			this->l_l_not->Visible = false;
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Cursor = System::Windows::Forms::Cursors::WaitCursor;
+			this->label1->ForeColor = System::Drawing::Color::Red;
+			this->label1->Location = System::Drawing::Point(145, 138);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(110, 12);
+			this->label1->TabIndex = 19;
+			this->label1->Text = L"•Ô‹p“ú‚ð‰ß‚¬‚Ä‚¢‚Ü‚·";
+			this->label1->Visible = false;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->ForeColor = System::Drawing::Color::Red;
+			this->label2->Location = System::Drawing::Point(145, 220);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(110, 12);
+			this->label2->TabIndex = 20;
+			this->label2->Text = L"•Ô‹p“ú‚ð‰ß‚¬‚Ä‚¢‚Ü‚·";
+			this->label2->Visible = false;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->ForeColor = System::Drawing::Color::Red;
+			this->label3->Location = System::Drawing::Point(145, 279);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(110, 12);
+			this->label3->TabIndex = 21;
+			this->label3->Text = L"•Ô‹p“ú‚ð‰ß‚¬‚Ä‚¢‚Ü‚·";
+			this->label3->Visible = false;
+			// 
 			// LendForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(421, 363);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->l_l_not);
 			this->Controls->Add(this->le_l_header);
 			this->Controls->Add(this->le_l_copyright);
@@ -301,39 +347,66 @@ namespace TeamProject {
 
 		}
 #pragma endregion
-		private: System::Void Reset() {//label‚ð‰Šú‰»‚·‚éŠÖ”
+		//label‚ð‰Šú‰»‚·‚éŠÖ”
+		 void Reset() {
 			this->l_l_booktitle1->Visible = false;
 			this->l_l_returnday1->Visible = false;
 			this->l_l_lendbook1->Text = "";
 			this->l_l_day1->Text = "";
+			this->label1->Visible = false;
 			this->l_l_booktitle2->Visible = false;
 			this->l_l_returnday2->Visible = false;
 			this->l_l_lendbook2->Text = "";
 			this->l_l_day2->Text = "";
+			this->label2->Visible = false;
 			this->l_l_booktitle3->Visible = false;
 			this->l_l_returnday3->Visible = false;
 			this->l_l_lendbook3->Text = "";
 			this->l_l_day3->Text = "";
+			this->label3->Visible = false;
 			this->l_l_not->Visible = false;
 		}
 
-	private: System::Void Showbookday(int booknum) {//ŽØ‚è‚Ä‚¢‚éû”‚É‰ž‚¶‚Älabel‚É’l‚ð“ü‚ê•\Ž¦‚·‚éŠÖ”
+		 //tmŒ^‚ðstringŒ^‚É•ÏŠ·‚·‚éŠÖ”
+		 string Day(int d) {
+			 string day = to_string(user[usernum].rday[d]->tm_year);
+			 day.append(to_string(user[usernum].rday[d]->tm_mon));
+			 day.append(to_string(user[usernum].rday[d]->tm_mday));
+			 day.append(to_string(user[usernum].rday[d]->tm_hour));
+			 day.append(to_string(user[usernum].rday[d]->tm_min));
+			 day.append(to_string(user[usernum].rday[d]->tm_sec));
+			 return day;
+		 }
+
+		 //ŽØ‚è‚Ä‚¢‚éû”‚É‰ž‚¶‚Älabel‚É’l‚ð“ü‚ê•\Ž¦‚·‚éŠÖ”
+	void Showbookday(int booknum) {
+		time_t t = time(nullptr);
+		tm* now = localtime(&t);
 		switch (booknum) {
 		case 3:
 			this->l_l_booktitle3->Visible = true;
 			this->l_l_returnday3->Visible = true;
-			//this->l_l_lendbook3->Text = msclr::interop::marshal_as<System::String^>(user.lib[2]);
-			//this->l_l_day3->Text = msclr::interop::marshal_as<System::String^>(user.rday[2]);
+			this->l_l_lendbook3->Text = msclr::interop::marshal_as<System::String^>(user[usernum].lendname[2]);
+			this->l_l_day3->Text = msclr::interop::marshal_as<System::String^>(Day(2));
+			if (mktime(now) > mktime(user[usernum].rday[2])) {
+				this->label3->Visible = true;
+			}
 		case 2:
 			this->l_l_booktitle2->Visible = true;
 			this->l_l_returnday2->Visible = true;
-			//this->l_l_lendbook2->Text = msclr::interop::marshal_as<System::String^>(user.lib[1]);
-			//this->l_l_day2->Text = msclr::interop::marshal_as<System::String^>(user.rday[1]);
+			this->l_l_lendbook2->Text = msclr::interop::marshal_as<System::String^>(user[usernum].lendname[1]);
+			this->l_l_day2->Text = msclr::interop::marshal_as<System::String^>(Day(1));
+			if (mktime(now) > mktime(user[usernum].rday[1])) {
+				this->label2->Visible = true;
+			}
 		case 1:
 			this->l_l_booktitle1->Visible = true;
 			this->l_l_returnday1->Visible = true;
-			//this->l_l_lendbook1->Text = msclr::interop::marshal_as<System::String^>(user.lib[0]);
-			//this->l_l_day1->Text = msclr::interop::marshal_as<System::String^>(user.rday[0]);
+			this->l_l_lendbook1->Text = msclr::interop::marshal_as<System::String^>(user[usernum].lendname[0]);
+			this->l_l_day1->Text = msclr::interop::marshal_as<System::String^>(Day(0));
+			if (mktime(now) > mktime(user[usernum].rday[0])) {
+				this->label1->Visible = true;
+			}
 			break;
 		default :
 			this->l_l_not->Visible = true;
@@ -344,7 +417,7 @@ namespace TeamProject {
 	
 	private: System::Void LendForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		Reset();
-		//Showbookday(user.count);
+		Showbookday(user[usernum].books);
 	}
 
 	private: System::Void l_b_return_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -10,6 +10,7 @@ using namespace std;
 string Email = "";
 string pass = "";
 string Genre = "";
+int close = 0;
 namespace TeamProject {
 
 	using namespace System;
@@ -75,7 +76,7 @@ namespace TeamProject {
 		/// <summary>
 		/// 必要なデザイナー変数です。
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -228,6 +229,8 @@ namespace TeamProject {
 			this->Controls->Add(this->Label_confirmation_Email);
 			this->Controls->Add(this->Label_confirmation);
 			this->Controls->Add(this->Label_confirmation_sing_up);
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"confirmationForm";
 			this->Text = L"confirmationForm";
 			this->Load += gcnew System::EventHandler(this, &confirmationForm::confirmationForm_Load);
@@ -236,42 +239,70 @@ namespace TeamProject {
 
 		}
 #pragma endregion
-	
-private: System::Void confirmationForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	this->TextBox_confirmation_Email->Text = msclr::interop::marshal_as<System::String^>(Email);
-	this->TextBox_confirmation_password->Text = msclr::interop::marshal_as<System::String^>(pass);
-	this->ComboBox_confirmation_Genre->Text = msclr::interop::marshal_as<System::String^>(Genre);
-}
-private: System::Void Button_return_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-private: System::Void Button_confirmation_sign_up_Click(System::Object^ sender, System::EventArgs^ e) {
-	std::ofstream ofs("user.csv");
-	user[nummax].mail = Email;
-	user[nummax].pass = pass;
-	user[nummax].genre = Genre;
-	for (int i = 0; i <= nummax; i++) {
-	 ofs << user[i].mail << ',';
-	ofs << user[i].pass << ',';
-	ofs << user[i].genre << ',';
-	ofs << user[i].lendname[0]<< ',';
-	ofs << user[i].lendname[1] << ',';
-	ofs << user[i].lendname[2] << ',';
-	for (int j = 0; j < 3; j++) {	  
-		ofs << to_string(user[i].rday[j].tm_year);
-		ofs << to_string(user[i].rday[j].tm_mon);
-		ofs << to_string(user[i].rday[j].tm_mday);
-		ofs << to_string(user[i].rday[j].tm_hour);
-		ofs << to_string(user[i].rday[j].tm_min);
-		ofs << to_string(user[i].rday[j].tm_sec) << ',';
-	}
-	ofs << user[i].books << "\n";
-}
-	
-	completeForm^ frm = gcnew completeForm();
-	frm->Show();
 
-	this->Close();
-}
-};
+	private: System::Void confirmationForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->TextBox_confirmation_Email->Text = msclr::interop::marshal_as<System::String^>(Email);
+		this->TextBox_confirmation_password->Text = msclr::interop::marshal_as<System::String^>(pass);
+		this->ComboBox_confirmation_Genre->Text = msclr::interop::marshal_as<System::String^>(Genre);
+	}
+	private: System::Void Button_return_Click(System::Object^ sender, System::EventArgs^ e) {
+		close = 0;
+		this->Close();
+	}
+	private: System::Void Button_confirmation_sign_up_Click(System::Object^ sender, System::EventArgs^ e) {
+		std::ofstream ofs("user.csv");
+		user[nummax].mail = Email;
+		user[nummax].pass = pass;
+		user[nummax].genre = Genre;
+		for (int i = 0; i <= nummax; i++) {
+			if (i == 0) {
+				ofs << "メールアドレス" << ',';
+				ofs << "パスワード" << ',';
+				ofs << "ジャンル" << ',';
+				ofs << "図書名1" << ',';
+				ofs << "図書名2" << ',';
+				ofs << "図書名3" << ',';
+				ofs << "返却日1" << ',';
+				ofs << "返却日2" << ',';
+				ofs << "返却日3" << ',';
+				ofs << "図書数" << '\n';
+			}
+			ofs << user[i].mail << ',';
+			ofs << user[i].pass << ',';
+			ofs << user[i].genre << ',';
+			ofs << user[i].lendname[0] << ',';
+			ofs << user[i].lendname[1] << ',';
+			ofs << user[i].lendname[2] << ',';
+			for (int j = 0; j < 3; j++) {
+				if (user[i].rday[j] != NULL) {
+					//年
+					string tmp = to_string(user[i].rday[j]->tm_year);
+					//月
+					if (user[i].rday[j]->tm_mon < 10) { tmp += "0"; }
+					tmp += to_string(user[i].rday[j]->tm_mon);
+					//日
+					if (user[i].rday[j]->tm_mday < 10) { tmp += "0"; }
+					tmp += to_string(user[i].rday[j]->tm_mday);
+					//時
+					if (user[i].rday[j]->tm_hour < 10) { tmp += "0"; }
+					tmp += to_string(user[i].rday[j]->tm_hour);
+					//分
+					if (user[i].rday[j]->tm_min < 10) { tmp += "0"; }
+					tmp += to_string(user[i].rday[j]->tm_min);
+					//秒
+					if (user[i].rday[j]->tm_sec < 10) { tmp += "0"; }
+					tmp += to_string(user[i].rday[j]->tm_sec);
+					ofs << tmp;
+				}
+				ofs <<  ',';
+			}
+			ofs << user[i].books << "\n";
+			close = 1;
+			this->Close();
+			completeForm^ frm = gcnew completeForm();
+			frm->Show();
+
+		}
+	}
+	};
 }
