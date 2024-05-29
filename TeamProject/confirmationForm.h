@@ -251,10 +251,10 @@ namespace TeamProject {
 	}
 	private: System::Void Button_confirmation_sign_up_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::ofstream ofs("user.csv");
-		user[nummax].mail = Email;
-		user[nummax].pass = pass;
-		user[nummax].genre = Genre;
-		for (int i = 0; i <= nummax; i++) {
+		user[usermax].mail = Email;
+		user[usermax].pass = pass;
+		user[usermax].genre = Genre;
+		for (int i = 0; i <= usermax; i++) {
 			if (i == 0) {
 				ofs << "メールアドレス" << ',';
 				ofs << "パスワード" << ',';
