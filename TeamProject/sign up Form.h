@@ -283,7 +283,7 @@ namespace TeamProject {
 			int space1 = pass.find(" ");
 			int space2 = Email.find(" ");
 			int check = 0;
-			for (int i = 0; i < nummax; i++) {
+			for (int i = 0; i < usermax; i++) {
 				if (Email == user[i].mail) {
 					check = 1;
 					break;

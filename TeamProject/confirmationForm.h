@@ -254,7 +254,8 @@ namespace TeamProject {
 		user[usermax].mail = Email;
 		user[usermax].pass = pass;
 		user[usermax].genre = Genre;
-		for (int i = 0; i <= usermax; i++) {
+		usermax += 1;
+		for (int i = 0; i < usermax; i++) {
 			if (i == 0) {
 				ofs << "メールアドレス" << ',';
 				ofs << "パスワード" << ',';

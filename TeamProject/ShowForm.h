@@ -1,3 +1,6 @@
+/*
+* ì¬Ò@ìR
+*/
 #pragma once
 #include <string>
 #include <fstream>
