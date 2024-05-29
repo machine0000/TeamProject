@@ -234,7 +234,8 @@ namespace TeamProject {
 			this->b_lo_check->TabIndex = 12;
 			this->b_lo_check->Text = L"確認";
 			this->b_lo_check->UseVisualStyleBackColor = true;
-			this->b_lo_check->Click += gcnew System::EventHandler(this, &LoginForm::b_lo_check_Click);
+			this->b_lo_check->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &LoginForm::b_lo_check_MouseDown);
+			this->b_lo_check->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &LoginForm::b_lo_check_MouseUp);
 			// 
 			// LoginForm
 			// 
@@ -265,10 +266,10 @@ namespace TeamProject {
 
 		}
 #pragma endregion
-		private: System::Void b_l_signup_Click(System::Object^ sender, System::EventArgs^ e) {   //新規登録画面へ遷移
-			signupForm^ frm = gcnew signupForm();
-			frm->ShowDialog();
-		}
+	private: System::Void b_l_signup_Click(System::Object^ sender, System::EventArgs^ e) {   //新規登録画面へ遷移
+		signupForm^ frm = gcnew signupForm();
+		frm->ShowDialog();
+	}
 
 	private: System::Void b_l_login_Click(System::Object^ sender, System::EventArgs^ e) {   //ログイン処理を実行
 		this->l_l_error1->Visible = false;
@@ -303,19 +304,9 @@ namespace TeamProject {
 			}
 		}
 	}
-		  private:void LoginForm::Close(Object^ sender, FormClosedEventArgs^ e) {
-			 LoginForm::Close();
-		  }
-	private: System::Void LoginForm_Load(System::Object^ sender, System::EventArgs^ e) {   
-
-		
-		
-
+	private:void LoginForm::Close(Object^ sender, FormClosedEventArgs^ e) {
+		LoginForm::Close();
 	}
-	private: System::Void b_lo_check_Click(System::Object^ sender, System::EventArgs^ e) {   //確認ボタン（パスワードを表示）
-		this->t_l_password->PasswordChar = '\0';
-	}
-
 
 	private: System::Void LoginForm_Load_1(System::Object^ sender, System::EventArgs^ e) {   //ユーザーファイル読み込み・クラスに格納
 		std::string str_buf;
@@ -378,6 +369,12 @@ namespace TeamProject {
 			}
 		}
 		ifs.close();
+	}
+	private: System::Void b_lo_check_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->t_l_password->PasswordChar = '\0';
+	}
+	private: System::Void b_lo_check_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		this->t_l_password->PasswordChar = '*';
 	}
 };
 }

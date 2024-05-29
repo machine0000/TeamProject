@@ -299,10 +299,9 @@ namespace TeamProject {
 			ofs << user[i].books << "\n";
 			close = 1;
 			this->Close();
-			completeForm^ frm = gcnew completeForm();
-			frm->Show();
-
 		}
+		completeForm^ frm = gcnew completeForm();
+		frm->Show();
 	}
 	};
 }

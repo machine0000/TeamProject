@@ -1350,6 +1350,30 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 
 		}
 
+		private: void t_s_choicepage_KeyPress(System::Object^ senderr, KeyPressEventArgs^ e)
+		{
+			if (e->KeyChar == '\r') // Enterキーが押された場合
+			{
+				//テキストボックス入力された数字を数値に変換
+				try {
+					choice = stoi(msclr::interop::marshal_as<string>(t_s_choicepage->Text));
+					//入力された数値のページの内容を表示
+					if (1 <= choice && choice <= (pagemax + 1)) {
+						l_s_error->Text = "";
+						showBook(choice);
+					}
+					else {
+						l_s_error->Text = "1～" + (pagemax + 1) + "の範囲で入力してください";
+					}
+				}
+				catch (invalid_argument&) {
+					l_s_error->Text = "数字を入力してください";
+				}
+
+
+			}
+		}
+
 		private: System::Void ShowForm_Load(System::Object^ sender, System::EventArgs^ e) {
 			//図書クラスのファイル入力
 			string str_buf;
@@ -1577,30 +1601,6 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 		private: System::Void b_s_next_Click(System::Object^ sender, System::EventArgs^ e) {
 			//次ページの一覧に更新
 			showBook(page + 1);
-		}
-
-		private: void t_s_choicepage_KeyPress(System::Object^ senderr, KeyPressEventArgs^ e)
-		{
-			if (e->KeyChar == '\r') // Enterキーが押された場合
-			{
-				//テキストボックス入力された数字を数値に変換
-				try {
-					choice = stoi(msclr::interop::marshal_as<string>(t_s_choicepage->Text));
-					//入力された数値のページの内容を表示
-					if (1 <= choice && choice <= (pagemax + 1)) {
-						l_s_error->Text = "";
-						showBook(choice);
-					}
-					else {
-						l_s_error->Text = "1～" + (pagemax + 1) + "の範囲で入力してください";
-					}
-				}
-				catch (invalid_argument&) {
-					l_s_error->Text = "数字を入力してください";
-				}
-
-
-			}
 		}
 
 		//詳細ラベルをマウスカーソルにより色変更

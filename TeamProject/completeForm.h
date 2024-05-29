@@ -118,6 +118,7 @@ namespace TeamProject {
 			this->MinimizeBox = false;
 			this->Name = L"completeForm";
 			this->Text = L"completeForm";
+			this->TopMost = true;
 			this->Load += gcnew System::EventHandler(this, &completeForm::completeForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
