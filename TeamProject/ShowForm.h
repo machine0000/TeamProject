@@ -915,26 +915,36 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 
 		}
 #pragma endregion
+		//選択変数
 		private: int choice = 1;
+		//最大ページ数変数
 		private: int pagemax;
+		//最大ページ数一時保存用変数
 		private: int pagemaxtmp;
 
 		private: void showBook(int num) {
 			//ページ変更
 			l_s_page->Text = msclr::interop::marshal_as<System::String^>(to_string(num)) + "ページ目";
 			page = num;
-
-			lend_Botton_Enable(1);
+			//すべての貸し出しボタンの有効化することで初期化／３冊以上借りている場合はすべて無効化
+			if (user[usernum].books >= 3) {
+				lend_Botton_Enable(0);
+			}
+			else {
+				lend_Botton_Enable(1);
+			}
 
 			//図書一覧変更
 			//ジャンル未選択
 			if (selectgenre == "ジャンルを選択") {
 				//　１番目の表示
 				l_s_book1->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10].title);
-					if (lib[(num - 1) * 10 + 0].rest == 0) { b_s_lend1->Enabled = false; }
+				//貸し出しボタンの無効化
+				if (lib[(num - 1) * 10 + 0].rest == 0) { b_s_lend1->Enabled = false; }
 				//　２番目の表示
 				if(lib[(num - 1) * 10 + 1].title != ""){
 					l_s_book2->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 1].title);
+					//貸し出しボタンの無効化
 					if (lib[(num - 1) * 10 + 1].rest == 0) { b_s_lend2->Enabled = false; }
 				}
 				else {
@@ -946,6 +956,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 				//　３番目の表示
 				if (lib[(num - 1) * 10 + 2].title != "") {
 					l_s_book3->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 2].title);
+					//貸し出しボタンの無効化
 					if (lib[(num - 1) * 10 + 2].rest == 0) { b_s_lend3->Enabled = false; }
 				}
 				else {
@@ -957,6 +968,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 				//　４番目の表示
 				if (lib[(num - 1) * 10 + 3].title != "") {
 					l_s_book4->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 3].title);
+					//貸し出しボタンの無効化
 					if (lib[(num - 1) * 10 + 3].rest == 0) { b_s_lend4->Enabled = false; }
 				}
 				else {
@@ -968,6 +980,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 				//　５番目の表示
 				if (lib[(num - 1) * 10 + 4].title != "") {
 					l_s_book5->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 4].title);
+					//貸し出しボタンの無効化
 					if (lib[(num - 1) * 10 + 4].rest == 0) { b_s_lend5->Enabled = false; }
 				}
 				else {
@@ -979,6 +992,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 				//　６番目の表示
 				if (lib[(num - 1) * 10 + 5].title != "") {
 					l_s_book6->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 5].title);
+					//貸し出しボタンの無効化
 					if (lib[(num - 1) * 10 + 5].rest == 0) { b_s_lend6->Enabled = false; }
 				}
 				else {
@@ -990,6 +1004,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 				//　７番目の表示
 				if (lib[(num - 1) * 10 + 6].title != "") {
 					l_s_book7->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 6].title);
+					//貸し出しボタンの無効化
 					if (lib[(num - 1) * 10 + 6].rest == 0) { b_s_lend7->Enabled = false; }
 				}
 				else {
@@ -1001,6 +1016,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 				//　８番目の表示
 				if (lib[(num - 1) * 10 + 7].title != "") {
 					l_s_book8->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 7].title);
+					//貸し出しボタンの無効化
 					if (lib[(num - 1) * 10 + 7].rest == 0) { b_s_lend8->Enabled = false; }
 				}
 				else {
@@ -1012,6 +1028,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 				//　９番目の表示
 				if (lib[(num - 1) * 10 + 8].title != "") {
 					l_s_book9->Text = msclr::interop::marshal_as<System::String^>(lib[(num - 1) * 10 + 8].title);
+					//貸し出しボタンの無効化
 					if (lib[(num - 1) * 10 + 8].rest == 0) { b_s_lend9->Enabled = false; };
 				}
 				else {
@@ -1169,6 +1186,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 			
 		}
 
+		//すべての貸し出しボタンの有効／無効化
 		private: void lend_Botton_Enable(bool lchoice) {
 			b_s_lend1->Enabled = lchoice;
 			b_s_lend2->Enabled = lchoice;
@@ -1182,10 +1200,13 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 			b_s_lend10->Enabled = lchoice;
 		}
 
-		private: int lend_Click_func(int bnum) {
+		private: bool lend_Click_func(int bnum) {
 			if (System::Windows::Forms::DialogResult::OK == MessageBox::Show(msclr::interop::marshal_as<System::String^>("タイトル" + lib[(page - 1) * 10 + lnum].title) + "を借りますか?", "確認", MessageBoxButtons::OKCancel, MessageBoxIcon::Question)) {
+				
+				//ユーザー情報ファイルオープン
 				std::ofstream uofs("user.csv");
 
+				//ユーザークラスの借りている本のタイトルを更新
 				user[usernum].lendname[user[usernum].books] = lib[(page - 1) * 10 + bnum].title;
 
 				// 現在時刻を取得
@@ -1214,7 +1235,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 					<< "返却日3" << ','
 					<< "図書数" << '\n';
 
-				//図書情報出力
+				//ユーザー情報出力
 				for (int i = 0; user[i].mail != ""; i++) {
 					uofs << user[i].mail << ',';
 					uofs << user[i].pass << ',';
@@ -1223,9 +1244,10 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 					uofs << user[i].lendname[1] << ',';
 					uofs << user[i].lendname[2] << ',';
 					for (int j = 0; j < 3; j++) {
-						if (lib[i].aday != NULL) {
+						if (user[i].rday[j] != NULL) {
+							string tmp;
 							//年
-							string tmp = to_string(user[i].rday[j]->tm_year);
+							tmp = to_string(user[i].rday[j]->tm_year);
 							//月
 							if (user[i].rday[j]->tm_mon < 10) { tmp += "0"; }
 							tmp += to_string(user[i].rday[j]->tm_mon);
@@ -1241,14 +1263,16 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 							//秒
 							if (user[i].rday[j]->tm_sec < 10) { tmp += "0"; }
 							tmp += to_string(user[i].rday[j]->tm_sec);
+							uofs << tmp;
 						}
 						uofs << ',';
 					}
+					//改行
 					uofs << user[i].books << "\n";
 				}
 				uofs.close();
 
-				//図書情報ファイル出力
+				//図書情報ファイルオープン
 				std::ofstream lofs("sample.csv");
 
 				// 現在時刻を取得
@@ -1259,8 +1283,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 				lib[(page - 1) * 10 + bnum].aday->tm_year += 1900;
 				lib[(page - 1) * 10 + bnum].aday->tm_mon += 1;
 
-				user[usernum].books += 1;
-
+				//クラスの図書情報更新
 				lib[(page - 1) * 10 + bnum].lendname = user[usernum].mail;
 				lib[(page - 1) * 10 + bnum].count += 1;
 				lib[(page - 1) * 10 + bnum].rest -= 1;
@@ -1275,6 +1298,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 					<< "貸し出し回数" << ','
 					<< "残り冊数" << '\n';
 
+				//図書情報出力
 				for (int i = 0; i < nummax; i++) {
 					lofs << lib[i].title << ",";
 					lofs << lib[i].genre << ",";
@@ -1282,7 +1306,8 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 					lofs << lib[i].writer << ",";
 					if(lib[i].aday != NULL) {
 						//年
-						string tmp = to_string(lib[i].aday->tm_year);
+						string tmp;
+						tmp = to_string(lib[i].aday->tm_year);
 						//月
 						if (lib[i].aday->tm_mon < 10) { tmp += "0"; }
 						tmp += to_string(lib[i].aday->tm_mon);
@@ -1303,10 +1328,11 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 					lofs << ',';
 					lofs << lib[i].lendname << ",";
 					lofs << lib[i].count << ",";
-					lofs << lib[i].rest << ",";
-					lofs << user[i].books << "\n";
+					lofs << lib[i].rest << "\n";
 				}
 				lofs.close();
+
+				//もし3冊以上借りている場合は貸し出しボタンをすべて無効化
 				if (user[usernum].books >= 3) {
 					lend_Botton_Enable(0);
 				}
@@ -1314,9 +1340,11 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 				//借りられる残り冊数の表示を更新
 				l_s_lendnum->Text = "借りられる冊数\n" + user[usernum].books.ToString() + "／3冊";
 
+				//確認でOKボタンを押下している場合、trueを戻り値とする
 				return 1;
 			}
 			else {
+				//確認でキャンセルまたは×ボタンを押下している場合、falseを戻り値とする。
 				return 0;
 			}
 
@@ -1358,7 +1386,6 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 					// ５列目
 					struct tm tm;
 					getline(i_stream, str_conma_buf, ',');
-
 					if (str_conma_buf != "") {
 						//年
 						time = str_conma_buf.substr(0, 4);
@@ -1402,11 +1429,6 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 			pagemax = (nummax - 1) / 10;
 			pagemaxtmp = pagemax;
 			ifs.close();
-
-			int max = 0;
-			string num1;
-			string num2;
-			string num3;
 
 			//おすすめ表示
 			int buf[100][2];
@@ -1459,7 +1481,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 			}
 
 			//借りられる残り冊数の表示
-			l_s_lendnum->Text = "借りられる冊数\n" + user[usernum].books.ToString() + "／３冊";
+			l_s_lendnum->Text = "借りられる冊数\n" + user[usernum].books.ToString() + "／3冊";
 		}
 
 		private: System::Void b_s_search_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1475,9 +1497,11 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 						j++;
 					}
 				}
+				//選択されたジャンルの最大ページ数に更新
 				pagemax = (j - 1) / 10;
 			}
 			else {
+				//ジャンルが選択されていないとき、一時保存していた最大ページ数に更新
 				pagemax = pagemaxtmp;
 			}
 
@@ -1498,61 +1522,53 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
-
 		private: System::Void ll_s_detailform2_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 1;
 			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
-
 		private: System::Void ll_s_detailform3_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 2;
 			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
-
 		private: System::Void ll_s_detailform4_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 3;
 			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
-
 		private: System::Void ll_s_detailform5_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 4;
 			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
-
 		private: System::Void ll_s_detailform6_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 5;
 			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
-
 		private: System::Void ll_s_detailform7_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 6;
 			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
-
 		private: System::Void ll_s_detailform8_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 7;
 			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
-
 		private: System::Void ll_s_detailform9_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 8;
 			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
-
 		private: System::Void ll_s_detailform10_Click(System::Object^ sender, System::EventArgs^ e) {
 			lnum = 9;
 			Book_detail_form^ frm_bdf = gcnew Book_detail_form();
 			frm_bdf->ShowDialog();
 		}
-
+		
+		//前次ボタン
 		private: System::Void b_s_previous_Click(System::Object^ sender, System::EventArgs^ e) {
 			//前ページの一覧に更新
 			showBook(page - 1);

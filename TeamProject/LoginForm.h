@@ -149,6 +149,7 @@ namespace TeamProject {
 			// l_l_error1
 			// 
 			this->l_l_error1->AutoSize = true;
+			this->l_l_error1->ForeColor = System::Drawing::Color::Red;
 			this->l_l_error1->Location = System::Drawing::Point(155, 230);
 			this->l_l_error1->Name = L"l_l_error1";
 			this->l_l_error1->Size = System::Drawing::Size(249, 15);
@@ -159,6 +160,7 @@ namespace TeamProject {
 			// l_l_error2
 			// 
 			this->l_l_error2->AutoSize = true;
+			this->l_l_error2->ForeColor = System::Drawing::Color::Red;
 			this->l_l_error2->Location = System::Drawing::Point(155, 245);
 			this->l_l_error2->Name = L"l_l_error2";
 			this->l_l_error2->Size = System::Drawing::Size(391, 15);
@@ -169,6 +171,7 @@ namespace TeamProject {
 			// l_l_error3
 			// 
 			this->l_l_error3->AutoSize = true;
+			this->l_l_error3->ForeColor = System::Drawing::Color::Red;
 			this->l_l_error3->Location = System::Drawing::Point(155, 260);
 			this->l_l_error3->Name = L"l_l_error3";
 			this->l_l_error3->Size = System::Drawing::Size(287, 15);
@@ -272,8 +275,9 @@ namespace TeamProject {
 		this->l_l_error2->Visible = false;
 		this->l_l_error3->Visible = false;
 		for (int i = 0; i < usermax; i++) {
-			size_t Password = user[i].pass.length();
-			if(t_l_mail->Text=="kanri"&&t_l_password->Text=="abcd1234") {   //ä«óùé“âÊñ Ç…ëJà⁄
+			pass = msclr::interop::marshal_as<std::string>(t_l_password->Text);
+			size_t Password = pass.length();
+			if (t_l_mail->Text == "kanri" && t_l_password->Text == "abcd1234") {   //ä«óùé“âÊñ Ç…ëJà⁄
 				ManagementForm^ frm = gcnew ManagementForm();
 				frm->ShowDialog();
 				break;
@@ -282,7 +286,7 @@ namespace TeamProject {
 				this->l_l_error1->Visible = true;
 				break;
 			}
-			else if (Password <=7 || Password >= 17) {  //ÉGÉâÅ[ï∂ÇQ
+			else if (Password <= 7 || Password >= 17) {  //ÉGÉâÅ[ï∂ÇQ
 				this->l_l_error2->Visible = true;
 				break;
 			}
@@ -291,14 +295,17 @@ namespace TeamProject {
 			}
 			else if (t_l_mail->Text == msclr::interop::marshal_as<System::String^>(user[i].mail) && t_l_password->Text == msclr::interop::marshal_as<System::String^>(user[i].pass)) {   //àÍóóâÊñ Ç…ëJà⁄
 				usernum = i;
-				
-				ShowForm^ frm = gcnew ShowForm();
-				frm->Show();
+
+				ShowForm^ frma = gcnew ShowForm();
+				frma->FormClosed += gcnew FormClosedEventHandler(this, &LoginForm::Close);
+				frma->Show();
 				LoginForm::Visible = false;
 			}
 		}
 	}
-
+		  private:void LoginForm::Close(Object^ sender, FormClosedEventArgs^ e) {
+			 LoginForm::Close();
+		  }
 	private: System::Void LoginForm_Load(System::Object^ sender, System::EventArgs^ e) {   
 
 		

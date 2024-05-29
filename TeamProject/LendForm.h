@@ -141,8 +141,9 @@ namespace TeamProject {
 			this->l_l_lendbook1->AutoSize = true;
 			this->l_l_lendbook1->Location = System::Drawing::Point(158, 97);
 			this->l_l_lendbook1->Name = L"l_l_lendbook1";
-			this->l_l_lendbook1->Size = System::Drawing::Size(0, 12);
+			this->l_l_lendbook1->Size = System::Drawing::Size(17, 12);
 			this->l_l_lendbook1->TabIndex = 3;
+			this->l_l_lendbook1->Text = L"aa";
 			// 
 			// l_l_returnday1
 			// 
@@ -197,42 +198,47 @@ namespace TeamProject {
 			// l_l_day1
 			// 
 			this->l_l_day1->AutoSize = true;
-			this->l_l_day1->Location = System::Drawing::Point(158, 164);
+			this->l_l_day1->Location = System::Drawing::Point(158, 126);
 			this->l_l_day1->Name = L"l_l_day1";
-			this->l_l_day1->Size = System::Drawing::Size(0, 12);
+			this->l_l_day1->Size = System::Drawing::Size(23, 12);
 			this->l_l_day1->TabIndex = 9;
+			this->l_l_day1->Text = L"aaa";
 			// 
 			// l_l_lendbook2
 			// 
 			this->l_l_lendbook2->AutoSize = true;
-			this->l_l_lendbook2->Location = System::Drawing::Point(158, 126);
+			this->l_l_lendbook2->Location = System::Drawing::Point(158, 164);
 			this->l_l_lendbook2->Name = L"l_l_lendbook2";
-			this->l_l_lendbook2->Size = System::Drawing::Size(0, 12);
+			this->l_l_lendbook2->Size = System::Drawing::Size(23, 12);
 			this->l_l_lendbook2->TabIndex = 10;
+			this->l_l_lendbook2->Text = L"aaa";
 			// 
 			// l_l_day2
 			// 
 			this->l_l_day2->AutoSize = true;
 			this->l_l_day2->Location = System::Drawing::Point(158, 192);
 			this->l_l_day2->Name = L"l_l_day2";
-			this->l_l_day2->Size = System::Drawing::Size(0, 12);
+			this->l_l_day2->Size = System::Drawing::Size(17, 12);
 			this->l_l_day2->TabIndex = 11;
+			this->l_l_day2->Text = L"aa";
 			// 
 			// l_l_lendbook3
 			// 
 			this->l_l_lendbook3->AutoSize = true;
 			this->l_l_lendbook3->Location = System::Drawing::Point(158, 232);
 			this->l_l_lendbook3->Name = L"l_l_lendbook3";
-			this->l_l_lendbook3->Size = System::Drawing::Size(0, 12);
+			this->l_l_lendbook3->Size = System::Drawing::Size(17, 12);
 			this->l_l_lendbook3->TabIndex = 12;
+			this->l_l_lendbook3->Text = L"aa";
 			// 
 			// l_l_day3
 			// 
 			this->l_l_day3->AutoSize = true;
 			this->l_l_day3->Location = System::Drawing::Point(158, 256);
 			this->l_l_day3->Name = L"l_l_day3";
-			this->l_l_day3->Size = System::Drawing::Size(0, 12);
+			this->l_l_day3->Size = System::Drawing::Size(17, 12);
 			this->l_l_day3->TabIndex = 13;
+			this->l_l_day3->Text = L"aa";
 			// 
 			// le_l_copyright
 			// 
@@ -369,25 +375,25 @@ namespace TeamProject {
 
 		 //tmŒ^‚ðstringŒ^‚É•ÏŠ·‚·‚éŠÖ”
 		 string Day(int d) {
-			 string day = to_string(user[usernum].rday[d]->tm_year);
-			 day.append(to_string(user[usernum].rday[d]->tm_mon));
-			 day.append(to_string(user[usernum].rday[d]->tm_mday));
-			 day.append(to_string(user[usernum].rday[d]->tm_hour));
-			 day.append(to_string(user[usernum].rday[d]->tm_min));
-			 day.append(to_string(user[usernum].rday[d]->tm_sec));
-			 return day;
+			
+			 
+			 char buffer[80];
+			 strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", user[usernum].rday[d]);
+			 string datetimeString(buffer);
+			 return datetimeString;
 		 }
 
 		 //ŽØ‚è‚Ä‚¢‚éû”‚É‰ž‚¶‚Älabel‚É’l‚ð“ü‚ê•\Ž¦‚·‚éŠÖ”
 	void Showbookday(int booknum) {
 		time_t t = time(nullptr);
 		tm* now = localtime(&t);
+		string day;
 		switch (booknum) {
 		case 3:
 			this->l_l_booktitle3->Visible = true;
 			this->l_l_returnday3->Visible = true;
 			this->l_l_lendbook3->Text = msclr::interop::marshal_as<System::String^>(user[usernum].lendname[2]);
-			this->l_l_day3->Text = msclr::interop::marshal_as<System::String^>(Day(2));
+			this->l_l_day3->Text = msclr::interop::marshal_as<System::String^>(day = Day(2));
 			if (mktime(now) > mktime(user[usernum].rday[2])) {
 				this->label3->Visible = true;
 			}
@@ -395,7 +401,7 @@ namespace TeamProject {
 			this->l_l_booktitle2->Visible = true;
 			this->l_l_returnday2->Visible = true;
 			this->l_l_lendbook2->Text = msclr::interop::marshal_as<System::String^>(user[usernum].lendname[1]);
-			this->l_l_day2->Text = msclr::interop::marshal_as<System::String^>(Day(1));
+			this->l_l_day2->Text = msclr::interop::marshal_as<System::String^>(day = Day(1));
 			if (mktime(now) > mktime(user[usernum].rday[1])) {
 				this->label2->Visible = true;
 			}
@@ -403,7 +409,7 @@ namespace TeamProject {
 			this->l_l_booktitle1->Visible = true;
 			this->l_l_returnday1->Visible = true;
 			this->l_l_lendbook1->Text = msclr::interop::marshal_as<System::String^>(user[usernum].lendname[0]);
-			this->l_l_day1->Text = msclr::interop::marshal_as<System::String^>(Day(0));
+			this->l_l_day1->Text = msclr::interop::marshal_as<System::String^>(day = Day(0));
 			if (mktime(now) > mktime(user[usernum].rday[0])) {
 				this->label1->Visible = true;
 			}
@@ -416,6 +422,7 @@ namespace TeamProject {
 
 	
 	private: System::Void LendForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		
 		Reset();
 		Showbookday(user[usernum].books);
 	}
