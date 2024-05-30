@@ -74,6 +74,9 @@ namespace TeamProject {
 	private: System::Windows::Forms::TextBox^ t_l_mail;
 	private: System::Windows::Forms::TextBox^ t_l_password;
 	private: System::Windows::Forms::Button^ b_lo_check;
+	private: System::Windows::Forms::Label^ l_l_error4;
+
+
 
 
 
@@ -105,6 +108,7 @@ namespace TeamProject {
 			this->t_l_mail = (gcnew System::Windows::Forms::TextBox());
 			this->t_l_password = (gcnew System::Windows::Forms::TextBox());
 			this->b_lo_check = (gcnew System::Windows::Forms::Button());
+			this->l_l_error4 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// l_lo_header
@@ -150,7 +154,7 @@ namespace TeamProject {
 			// 
 			this->l_l_error1->AutoSize = true;
 			this->l_l_error1->ForeColor = System::Drawing::Color::Red;
-			this->l_l_error1->Location = System::Drawing::Point(155, 230);
+			this->l_l_error1->Location = System::Drawing::Point(155, 245);
 			this->l_l_error1->Name = L"l_l_error1";
 			this->l_l_error1->Size = System::Drawing::Size(249, 15);
 			this->l_l_error1->TabIndex = 4;
@@ -161,7 +165,7 @@ namespace TeamProject {
 			// 
 			this->l_l_error2->AutoSize = true;
 			this->l_l_error2->ForeColor = System::Drawing::Color::Red;
-			this->l_l_error2->Location = System::Drawing::Point(155, 245);
+			this->l_l_error2->Location = System::Drawing::Point(75, 245);
 			this->l_l_error2->Name = L"l_l_error2";
 			this->l_l_error2->Size = System::Drawing::Size(391, 15);
 			this->l_l_error2->TabIndex = 5;
@@ -172,7 +176,7 @@ namespace TeamProject {
 			// 
 			this->l_l_error3->AutoSize = true;
 			this->l_l_error3->ForeColor = System::Drawing::Color::Red;
-			this->l_l_error3->Location = System::Drawing::Point(155, 260);
+			this->l_l_error3->Location = System::Drawing::Point(134, 245);
 			this->l_l_error3->Name = L"l_l_error3";
 			this->l_l_error3->Size = System::Drawing::Size(287, 15);
 			this->l_l_error3->TabIndex = 6;
@@ -237,12 +241,24 @@ namespace TeamProject {
 			this->b_lo_check->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &LoginForm::b_lo_check_MouseDown);
 			this->b_lo_check->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &LoginForm::b_lo_check_MouseUp);
 			// 
+			// l_l_error4
+			// 
+			this->l_l_error4->AutoSize = true;
+			this->l_l_error4->ForeColor = System::Drawing::Color::Red;
+			this->l_l_error4->Location = System::Drawing::Point(170, 260);
+			this->l_l_error4->Name = L"l_l_error4";
+			this->l_l_error4->Size = System::Drawing::Size(201, 15);
+			this->l_l_error4->TabIndex = 13;
+			this->l_l_error4->Text = L"ƒ†[ƒU‚Ì“o˜^ãŒÀ‚ğ’´‚¦‚Ä‚¢‚Ü‚·";
+			this->l_l_error4->Visible = false;
+			// 
 			// LoginForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(568, 387);
+			this->Controls->Add(this->l_l_error4);
 			this->Controls->Add(this->b_lo_check);
 			this->Controls->Add(this->t_l_password);
 			this->Controls->Add(this->t_l_mail);
@@ -267,8 +283,13 @@ namespace TeamProject {
 		}
 #pragma endregion
 	private: System::Void b_l_signup_Click(System::Object^ sender, System::EventArgs^ e) {   //V‹K“o˜^‰æ–Ê‚Ö‘JˆÚ
-		signupForm^ frm = gcnew signupForm();
-		frm->ShowDialog();
+		if (usermax < 99) {
+			signupForm^ frm = gcnew signupForm();
+			frm->ShowDialog();
+		}
+		else {
+			l_l_error4->Visible = true;
+		}
 	}
 
 	private: System::Void b_l_login_Click(System::Object^ sender, System::EventArgs^ e) {   //ƒƒOƒCƒ“ˆ—‚ğÀs

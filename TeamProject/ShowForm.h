@@ -802,6 +802,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 			// 
 			this->l_s_error->BackColor = System::Drawing::SystemColors::Control;
 			this->l_s_error->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->l_s_error->ForeColor = System::Drawing::Color::Red;
 			this->l_s_error->Location = System::Drawing::Point(20, 620);
 			this->l_s_error->Name = L"l_s_error";
 			this->l_s_error->Size = System::Drawing::Size(480, 20);
@@ -836,9 +837,8 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 			this->l_s_select->Font = (gcnew System::Drawing::Font(L"ＭＳ 明朝", 12));
 			this->l_s_select->Location = System::Drawing::Point(196, 704);
 			this->l_s_select->Name = L"l_s_select";
-			this->l_s_select->Size = System::Drawing::Size(49, 20);
+			this->l_s_select->Size = System::Drawing::Size(0, 20);
 			this->l_s_select->TabIndex = 58;
-			this->l_s_select->Text = L"1～1";
 			// 
 			// l_s_lendnum
 			// 
@@ -1204,7 +1204,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 		}
 
 		private: bool lend_Click_func(int bnum) {
-			if (System::Windows::Forms::DialogResult::OK == MessageBox::Show(msclr::interop::marshal_as<System::String^>("タイトル" + lib[(page - 1) * 10 + lnum].title) + "を借りますか?", "確認", MessageBoxButtons::OKCancel, MessageBoxIcon::Question)) {
+			if (System::Windows::Forms::DialogResult::OK == MessageBox::Show(msclr::interop::marshal_as<System::String^>("タイトル" + lib[(page - 1) * 10 + bnum].title) + "を借りますか?", "確認", MessageBoxButtons::OKCancel, MessageBoxIcon::Question)) {
 				
 				//ユーザー情報ファイルオープン
 				std::ofstream uofs("user.csv");
