@@ -911,6 +911,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 			this->Controls->Add(this->c_s_genre);
 			this->Controls->Add(this->l_s_header);
 			this->Name = L"ShowForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"‘İ‚µo‚µ";
 			this->Load += gcnew System::EventHandler(this, &ShowForm::ShowForm_Load);
 			this->ResumeLayout(false);
@@ -1219,9 +1220,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 				t += (7 * 24 * 60 * 60);
 
 				// Œ»İ‚ğƒNƒ‰ƒX‚ÉŠi”[
-				user[usernum].rday[user[usernum].books] = localtime(&t);
-				user[usernum].rday[user[usernum].books]->tm_year += 1900;
-				user[usernum].rday[user[usernum].books]->tm_mon += 1;
+				user[usernum].rday[user[usernum].books] = *localtime(&t);
 
 				//Ø‚è‚Ä‚¢‚é}‘”‚ğ{‚P
 				user[usernum].books += 1;
@@ -1247,25 +1246,25 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 					uofs << user[i].lendname[1] << ',';
 					uofs << user[i].lendname[2] << ',';
 					for (int j = 0; j < 3; j++) {
-						if (user[i].rday[j] != NULL) {
+						if (user[i].rday[j].tm_year != NULL) {
 							string tmp;
 							//”N
-							tmp = to_string(user[i].rday[j]->tm_year);
+							tmp = to_string(user[i].rday[j].tm_year + 1900);
 							//Œ
-							if (user[i].rday[j]->tm_mon < 10) { tmp += "0"; }
-							tmp += to_string(user[i].rday[j]->tm_mon);
+							if (user[i].rday[j].tm_mon < 10) { tmp += "0"; }
+							tmp += to_string(user[i].rday[j].tm_mon + 1);
 							//“ú
-							if (user[i].rday[j]->tm_mday < 10) { tmp += "0"; }
-							tmp += to_string(user[i].rday[j]->tm_mday);
+							if (user[i].rday[j].tm_mday < 10) { tmp += "0"; }
+							tmp += to_string(user[i].rday[j].tm_mday);
 							//
-							if (user[i].rday[j]->tm_hour < 10) { tmp += "0"; }
-							tmp += to_string(user[i].rday[j]->tm_hour);
+							if (user[i].rday[j].tm_hour < 10) { tmp += "0"; }
+							tmp += to_string(user[i].rday[j].tm_hour);
 							//•ª
-							if (user[i].rday[j]->tm_min < 10) { tmp += "0"; }
-							tmp += to_string(user[i].rday[j]->tm_min);
+							if (user[i].rday[j].tm_min < 10) { tmp += "0"; }
+							tmp += to_string(user[i].rday[j].tm_min);
 							//•b
-							if (user[i].rday[j]->tm_sec < 10) { tmp += "0"; }
-							tmp += to_string(user[i].rday[j]->tm_sec);
+							if (user[i].rday[j].tm_sec < 10) { tmp += "0"; }
+							tmp += to_string(user[i].rday[j].tm_sec);
 							uofs << tmp;
 						}
 						uofs << ',';
@@ -1282,9 +1281,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 				t = time(NULL);
 
 				// Œ»İ‚ğƒNƒ‰ƒX‚ÉŠi”[
-				lib[(page - 1) * 10 + bnum].aday = localtime(&t);
-				lib[(page - 1) * 10 + bnum].aday->tm_year += 1900;
-				lib[(page - 1) * 10 + bnum].aday->tm_mon += 1;
+				lib[(page - 1) * 10 + bnum].aday = *localtime(&t);
 
 				//ƒNƒ‰ƒX‚Ì}‘î•ñXV
 				lib[(page - 1) * 10 + bnum].lendname = user[usernum].mail;
@@ -1307,25 +1304,25 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 					lofs << lib[i].genre << ",";
 					lofs << lib[i].pub << ",";
 					lofs << lib[i].writer << ",";
-					if(lib[i].aday != NULL) {
+					if(lib[i].aday.tm_year != NULL) {
 						//”N
 						string tmp;
-						tmp = to_string(lib[i].aday->tm_year);
+						tmp = to_string(lib[i].aday.tm_year + 1900);
 						//Œ
-						if (lib[i].aday->tm_mon < 10) { tmp += "0"; }
-						tmp += to_string(lib[i].aday->tm_mon);
+						if (lib[i].aday.tm_mon < 10) { tmp += "0"; }
+						tmp += to_string(lib[i].aday.tm_mon + 1);
 						//“ú
-						if (lib[i].aday->tm_mday < 10) { tmp += "0"; }
-						tmp += to_string(lib[i].aday->tm_mday);
+						if (lib[i].aday.tm_mday < 10) { tmp += "0"; }
+						tmp += to_string(lib[i].aday.tm_mday);
 						//
-						if (lib[i].aday->tm_hour < 10) { tmp += "0"; }
-						tmp+= to_string(lib[i].aday->tm_hour);
+						if (lib[i].aday.tm_hour < 10) { tmp += "0"; }
+						tmp+= to_string(lib[i].aday.tm_hour);
 						//•ª
-						if (lib[i].aday->tm_min < 10) { tmp += "0"; }
-						tmp+= to_string(lib[i].aday->tm_min);
+						if (lib[i].aday.tm_min < 10) { tmp += "0"; }
+						tmp+= to_string(lib[i].aday.tm_min);
 						//•b
-						if (lib[i].aday->tm_sec < 10) { tmp += "0"; }
-						tmp+= to_string(lib[i].aday->tm_sec);
+						if (lib[i].aday.tm_sec < 10) { tmp += "0"; }
+						tmp+= to_string(lib[i].aday.tm_sec);
 						lofs << tmp;
 					}
 					lofs << ',';
@@ -1419,7 +1416,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 						tm.tm_year = stoi(time) - 1900;
 						//Œ
 						time = str_conma_buf.substr(4, 2);
-						tm.tm_mon = stoi(time);
+						tm.tm_mon = stoi(time) - 1;
 						//“ú
 						time = str_conma_buf.substr(6, 2);
 						tm.tm_mday = stoi(time);
@@ -1433,7 +1430,7 @@ private: System::Windows::Forms::Label^ l_s_lendnum;
 						time = str_conma_buf.substr(12, 2);
 						tm.tm_sec = stoi(time);
 						time_t timep = mktime(&tm);
-						lib[nummax].aday = localtime(&timep);
+						lib[nummax].aday = *localtime(&timep);
 					}
 
 					// ‚U—ñ–Ú

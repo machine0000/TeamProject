@@ -272,6 +272,7 @@ namespace TeamProject {
 			this->Controls->Add(this->l_b_copyright);
 			this->Controls->Add(this->l_b_header);
 			this->Name = L"Book_detail_form";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Ú×";
 			this->Load += gcnew System::EventHandler(this, &Book_detail_form::Book_detail_form_Load);
 			this->ResumeLayout(false);

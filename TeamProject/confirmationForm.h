@@ -232,6 +232,7 @@ namespace TeamProject {
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"confirmationForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"confirmationForm";
 			this->Load += gcnew System::EventHandler(this, &confirmationForm::confirmationForm_Load);
 			this->ResumeLayout(false);
@@ -275,24 +276,24 @@ namespace TeamProject {
 			ofs << user[i].lendname[1] << ',';
 			ofs << user[i].lendname[2] << ',';
 			for (int j = 0; j < 3; j++) {
-				if (user[i].rday[j] != NULL) {
+				if (user[i].rday[j].tm_year != NULL) {
 					//”N
-					string tmp = to_string(user[i].rday[j]->tm_year);
+					string tmp = to_string(user[i].rday[j].tm_year + 1900);
 					//Œ
-					if (user[i].rday[j]->tm_mon < 10) { tmp += "0"; }
-					tmp += to_string(user[i].rday[j]->tm_mon);
+					if (user[i].rday[j].tm_mon < 10) { tmp += "0"; }
+					tmp += to_string(user[i].rday[j].tm_mon + 1);
 					//“ú
-					if (user[i].rday[j]->tm_mday < 10) { tmp += "0"; }
-					tmp += to_string(user[i].rday[j]->tm_mday);
+					if (user[i].rday[j].tm_mday < 10) { tmp += "0"; }
+					tmp += to_string(user[i].rday[j].tm_mday);
 					//
-					if (user[i].rday[j]->tm_hour < 10) { tmp += "0"; }
-					tmp += to_string(user[i].rday[j]->tm_hour);
+					if (user[i].rday[j].tm_hour < 10) { tmp += "0"; }
+					tmp += to_string(user[i].rday[j].tm_hour);
 					//•ª
-					if (user[i].rday[j]->tm_min < 10) { tmp += "0"; }
-					tmp += to_string(user[i].rday[j]->tm_min);
+					if (user[i].rday[j].tm_min < 10) { tmp += "0"; }
+					tmp += to_string(user[i].rday[j].tm_min);
 					//•b
-					if (user[i].rday[j]->tm_sec < 10) { tmp += "0"; }
-					tmp += to_string(user[i].rday[j]->tm_sec);
+					if (user[i].rday[j].tm_sec < 10) { tmp += "0"; }
+					tmp += to_string(user[i].rday[j].tm_sec);
 					ofs << tmp;
 				}
 				ofs <<  ',';

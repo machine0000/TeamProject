@@ -275,6 +275,7 @@ namespace TeamProject {
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"LoginForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"LoginForm";
 			this->Load += gcnew System::EventHandler(this, &LoginForm::LoginForm_Load_1);
 			this->ResumeLayout(false);
@@ -364,10 +365,10 @@ namespace TeamProject {
 					if (str_conma_buf != "") {
 						//”N
 						time = str_conma_buf.substr(0, 4);
-						tm.tm_year = stoi(time)-1900;
+						tm.tm_year = stoi(time) - 1900;
 						//ŒŽ
 						time = str_conma_buf.substr(4, 2);
-						tm.tm_mon = stoi(time);
+						tm.tm_mon = stoi(time) - 1;
 						//“ú
 						time = str_conma_buf.substr(6, 2);
 						tm.tm_mday = stoi(time);
@@ -381,7 +382,7 @@ namespace TeamProject {
 						time = str_conma_buf.substr(12, 2);
 						tm.tm_sec = stoi(time);
 						time_t timep = mktime(&tm);
-						user[usermax].rday[j] = localtime(&timep);
+						user[usermax].rday[j] = *localtime(&timep);
 					}
 				}
 				//‚P‚O—ñ–Ú

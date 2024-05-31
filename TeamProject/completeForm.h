@@ -117,6 +117,7 @@ namespace TeamProject {
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"completeForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"completeForm";
 			this->TopMost = true;
 			this->Load += gcnew System::EventHandler(this, &completeForm::completeForm_Load);

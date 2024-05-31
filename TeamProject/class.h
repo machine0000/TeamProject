@@ -9,7 +9,7 @@ public:
 	string pass;
 	string genre;
 	string lendname[3];
-	tm* rday[3];
+	tm rday[3];
 	int books;
 };
 User user[100];
@@ -20,7 +20,7 @@ public:
 	string genre;
 	string pub;
 	string writer;
-	tm* aday;
+	tm aday;
 	string lendname;
 	int count;
 	int rest;

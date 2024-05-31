@@ -158,6 +158,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Book_detail_form.resx">
+      <DependentUpon>Book_detail_form.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="completeForm.resx">
       <DependentUpon>completeForm.h</DependentUpon>
     </EmbeddedResource>

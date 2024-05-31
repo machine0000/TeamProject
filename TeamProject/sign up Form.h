@@ -265,6 +265,7 @@ namespace TeamProject {
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"signupForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"signupForm";
 			this->Load += gcnew System::EventHandler(this, &signupForm::signupForm_Load);
 			this->ResumeLayout(false);
